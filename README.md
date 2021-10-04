@@ -12,8 +12,8 @@
 <Include project description?
 
 ## Team
-<a href="https://github.com/msalloum" target="_blank"><img src="https://avatars3.githubusercontent.com/u/1790819?s=400&v=4" align="left" height="30px">Mariam Salloum</a><br>
-<a href="https://www.linkedin.com/in/richardvduong/" target="_blank"><img src="http://richardduong.com/resources/profile-picture1.jpg" align="left" height="30px">Richard Duong</a><br>
+<a href="https://github.com/msalloum" target="_blank"><img src="https://avatars3.githubusercontent.com/u/1790819?s=400&v=4" align="left" height="30px">Mariam Salloum</a><br><br>
+<a href="https://www.linkedin.com/in/richardvduong/" target="_blank"><img src="http://richardduong.com/resources/profile-picture1.jpg" align="left" height="30px">Richard Duong</a><br><br>
 
 ## Usage
 Demo: <Link to youtube video>
