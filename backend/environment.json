@@ -1,0 +1,95 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2021-10-28T22:35:41.992Z",
+  "__export_source": "insomnia.desktop.app:v2021.5.3",
+  "resources": [
+    {
+      "_id": "req_83ae634026064b8192f47ae8a47b6f0d",
+      "parentId": "wrk_1eab7632dc934df698426c84f5348abd",
+      "modified": 1635460507323,
+      "created": 1634537717444,
+      "url": "{{ _.base_url }}",
+      "name": "createUser",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"mutation {\\n  createUser(input: {username: \\\"NAME\\\"}) {\\n    username\\n    create_date\\n  }\\n}\"}"
+      },
+      "parameters": [
+        {
+          "id": "pair_fe103138607c418cb258d0868ac0f68e",
+          "name": "",
+          "value": "",
+          "description": ""
+        }
+      ],
+      "headers": [
+        {
+          "id": "pair_2fb1528d81434f2fa1347a6598534955",
+          "name": "x-api-key",
+          "value": "{{ _.API_KEY }}",
+          "description": ""
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/graphql",
+          "id": "pair_5ea7c63a0d294673aa628ae516b91ad8"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1634537717444,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "wrk_1eab7632dc934df698426c84f5348abd",
+      "parentId": null,
+      "modified": 1634537700682,
+      "created": 1634537700682,
+      "name": "Memoir GraphQL API",
+      "description": "",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "env_9d042246f80f2c2638a4b0aaf16297fbc1d00d3b",
+      "parentId": "wrk_1eab7632dc934df698426c84f5348abd",
+      "modified": 1635460491274,
+      "created": 1634537700693,
+      "name": "Base Environment",
+      "data": {},
+      "dataPropertyOrder": {},
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1634537700693,
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_9d042246f80f2c2638a4b0aaf16297fbc1d00d3b",
+      "parentId": "wrk_1eab7632dc934df698426c84f5348abd",
+      "modified": 1634537700695,
+      "created": 1634537700695,
+      "name": "Default Jar",
+      "cookies": [],
+      "_type": "cookie_jar"
+    },
+    {
+      "_id": "spc_0eda8140477949a9bde91d88218dd7fe",
+      "parentId": "wrk_1eab7632dc934df698426c84f5348abd",
+      "modified": 1634537700683,
+      "created": 1634537700683,
+      "fileName": "Memoir GraphQL API",
+      "contents": "",
+      "contentType": "yaml",
+      "_type": "api_spec"
+    }
+  ]
+}
