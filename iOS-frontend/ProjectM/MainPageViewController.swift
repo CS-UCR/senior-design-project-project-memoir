@@ -8,23 +8,32 @@
 import Foundation
 import AVFoundation // Access camera
 import UIKit
+import ARKit
 
-class MainPageViewController: UIViewController {
-    
-    private let captureSession = AVCaptureSession()
-    
+class MainPageViewController: UIViewController{
 
+    
+    @IBOutlet weak var sceneView: ARSCNView!
+    let config = ARWorldTrackingConfiguration()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.addCameraInput()
-        // Do any additional setup after loading the view.
-    }
 
-    
-    private func addCameraInput() {
-        let device = AVCaptureDevice.default(for: .video)!
-        let cameraInput = try! AVCaptureDeviceInput(device: device)
-        self.captureSession.addInput(cameraInput)
+        let text = SCNText(string: "Let's gooooo!", extrusionDepth: 2)
+        let material = SCNMaterial()
+        material.diffuse.contents = UIColor.blue
+        text.materials = [material]
+        
+        let node = SCNNode()
+        node.position = SCNVector3(x:0, y:0.02, z:-0.1)
+        node.scale = SCNVector3(x:0.01, y:0.01, z:0.01)
+        node.geometry = text
+        
+        sceneView.scene.rootNode.addChildNode(node)
+        sceneView.autoenablesDefaultLighting = true
+        sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints, ARSCNDebugOptions.showWorldOrigin]
+        sceneView.session.run(config)
+
     }
 
 }

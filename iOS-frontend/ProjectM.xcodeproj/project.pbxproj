@@ -106,15 +106,15 @@
 			isa = PBXGroup;
 			children = (
 				078BF1DF2711277B00307C5E /* AppDelegate.swift */,
-				078BF1E12711277B00307C5E /* SceneDelegate.swift */,
 				078BF1E32711277B00307C5E /* ViewController.swift */,
-				078BF1E52711277B00307C5E /* Main.storyboard */,
 				0739A4662728980E00497D11 /* AppleIDButtonAuthorizaiton.swift */,
+				07F5E5B8272B574800CDB8ED /* MainPageViewController.swift */,
+				07912A02272C6C2000E48FA6 /* SignUpViewController.swift */,
+				078BF1E12711277B00307C5E /* SceneDelegate.swift */,
+				078BF1E52711277B00307C5E /* Main.storyboard */,
 				078BF1E82711277E00307C5E /* Assets.xcassets */,
 				078BF1EA2711277E00307C5E /* LaunchScreen.storyboard */,
 				078BF1ED2711277E00307C5E /* Info.plist */,
-				07F5E5B8272B574800CDB8ED /* MainPageViewController.swift */,
-				07912A02272C6C2000E48FA6 /* SignUpViewController.swift */,
 			);
 			path = ProjectM;
 			sourceTree = "<group>";
@@ -452,6 +452,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C3353ZR648;
 				INFOPLIST_FILE = ProjectM/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -473,6 +474,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C3353ZR648;
 				INFOPLIST_FILE = ProjectM/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
