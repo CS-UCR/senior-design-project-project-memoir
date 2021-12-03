@@ -18,6 +18,7 @@
 		078BF2022711277F00307C5E /* ProjectMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078BF2012711277F00307C5E /* ProjectMUITests.swift */; };
 		07912A03272C6C2100E48FA6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07912A02272C6C2000E48FA6 /* SignUpViewController.swift */; };
 		07F5E5B9272B574800CDB8ED /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F5E5B8272B574800CDB8ED /* MainPageViewController.swift */; };
+		939FAAFD274C9F900016C798 /* InitRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939FAAFC274C9F900016C798 /* InitRequestViewController.swift */; };
 		93BA693D274B5CB100D84035 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 93BA693C274B5CB100D84035 /* schema.json */; };
 		93BA6940274B5D0400D84035 /* Queries.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 93BA693F274B5D0400D84035 /* Queries.graphql */; };
 		93BA6955274B639300D84035 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 93BA6954274B639300D84035 /* Apollo */; };
@@ -60,6 +61,7 @@
 		078BF2032711277F00307C5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07912A02272C6C2000E48FA6 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		07F5E5B8272B574800CDB8ED /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
+		939FAAFC274C9F900016C798 /* InitRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitRequestViewController.swift; sourceTree = "<group>"; };
 		93BA693C274B5CB100D84035 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		93BA693F274B5D0400D84035 /* Queries.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Queries.graphql; sourceTree = "<group>"; };
 		93BA6956274B63CC00D84035 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = ProjectM/API.swift; sourceTree = SOURCE_ROOT; };
@@ -119,6 +121,7 @@
 				078BF1DF2711277B00307C5E /* AppDelegate.swift */,
 				078BF1E32711277B00307C5E /* ViewController.swift */,
 				0739A4662728980E00497D11 /* AppleIDButtonAuthorizaiton.swift */,
+				939FAAFC274C9F900016C798 /* InitRequestViewController.swift */,
 				07F5E5B8272B574800CDB8ED /* MainPageViewController.swift */,
 				07912A02272C6C2000E48FA6 /* SignUpViewController.swift */,
 				93BA693E274B5CD500D84035 /* GraphQL */,
@@ -326,6 +329,7 @@
 				0739A4672728980E00497D11 /* AppleIDButtonAuthorizaiton.swift in Sources */,
 				078BF1E22711277B00307C5E /* SceneDelegate.swift in Sources */,
 				93BA6959274B641800D84035 /* Apollo.swift in Sources */,
+				939FAAFD274C9F900016C798 /* InitRequestViewController.swift in Sources */,
 				93BA6957274B63CD00D84035 /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
