@@ -38,7 +38,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
-                                    <segue destination="CVn-vE-jtw" kind="presentation" modalPresentationStyle="fullScreen" id="U1N-Sj-3gf"/>
+                                    <segue destination="oyK-az-9ub" kind="presentation" modalPresentationStyle="fullScreen" id="soE-49-Amy"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -150,16 +150,64 @@
             </objects>
             <point key="canvasLocation" x="-888.40579710144937" y="888.61607142857144"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="2cH-B2-HDn">
+            <objects>
+                <viewController id="oyK-az-9ub" customClass="ARViewController" customModule="ProjectM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="w7F-jv-ybQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FPB-pQ-8w5" userLabel="ARView" customClass="ARView" customModule="RealityKit">
+                                <rect key="frame" x="-7" y="0.0" width="421" height="903"/>
+                                <subviews>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1YB-uO-M2X" customClass="ErrorMessageLabel" customModule="AR_Message">
+                                        <rect key="frame" x="33" y="52" width="355" height="40"/>
+                                        <color key="backgroundColor" red="0.6922967941" green="0.6922967941" blue="0.6922967941" alpha="0.88345296959999997" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Oqd-SP-doG"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="1YB-uO-M2X" firstAttribute="leading" secondItem="FPB-pQ-8w5" secondAttribute="leading" constant="33" id="B38-Dq-ay7"/>
+                                    <constraint firstItem="1YB-uO-M2X" firstAttribute="top" secondItem="FPB-pQ-8w5" secondAttribute="top" constant="52" id="RCs-uM-QlZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="1YB-uO-M2X" secondAttribute="trailing" constant="33" id="uJL-rG-guU"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Vog-6D-F0R"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="FPB-pQ-8w5" secondAttribute="bottom" constant="-41" id="OMw-1m-hEV"/>
+                            <constraint firstItem="FPB-pQ-8w5" firstAttribute="trailing" secondItem="Vog-6D-F0R" secondAttribute="trailing" id="Ptx-C3-GNZ"/>
+                            <constraint firstItem="FPB-pQ-8w5" firstAttribute="top" secondItem="w7F-jv-ybQ" secondAttribute="topMargin" constant="-44" id="gI0-WB-Idl"/>
+                            <constraint firstItem="FPB-pQ-8w5" firstAttribute="leading" secondItem="w7F-jv-ybQ" secondAttribute="leadingMargin" constant="-27" id="n9f-4i-jiP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="ARView" destination="FPB-pQ-8w5" id="2vA-TQ-uMK"/>
+                        <outlet property="errorMessageLabel" destination="1YB-uO-M2X" id="0k4-7y-TgR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ipr-iN-ThD" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="31.884057971014496" y="140.625"/>
+        </scene>
     </scenes>
     <designables>
         <designable name="zdo-wJ-8Sy">
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
     </designables>
-    <inferredMetricsTieBreakers>
-        <segue reference="U1N-Sj-3gf"/>
-    </inferredMetricsTieBreakers>
     <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

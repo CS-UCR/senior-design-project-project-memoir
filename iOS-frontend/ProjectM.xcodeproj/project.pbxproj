@@ -8,16 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		0739A4672728980E00497D11 /* AppleIDButtonAuthorizaiton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0739A4662728980E00497D11 /* AppleIDButtonAuthorizaiton.swift */; };
-		078BF1E02711277B00307C5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078BF1DF2711277B00307C5E /* AppDelegate.swift */; };
+		07538B0827615516003D5182 /* AR View Controller in Resources */ = {isa = PBXBuildFile; fileRef = 07538B0727615516003D5182 /* AR View Controller */; };
+		07538B1F27615926003D5182 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07538B1E27615926003D5182 /* AppDelegate.swift */; };
 		078BF1E22711277B00307C5E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078BF1E12711277B00307C5E /* SceneDelegate.swift */; };
 		078BF1E42711277B00307C5E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078BF1E32711277B00307C5E /* ViewController.swift */; };
 		078BF1E72711277B00307C5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 078BF1E52711277B00307C5E /* Main.storyboard */; };
-		078BF1E92711277E00307C5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 078BF1E82711277E00307C5E /* Assets.xcassets */; };
 		078BF1EC2711277E00307C5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 078BF1EA2711277E00307C5E /* LaunchScreen.storyboard */; };
-		078BF1F72711277F00307C5E /* ProjectMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078BF1F62711277F00307C5E /* ProjectMTests.swift */; };
-		078BF2022711277F00307C5E /* ProjectMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078BF2012711277F00307C5E /* ProjectMUITests.swift */; };
 		07912A03272C6C2100E48FA6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07912A02272C6C2000E48FA6 /* SignUpViewController.swift */; };
-		07F5E5B9272B574800CDB8ED /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F5E5B8272B574800CDB8ED /* MainPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,22 +36,17 @@
 
 /* Begin PBXFileReference section */
 		0739A4662728980E00497D11 /* AppleIDButtonAuthorizaiton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIDButtonAuthorizaiton.swift; sourceTree = "<group>"; };
+		07538B0727615516003D5182 /* AR View Controller */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "AR View Controller"; sourceTree = "<group>"; };
+		07538B1E27615926003D5182 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "AR View Controller/AppDelegate.swift"; sourceTree = "<group>"; };
 		078BF1DC2711277B00307C5E /* ProjectM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectM.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		078BF1DF2711277B00307C5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		078BF1E12711277B00307C5E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		078BF1E32711277B00307C5E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		078BF1E62711277B00307C5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		078BF1E82711277E00307C5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		078BF1EB2711277E00307C5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		078BF1ED2711277E00307C5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		078BF1F22711277F00307C5E /* ProjectMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		078BF1F62711277F00307C5E /* ProjectMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMTests.swift; sourceTree = "<group>"; };
-		078BF1F82711277F00307C5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		078BF1FD2711277F00307C5E /* ProjectMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		078BF2012711277F00307C5E /* ProjectMUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMUITests.swift; sourceTree = "<group>"; };
-		078BF2032711277F00307C5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07912A02272C6C2000E48FA6 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		07F5E5B8272B574800CDB8ED /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,8 +78,6 @@
 			isa = PBXGroup;
 			children = (
 				078BF1DE2711277B00307C5E /* ProjectM */,
-				078BF1F52711277F00307C5E /* ProjectMTests */,
-				078BF2002711277F00307C5E /* ProjectMUITests */,
 				078BF1DD2711277B00307C5E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -105,36 +95,17 @@
 		078BF1DE2711277B00307C5E /* ProjectM */ = {
 			isa = PBXGroup;
 			children = (
-				078BF1DF2711277B00307C5E /* AppDelegate.swift */,
+				07538B1E27615926003D5182 /* AppDelegate.swift */,
 				078BF1E32711277B00307C5E /* ViewController.swift */,
 				0739A4662728980E00497D11 /* AppleIDButtonAuthorizaiton.swift */,
-				07F5E5B8272B574800CDB8ED /* MainPageViewController.swift */,
 				07912A02272C6C2000E48FA6 /* SignUpViewController.swift */,
+				07538B0727615516003D5182 /* AR View Controller */,
 				078BF1E12711277B00307C5E /* SceneDelegate.swift */,
 				078BF1E52711277B00307C5E /* Main.storyboard */,
-				078BF1E82711277E00307C5E /* Assets.xcassets */,
 				078BF1EA2711277E00307C5E /* LaunchScreen.storyboard */,
 				078BF1ED2711277E00307C5E /* Info.plist */,
 			);
 			path = ProjectM;
-			sourceTree = "<group>";
-		};
-		078BF1F52711277F00307C5E /* ProjectMTests */ = {
-			isa = PBXGroup;
-			children = (
-				078BF1F62711277F00307C5E /* ProjectMTests.swift */,
-				078BF1F82711277F00307C5E /* Info.plist */,
-			);
-			path = ProjectMTests;
-			sourceTree = "<group>";
-		};
-		078BF2002711277F00307C5E /* ProjectMUITests */ = {
-			isa = PBXGroup;
-			children = (
-				078BF2012711277F00307C5E /* ProjectMUITests.swift */,
-				078BF2032711277F00307C5E /* Info.plist */,
-			);
-			path = ProjectMUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,7 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				078BF1EC2711277E00307C5E /* LaunchScreen.storyboard in Resources */,
-				078BF1E92711277E00307C5E /* Assets.xcassets in Resources */,
+				07538B0827615516003D5182 /* AR View Controller in Resources */,
 				078BF1E72711277B00307C5E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,10 +241,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				07912A03272C6C2100E48FA6 /* SignUpViewController.swift in Sources */,
-				07F5E5B9272B574800CDB8ED /* MainPageViewController.swift in Sources */,
 				078BF1E42711277B00307C5E /* ViewController.swift in Sources */,
-				078BF1E02711277B00307C5E /* AppDelegate.swift in Sources */,
 				0739A4672728980E00497D11 /* AppleIDButtonAuthorizaiton.swift in Sources */,
+				07538B1F27615926003D5182 /* AppDelegate.swift in Sources */,
 				078BF1E22711277B00307C5E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,7 +252,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				078BF1F72711277F00307C5E /* ProjectMTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,7 +259,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				078BF2022711277F00307C5E /* ProjectMUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,7 +427,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "c.lo-.ProjectM";
+				PRODUCT_BUNDLE_IDENTIFIER = c.lo.ProjectM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -481,7 +449,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "c.lo-.ProjectM";
+				PRODUCT_BUNDLE_IDENTIFIER = c.lo.ProjectM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
