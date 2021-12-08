@@ -20,8 +20,19 @@ Demo: <Link to youtube video>
 
 <Screenshot of application>
 
-## How To Run
-In the project directory, you can run:
+## Running the project
+To run the project you'll need the following
+ - iPhone device with IOS 15+
+ - Xcode V13
+ - Apple Developer Account
+
+Clone this repository into your local machine. And open the `ProjectM.xcodeproj` file
+```shell
+git clone https://github.com/CS-UCR/senior-design-project-project-memoir.git
+cd iOS-frontend
+open ProjectM.xcodeproj
+```
+You'll need to have your phone connected to your computer. Build the project `Product > Build`, then run it `Product > Run`. The application will open on your phone.
 
 ### `npm start`
 
