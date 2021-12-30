@@ -32,3 +32,4 @@ class MessageEntity: Entity, HasAnchoring, HasARScreenSpace {
     
     
 }
+

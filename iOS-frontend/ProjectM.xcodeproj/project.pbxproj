@@ -7,14 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0739A4672728980E00497D11 /* AppleIDButtonAuthorizaiton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0739A4662728980E00497D11 /* AppleIDButtonAuthorizaiton.swift */; };
-		07538B0827615516003D5182 /* AR View Controller in Resources */ = {isa = PBXBuildFile; fileRef = 07538B0727615516003D5182 /* AR View Controller */; };
-		07538B1F27615926003D5182 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07538B1E27615926003D5182 /* AppDelegate.swift */; };
+		071023A52775779A00B21474 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 071023A42775779A00B21474 /* Assets.xcassets */; };
 		078BF1E22711277B00307C5E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078BF1E12711277B00307C5E /* SceneDelegate.swift */; };
-		078BF1E42711277B00307C5E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078BF1E32711277B00307C5E /* ViewController.swift */; };
 		078BF1E72711277B00307C5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 078BF1E52711277B00307C5E /* Main.storyboard */; };
 		078BF1EC2711277E00307C5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 078BF1EA2711277E00307C5E /* LaunchScreen.storyboard */; };
-		07912A03272C6C2100E48FA6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07912A02272C6C2000E48FA6 /* SignUpViewController.swift */; };
+		07C7E7D5277977B20069C607 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C7E7D4277977B20069C607 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,18 +32,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0739A4662728980E00497D11 /* AppleIDButtonAuthorizaiton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIDButtonAuthorizaiton.swift; sourceTree = "<group>"; };
+		071023A42775779A00B21474 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07538B0727615516003D5182 /* AR View Controller */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "AR View Controller"; sourceTree = "<group>"; };
-		07538B1E27615926003D5182 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "AR View Controller/AppDelegate.swift"; sourceTree = "<group>"; };
 		078BF1DC2711277B00307C5E /* ProjectM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		078BF1E12711277B00307C5E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		078BF1E32711277B00307C5E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		078BF1E62711277B00307C5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		078BF1EB2711277E00307C5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		078BF1ED2711277E00307C5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		078BF1F22711277F00307C5E /* ProjectMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		078BF1FD2711277F00307C5E /* ProjectMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		07912A02272C6C2000E48FA6 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		07C7E7D4277977B20069C607 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,12 +90,10 @@
 		078BF1DE2711277B00307C5E /* ProjectM */ = {
 			isa = PBXGroup;
 			children = (
-				07538B1E27615926003D5182 /* AppDelegate.swift */,
-				078BF1E32711277B00307C5E /* ViewController.swift */,
-				0739A4662728980E00497D11 /* AppleIDButtonAuthorizaiton.swift */,
-				07912A02272C6C2000E48FA6 /* SignUpViewController.swift */,
+				07C7E7D4277977B20069C607 /* AppDelegate.swift */,
 				07538B0727615516003D5182 /* AR View Controller */,
 				078BF1E12711277B00307C5E /* SceneDelegate.swift */,
+				071023A42775779A00B21474 /* Assets.xcassets */,
 				078BF1E52711277B00307C5E /* Main.storyboard */,
 				078BF1EA2711277E00307C5E /* LaunchScreen.storyboard */,
 				078BF1ED2711277E00307C5E /* Info.plist */,
@@ -214,7 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				078BF1EC2711277E00307C5E /* LaunchScreen.storyboard in Resources */,
-				07538B0827615516003D5182 /* AR View Controller in Resources */,
+				071023A52775779A00B21474 /* Assets.xcassets in Resources */,
 				078BF1E72711277B00307C5E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,10 +233,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07912A03272C6C2100E48FA6 /* SignUpViewController.swift in Sources */,
-				078BF1E42711277B00307C5E /* ViewController.swift in Sources */,
-				0739A4672728980E00497D11 /* AppleIDButtonAuthorizaiton.swift in Sources */,
-				07538B1F27615926003D5182 /* AppDelegate.swift in Sources */,
+				07C7E7D5277977B20069C607 /* AppDelegate.swift in Sources */,
 				078BF1E22711277B00307C5E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,14 +410,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = C3353ZR648;
+				DEVELOPMENT_TEAM = PDRD89J8QK;
 				INFOPLIST_FILE = ProjectM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = c.lo.ProjectM;
+				PRODUCT_BUNDLE_IDENTIFIER = c.lo.ProjectM1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -442,7 +432,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = C3353ZR648;
+				DEVELOPMENT_TEAM = PDRD89J8QK;
 				INFOPLIST_FILE = ProjectM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (

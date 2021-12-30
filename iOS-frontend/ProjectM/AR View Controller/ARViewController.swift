@@ -100,6 +100,37 @@ class ARViewController: UIViewController, ARSessionDelegate {
         }
     }
     
+    func session(_ session: ARSession, didFailWithError error: Error) {
+        guard error is ARError else { return }
+        
+        let errorWithInfo = error as NSError
+        let messages = [
+            errorWithInfo.localizedDescription,
+            errorWithInfo.localizedFailureReason,
+            errorWithInfo.localizedRecoverySuggestion
+        ]
+        let errorMessage = messages.compactMap({ $0 }).joined(separator: "\n")
+        
+        DispatchQueue.main.async {
+            // Present an alert informing about the error that has occurred.
+            let alertController = UIAlertController(title: "The AR session failed.", message: errorMessage, preferredStyle: .alert)
+            let restartAction = UIAlertAction(title: "Restart Session", style: .default) { _ in
+                alertController.dismiss(animated: true, completion: nil)
+                self.clear()
+            }
+            alertController.addAction(restartAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
+    override var prefersHomeIndicatorAutoHidden: Bool {
+        return true
+    }
+    
 
 }
 
