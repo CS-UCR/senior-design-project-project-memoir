@@ -16,8 +16,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // If user's device does not support, terminate app
             fatalError("Your device does not support ARKit.")
         }
+        
+        
+        Network.shared.apollo.fetch(query: TestQueryQuery()) { result in
+          switch result {
+          case .success(let graphQLResult):
+            print("Success! Result: \(graphQLResult)")
+          case .failure(let error):
+            print("Failure! Error: \(error)")
+          }
+        }
+        
+        
         // return true if user's device supports ARWorldTracking
         return true
     }
     
 }
+
