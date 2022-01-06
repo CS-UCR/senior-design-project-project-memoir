@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="COn-2P-SKb">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="lQS-h4-TLb">
+            <objects>
+                <viewController id="COn-2P-SKb" customClass="LoginViewController" customModule="ProjectM" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oRr-41-BK8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DDa-AT-vTX">
+                                <rect key="frame" x="133" y="640" width="148" height="31"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Explore"/>
+                                <connections>
+                                    <action selector="exploreButton:" destination="COn-2P-SKb" eventType="touchUpInside" id="Onm-Zj-k0z"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="IMt-rp-RjQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DDa-AT-vTX" firstAttribute="leading" secondItem="IMt-rp-RjQ" secondAttribute="leading" constant="133" id="e2o-Qi-CE8"/>
+                            <constraint firstItem="DDa-AT-vTX" firstAttribute="top" secondItem="IMt-rp-RjQ" secondAttribute="top" constant="596" id="qPp-XU-4MV"/>
+                            <constraint firstItem="DDa-AT-vTX" firstAttribute="centerX" secondItem="oRr-41-BK8" secondAttribute="centerX" id="tp7-HW-AtD"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="lt2-YW-pVz" kind="presentation" identifier="explore" modalPresentationStyle="fullScreen" id="fSS-Uo-QQG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KAx-Y8-N2j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-781.15942028985512" y="150.66964285714286"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="4cW-3b-WVq">
+            <objects>
+                <viewController id="lt2-YW-pVz" customClass="ARViewController" customModule="ProjectM" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Nkx-Nt-Ass">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MaM-O2-B9G" userLabel="ARView" customClass="ARView" customModule="RealityKit">
+                                <rect key="frame" x="-7" y="0.0" width="421" height="903"/>
+                                <subviews>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K6l-aL-URt" customClass="ErrorMessageLabel" customModule="ProjectM" customModuleProvider="target">
+                                        <rect key="frame" x="33" y="52" width="355" height="40"/>
+                                        <color key="backgroundColor" red="0.6922967941" green="0.6922967941" blue="0.6922967941" alpha="0.88345296959999997" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="eQD-1n-a6G"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="K6l-aL-URt" firstAttribute="centerX" secondItem="MaM-O2-B9G" secondAttribute="centerX" id="Nvz-Dj-eca"/>
+                                    <constraint firstItem="K6l-aL-URt" firstAttribute="top" secondItem="MaM-O2-B9G" secondAttribute="topMargin" id="l0y-zb-Ow9"/>
+                                    <constraint firstItem="K6l-aL-URt" firstAttribute="leading" secondItem="MaM-O2-B9G" secondAttribute="leading" constant="33" id="rfh-Z1-tee"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Qq1-2r-375"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MaM-O2-B9G" firstAttribute="trailing" secondItem="Qq1-2r-375" secondAttribute="trailing" id="0at-uq-ZQt"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="MaM-O2-B9G" secondAttribute="bottom" constant="-41" id="246-sq-zdJ"/>
+                            <constraint firstItem="MaM-O2-B9G" firstAttribute="top" secondItem="Nkx-Nt-Ass" secondAttribute="topMargin" constant="-44" id="WKb-ED-2ZB"/>
+                            <constraint firstItem="MaM-O2-B9G" firstAttribute="leading" secondItem="Nkx-Nt-Ass" secondAttribute="leadingMargin" constant="-27" id="kzB-68-nCo"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="0ME-Bz-rR0"/>
+                    <connections>
+                        <outlet property="ARView" destination="MaM-O2-B9G" id="Mai-27-vng"/>
+                        <outlet property="errorMessageLabel" destination="K6l-aL-URt" id="U2h-0h-38O"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vgv-rB-fhw" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="31.884057971014496" y="140.625"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="K6l-aL-URt"/>
+    </designables>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
