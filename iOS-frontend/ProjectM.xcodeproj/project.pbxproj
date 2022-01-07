@@ -11,6 +11,9 @@
 		078BF1E22711277B00307C5E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078BF1E12711277B00307C5E /* SceneDelegate.swift */; };
 		078BF1EC2711277E00307C5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 078BF1EA2711277E00307C5E /* LaunchScreen.storyboard */; };
 		07C7E7D5277977B20069C607 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C7E7D4277977B20069C607 /* AppDelegate.swift */; };
+		79ED5CE02788B3050087A128 /* AppSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 79ED5CDF2788B3050087A128 /* AppSettings.xcconfig */; };
+		79ED5CE12788B3050087A128 /* AppSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 79ED5CDF2788B3050087A128 /* AppSettings.xcconfig */; };
+		79ED5CE22788B3050087A128 /* AppSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 79ED5CDF2788B3050087A128 /* AppSettings.xcconfig */; };
 		936932A22786922000EA8B68 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936932A12786922000EA8B68 /* ARViewController.swift */; };
 		936932A42786922200EA8B68 /* ARVC+ARCoachingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936932A32786922200EA8B68 /* ARVC+ARCoachingDelegate.swift */; };
 		936932A62786922400EA8B68 /* ARVC+TextViewDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936932A52786922400EA8B68 /* ARVC+TextViewDelegates.swift */; };
@@ -58,6 +61,7 @@
 		078BF1F22711277F00307C5E /* ProjectMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		078BF1FD2711277F00307C5E /* ProjectMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07C7E7D4277977B20069C607 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		79ED5CDF2788B3050087A128 /* AppSettings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppSettings.xcconfig; sourceTree = "<group>"; };
 		936932A12786922000EA8B68 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		936932A32786922200EA8B68 /* ARVC+ARCoachingDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARVC+ARCoachingDelegate.swift"; sourceTree = "<group>"; };
 		936932A52786922400EA8B68 /* ARVC+TextViewDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARVC+TextViewDelegates.swift"; sourceTree = "<group>"; };
@@ -140,6 +144,7 @@
 				936932CD2786B91E00EA8B68 /* schema.json */,
 				078BF1EA2711277E00307C5E /* LaunchScreen.storyboard */,
 				936932BF2786937C00EA8B68 /* Main.storyboard */,
+				79ED5CDF2788B3050087A128 /* AppSettings.xcconfig */,
 				078BF1ED2711277E00307C5E /* Info.plist */,
 			);
 			path = ProjectM;
@@ -345,6 +350,7 @@
 				936932CE2786B91E00EA8B68 /* schema.json in Resources */,
 				936932C02786937C00EA8B68 /* Main.storyboard in Resources */,
 				078BF1EC2711277E00307C5E /* LaunchScreen.storyboard in Resources */,
+				79ED5CE02788B3050087A128 /* AppSettings.xcconfig in Resources */,
 				071023A52775779A00B21474 /* Assets.xcassets in Resources */,
 				936932D32786BB2300EA8B68 /* test.graphql in Resources */,
 			);
@@ -354,6 +360,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79ED5CE12788B3050087A128 /* AppSettings.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +368,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79ED5CE22788B3050087A128 /* AppSettings.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,7 +377,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		936932CF2786B9E700EA8B68 /* Generate Apollo GraphQL API */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputFileListPaths = (
@@ -381,7 +389,7 @@
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "# Don't run this during index builds\nif [ $ACTION = \"indexbuild\" ]; then exit 0; fi\n\n# Go to the build root and search up the chain to find the Derived Data Path where the source packages are checked out.\nDERIVED_DATA_CANDIDATE=\"${BUILD_ROOT}\"\n\nwhile ! [ -d \"${DERIVED_DATA_CANDIDATE}/SourcePackages\" ]; do\n  if [ \"${DERIVED_DATA_CANDIDATE}\" = / ]; then\n    echo >&2 \"error: Unable to locate SourcePackages directory from BUILD_ROOT: '${BUILD_ROOT}'\"\n    exit 1\n  fi\n\n  DERIVED_DATA_CANDIDATE=\"$(dirname \"${DERIVED_DATA_CANDIDATE}\")\"\ndone\n\n# Grab a reference to the directory where scripts are checked out\nSCRIPT_PATH=\"${DERIVED_DATA_CANDIDATE}/SourcePackages/checkouts/apollo-ios/scripts\"\n\nif [ -z \"${SCRIPT_PATH}\" ]; then\n    echo >&2 \"error: Couldn't find the CLI script in your checked out SPM packages; make sure to add the framework to your project.\"\n    exit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" API.swift\n\n";
 		};
@@ -576,14 +584,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SD5DL4XZ26;
+				DEVELOPMENT_TEAM = YS23Z3JRP5;
 				INFOPLIST_FILE = ProjectM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = c.lo.ProjectM1;
+				PRODUCT_BUNDLE_IDENTIFIER = r.duong.ProjectM1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -598,7 +606,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SD5DL4XZ26;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ProjectM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
