@@ -25,11 +25,23 @@
                                     <action selector="exploreButton:" destination="COn-2P-SKb" eventType="touchUpInside" id="Onm-Zj-k0z"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ge-t9-jep">
+                                <rect key="frame" x="134" y="544" width="146" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="TEST API"/>
+                                <connections>
+                                    <action selector="TestAPI:" destination="COn-2P-SKb" eventType="touchUpInside" id="rOz-Z2-hue"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IMt-rp-RjQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="5ge-t9-jep" firstAttribute="leading" secondItem="IMt-rp-RjQ" secondAttribute="leading" constant="134" id="9eb-Xr-y0X"/>
+                            <constraint firstItem="DDa-AT-vTX" firstAttribute="top" secondItem="5ge-t9-jep" secondAttribute="bottom" constant="65" id="FPJ-Ub-TIH"/>
+                            <constraint firstItem="IMt-rp-RjQ" firstAttribute="trailing" secondItem="5ge-t9-jep" secondAttribute="trailing" constant="134" id="a3m-m9-ayR"/>
                             <constraint firstItem="DDa-AT-vTX" firstAttribute="leading" secondItem="IMt-rp-RjQ" secondAttribute="leading" constant="133" id="e2o-Qi-CE8"/>
+                            <constraint firstItem="5ge-t9-jep" firstAttribute="top" secondItem="IMt-rp-RjQ" secondAttribute="top" constant="500" id="m1b-Ms-WxL"/>
                             <constraint firstItem="DDa-AT-vTX" firstAttribute="top" secondItem="IMt-rp-RjQ" secondAttribute="top" constant="596" id="qPp-XU-4MV"/>
                             <constraint firstItem="DDa-AT-vTX" firstAttribute="centerX" secondItem="oRr-41-BK8" secondAttribute="centerX" id="tp7-HW-AtD"/>
                         </constraints>
