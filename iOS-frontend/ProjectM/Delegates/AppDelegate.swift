@@ -7,6 +7,7 @@ import ARKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
+    var settings: NSDictionary!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
         // Make sure user device supports ARWorldTrackingConfiguration
@@ -16,8 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // If user's device does not support, terminate app
             fatalError("Your device does not support ARKit.")
         }
+        
         // return true if user's device supports ARWorldTracking
         return true
     }
     
 }
+
