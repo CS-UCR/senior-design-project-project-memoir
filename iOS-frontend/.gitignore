@@ -223,3 +223,6 @@ xcuserdata/
 #
 ProjectM/AppSettings.xcconfig
 
+## AR Sessions
+*.mov
+
