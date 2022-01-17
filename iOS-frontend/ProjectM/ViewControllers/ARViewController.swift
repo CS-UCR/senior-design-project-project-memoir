@@ -32,9 +32,9 @@ class ARViewController: UIViewController, ARSessionDelegate {
 
         ARGeoTrackingConfiguration.checkAvailability { (available, error) in
             guard available else {
-                print("geollocation does not works :( !")
+                print("geo location does not works :( !")
                 return }
-            print("geollocation does works :) !")
+            print("geo location does works :) !")
             self.ARView.session.run(ARGeoTrackingConfiguration())
         }
         // Update our screen constantly since user's phone constantly moves
