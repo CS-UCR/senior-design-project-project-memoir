@@ -7,7 +7,7 @@
 
 import UIKit
 import ARKit
-
+import RealityKit
 
 extension ARViewController {
     // Setup the gestures for our AR world
@@ -147,34 +147,43 @@ extension ARViewController {
             return
         }
         
-        // Create a rectangular message box at the location of the user's tap
-        let frame = CGRect(origin: touchLocation, size: CGSize(width: 300, height: 200))
+        // Closure Expression Syntax
+        // @see https://docs.swift.org/swift-book/LanguageGuide/Closures.html#ID97
+        ARView.session.getGeoLocation(forPoint: raycastResult.worldTransform.translation) { (location, altitude, error) in
+            if let error = error {
+                return
+            }
+            // GeoAnchor supported
+            // create the box
+            let frame = CGRect(origin: touchLocation, size: CGSize(width: 300, height: 200))
+            // create the message entity
+            let message = MessageEntity(frame: frame, worldTransform: raycastResult.worldTransform)
+            
+            // create a geo anchor
+            let geoAnchor = ARGeoAnchor(coordinate: location)
+            // create a geo anchor entity
+            // @see https://developer.apple.com/documentation/realitykit/anchorentity
+            let geoAnchorEntity = AnchorEntity(anchor: geoAnchor)
+            // add the entity to the anchor
+            geoAnchorEntity.addChild(message)
+            
+            // add the anchor to the ar view
+            self.ARView.scene.addAnchor(geoAnchorEntity)
+            
+            guard let messageView = message.view else { return }
+            self.ARView.addSubview(messageView)
+            
+            // Enable gestures on the user's message
+            self.messageGestureSetup(message)
 
-        // create message entity
-        // entity helps us build our rectangular message box within our AR world
-        let message = MessageEntity(frame: frame, worldTransform: raycastResult.worldTransform)
-        
-        // Place the user's message at the location they originally tapped on
-        message.setPositionCenter(touchLocation)
-
-        // Save the location of our note by anchoring it to our AR View.
-        // This prevents the note from drifting.
-        ARView.scene.addAnchor(message)
-
-        // Add the messageView to our subview hierarchy.
-        // Ex: If user writes multiple messages, the newest message appears above all (or overlapping the other messages)
-        guard let messageView = message.view else { return }
-        ARView.addSubview(messageView)
-        
-        // Enable gestures on the user's message
-        messageGestureSetup(message)
-
-        // We need to add our message to our userMessages(contains all of the messages posted in AR world)
-        userMessages.append(message)
-        
-        // Volunteer to handle text view callbacks.
-        // LOOK INTO THIS
-        messageView.textView.delegate = self
+            // We need to add our message to our userMessages(contains all of the messages posted in AR world)
+            self.userMessages.append(message)
+            
+            // Volunteer to handle text view callbacks.
+            // LOOK INTO THIS
+            messageView.textView.delegate = self
+            
+        }
     }
 
     
