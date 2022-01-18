@@ -29,6 +29,14 @@ class ARViewController: UIViewController, ARSessionDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        ARGeoTrackingConfiguration.checkAvailability { (available, error) in
+            guard available else {
+                print("geo location does not works :( !")
+                return }
+            print("geo location does works :) !")
+            self.ARView.session.run(ARGeoTrackingConfiguration())
+        }
         // Update our screen constantly since user's phone constantly moves
         subscription = ARView.scene.subscribe(to: SceneEvents.Update.self) { [unowned self] in
             self.updateScene(on: $0)
