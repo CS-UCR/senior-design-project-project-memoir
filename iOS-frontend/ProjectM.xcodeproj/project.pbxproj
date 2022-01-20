@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		071023A52775779A00B21474 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 071023A42775779A00B21474 /* Assets.xcassets */; };
+		0718759B27979CCC00556988 /* ARVC+TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0718759A27979CCC00556988 /* ARVC+TestData.swift */; };
 		078BF1E22711277B00307C5E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078BF1E12711277B00307C5E /* SceneDelegate.swift */; };
 		078BF1EC2711277E00307C5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 078BF1EA2711277E00307C5E /* LaunchScreen.storyboard */; };
 		07C7E7D5277977B20069C607 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C7E7D4277977B20069C607 /* AppDelegate.swift */; };
@@ -30,7 +31,6 @@
 		936932D32786BB2300EA8B68 /* test.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 936932D22786BB2300EA8B68 /* test.graphql */; };
 		936932D92786BC3400EA8B68 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936932D82786BC3400EA8B68 /* API.swift */; };
 		936932DC2786BC8800EA8B68 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936932DB2786BC8800EA8B68 /* Network.swift */; };
-		93D34EF2278F67C700B2B852 /* AppSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 93D34EF1278F67C700B2B852 /* AppSettings.xcconfig */; };
 		93D34EF82790007900B2B852 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D34EF72790007900B2B852 /* Configuration.swift */; };
 		93D9DFBF2794EF2500FB4A66 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D9DFBE2794EF2500FB4A66 /* Utilities.swift */; };
 /* End PBXBuildFile section */
@@ -54,12 +54,14 @@
 
 /* Begin PBXFileReference section */
 		071023A42775779A00B21474 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0718759A27979CCC00556988 /* ARVC+TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARVC+TestData.swift"; sourceTree = "<group>"; };
 		078BF1DC2711277B00307C5E /* ProjectM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		078BF1E12711277B00307C5E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		078BF1EB2711277E00307C5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		078BF1ED2711277E00307C5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		078BF1F22711277F00307C5E /* ProjectMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		078BF1FD2711277F00307C5E /* ProjectMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		07B0339027964CEE00500E59 /* Riverside.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = Riverside.mov; sourceTree = "<group>"; };
 		07C7E7D4277977B20069C607 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		936932A12786922000EA8B68 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		936932A32786922200EA8B68 /* ARVC+ARCoachingDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARVC+ARCoachingDelegate.swift"; sourceTree = "<group>"; };
@@ -81,8 +83,6 @@
 		936932DB2786BC8800EA8B68 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		93D34EF1278F67C700B2B852 /* AppSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = AppSettings.xcconfig; sourceTree = "<group>"; };
 		93D34EF72790007900B2B852 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
-		93D9DFBB279363D800FB4A66 /* Riverside.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = Riverside.mov; sourceTree = "<group>"; };
-		93D9DFBD2794E95000FB4A66 /* ARSessionRiverside.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = ARSessionRiverside.mov; sourceTree = "<group>"; };
 		93D9DFBE2794EF2500FB4A66 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,11 +112,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0718759927979C8100556988 /* Mock Data */ = {
+			isa = PBXGroup;
+			children = (
+				0718759A27979CCC00556988 /* ARVC+TestData.swift */,
+			);
+			path = "Mock Data";
+			sourceTree = "<group>";
+		};
 		078BF1D32711277B00307C5E = {
 			isa = PBXGroup;
 			children = (
-				93D9DFBD2794E95000FB4A66 /* ARSessionRiverside.mov */,
-				93D9DFBB279363D800FB4A66 /* Riverside.mov */,
+				07B0339027964CEE00500E59 /* Riverside.mov */,
 				078BF1DE2711277B00307C5E /* ProjectM */,
 				078BF1DD2711277B00307C5E /* Products */,
 			);
@@ -135,6 +142,7 @@
 		078BF1DE2711277B00307C5E /* ProjectM */ = {
 			isa = PBXGroup;
 			children = (
+				0718759927979C8100556988 /* Mock Data */,
 				936932C82786AFF700EA8B68 /* Delegates */,
 				936932C12786AEA600EA8B68 /* Messages */,
 				936932C72786AF5C00EA8B68 /* Gestures */,
@@ -312,7 +320,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1250;
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1310;
 				TargetAttributes = {
 					078BF1DB2711277B00307C5E = {
 						CreatedOnToolsVersion = 12.5;
@@ -360,7 +368,6 @@
 				078BF1EC2711277E00307C5E /* LaunchScreen.storyboard in Resources */,
 				071023A52775779A00B21474 /* Assets.xcassets in Resources */,
 				936932D32786BB2300EA8B68 /* test.graphql in Resources */,
-				93D34EF2278F67C700B2B852 /* AppSettings.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +416,7 @@
 				936932B02786923100EA8B68 /* UIView.swift in Sources */,
 				936932A22786922000EA8B68 /* ARViewController.swift in Sources */,
 				936932A62786922400EA8B68 /* ARVC+TextViewDelegates.swift in Sources */,
+				0718759B27979CCC00556988 /* ARVC+TestData.swift in Sources */,
 				936932AC2786922D00EA8B68 /* Keyboard.swift in Sources */,
 				936932AE2786922E00EA8B68 /* SIMD.swift in Sources */,
 				936932A42786922200EA8B68 /* ARVC+ARCoachingDelegate.swift in Sources */,
@@ -592,14 +600,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SD5DL4XZ26;
+				DEVELOPMENT_TEAM = PDRD89J8QK;
 				INFOPLIST_FILE = ProjectM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = r.bryanProjectM1;
+				PRODUCT_BUNDLE_IDENTIFIER = ProjectM1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -614,14 +622,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SD5DL4XZ26;
+				DEVELOPMENT_TEAM = PDRD89J8QK;
 				INFOPLIST_FILE = ProjectM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = r.bryanProjectM1;
+				PRODUCT_BUNDLE_IDENTIFIER = ProjectM1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -715,7 +723,6 @@
 		};
 		93D34EF3278F6EAE00B2B852 /* Staging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 93D34EF1278F67C700B2B852 /* AppSettings.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -782,14 +789,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SD5DL4XZ26;
+				DEVELOPMENT_TEAM = PDRD89J8QK;
 				INFOPLIST_FILE = ProjectM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = r.bryanProjectM1;
+				PRODUCT_BUNDLE_IDENTIFIER = ProjectM1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

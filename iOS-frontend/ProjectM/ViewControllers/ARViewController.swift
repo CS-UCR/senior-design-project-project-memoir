@@ -11,7 +11,10 @@ import Combine
 import ARKit
 
 class ARViewController: UIViewController, ARSessionDelegate {
-    
+    // create mock data
+    // For now I am making mock variables here to test, later on we will use our data base
+    var data = ["id": 1, "longitude": 0.0, "latitude": 0.0, "message": "Hello World"] as [String : Any] as [String : Any] as [String : Any]
+   
     @IBOutlet weak var ARView: ARView!
     
     // Hold messages users post
@@ -45,7 +48,11 @@ class ARViewController: UIViewController, ARSessionDelegate {
         arViewUserGestures()
         // setup
         overlayUISetup()
-        
+        // get mock data which will print our mock data for now
+        getMockData()
+        // place mock data message in our AR world
+        // Look into reverse engineering how to place AR message
+        placeARMessage()
         ARView.session.delegate = self
     }
 
