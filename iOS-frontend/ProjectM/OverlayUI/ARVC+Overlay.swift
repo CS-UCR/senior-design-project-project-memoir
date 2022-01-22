@@ -73,7 +73,7 @@ extension ARViewController {
             coachingOverlay.trailingAnchor.constraint(equalTo: ARView.trailingAnchor),
             coachingOverlay.bottomAnchor.constraint(equalTo: ARView.bottomAnchor)
         ])
-        coachingOverlay.goal = .tracking
+        coachingOverlay.goal = .geoTracking
         coachingOverlay.session = ARView.session
         coachingOverlay.delegate = self
     }
