@@ -11,6 +11,7 @@
 		078BF1E22711277B00307C5E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078BF1E12711277B00307C5E /* SceneDelegate.swift */; };
 		078BF1EC2711277E00307C5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 078BF1EA2711277E00307C5E /* LaunchScreen.storyboard */; };
 		07C7E7D5277977B20069C607 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C7E7D4277977B20069C607 /* AppDelegate.swift */; };
+		935D0D722798D6B1000C81D0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935D0D712798D6B1000C81D0 /* ProfileViewController.swift */; };
 		936932A22786922000EA8B68 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936932A12786922000EA8B68 /* ARViewController.swift */; };
 		936932A42786922200EA8B68 /* ARVC+ARCoachingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936932A32786922200EA8B68 /* ARVC+ARCoachingDelegate.swift */; };
 		936932A62786922400EA8B68 /* ARVC+TextViewDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936932A52786922400EA8B68 /* ARVC+TextViewDelegates.swift */; };
@@ -61,6 +62,7 @@
 		078BF1F22711277F00307C5E /* ProjectMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		078BF1FD2711277F00307C5E /* ProjectMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07C7E7D4277977B20069C607 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		935D0D712798D6B1000C81D0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		936932A12786922000EA8B68 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		936932A32786922200EA8B68 /* ARVC+ARCoachingDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARVC+ARCoachingDelegate.swift"; sourceTree = "<group>"; };
 		936932A52786922400EA8B68 /* ARVC+TextViewDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARVC+TextViewDelegates.swift"; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				936932DA2786BC7800EA8B68 /* Networking */,
 				071023A42775779A00B21474 /* Assets.xcassets */,
 				936932D82786BC3400EA8B68 /* API.swift */,
+				935D0D732798D865000C81D0 /* Models */,
 				936932CD2786B91E00EA8B68 /* schema.json */,
 				078BF1EA2711277E00307C5E /* LaunchScreen.storyboard */,
 				93D34EF1278F67C700B2B852 /* AppSettings.xcconfig */,
@@ -154,6 +157,13 @@
 				078BF1ED2711277E00307C5E /* Info.plist */,
 			);
 			path = ProjectM;
+			sourceTree = "<group>";
+		};
+		935D0D732798D865000C81D0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		936932C12786AEA600EA8B68 /* Messages */ = {
@@ -206,6 +216,7 @@
 			children = (
 				936932B12786923200EA8B68 /* LoginViewController.swift */,
 				936932A12786922000EA8B68 /* ARViewController.swift */,
+				935D0D712798D6B1000C81D0 /* ProfileViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -408,6 +419,7 @@
 			files = (
 				936932B02786923100EA8B68 /* UIView.swift in Sources */,
 				936932A22786922000EA8B68 /* ARViewController.swift in Sources */,
+				935D0D722798D6B1000C81D0 /* ProfileViewController.swift in Sources */,
 				936932A62786922400EA8B68 /* ARVC+TextViewDelegates.swift in Sources */,
 				936932AC2786922D00EA8B68 /* Keyboard.swift in Sources */,
 				936932AE2786922E00EA8B68 /* SIMD.swift in Sources */,
@@ -592,14 +604,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SD5DL4XZ26;
+				DEVELOPMENT_TEAM = 9UBM9TUHXM;
 				INFOPLIST_FILE = ProjectM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = r.bryanProjectM1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.memoir;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -614,14 +626,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SD5DL4XZ26;
+				DEVELOPMENT_TEAM = 9UBM9TUHXM;
 				INFOPLIST_FILE = ProjectM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = r.bryanProjectM1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.memoir;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -782,14 +794,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SD5DL4XZ26;
+				DEVELOPMENT_TEAM = 9UBM9TUHXM;
 				INFOPLIST_FILE = ProjectM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = r.bryanProjectM1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.memoir;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
