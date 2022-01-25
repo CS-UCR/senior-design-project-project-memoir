@@ -87,8 +87,22 @@ extension ARViewController {
         // Create a new message at the tap location if user was not
         // editing message.
         insertNewMessage(sender)
+
     }
     
+    
+    @objc
+    // addUserTapsToArray will save the user tap location so we can populate existing AR messges
+    func addUserTapsToArray(_ sender: UITapGestureRecognizer){
+        tap_data.append(sender)
+        for data in tap_data{
+            print("**********")
+            print("data: ")
+            print(data)
+            print("**********")
+            
+        }
+    }
 
     @objc
     // userTapsOnMessageView will get the messageView the user tapped on
@@ -135,9 +149,17 @@ extension ARViewController {
 
     // Insert new message in our ARView
     fileprivate func insertNewMessage(_ sender: UITapGestureRecognizer) {
-
+//        print("-------------------------------------------")
+//        print("insert new message tap: ")
+//        print(sender)
+//        print("-------------------------------------------")
         // Get the user's tap screen location.
         let touchLocation = sender.location(in: ARView)
+        print("-------------------------------------------")
+        print("insert new message tap: ")
+        print(type(of: touchLocation))
+        print(touchLocation)
+        print("-------------------------------------------")
         
         // Make sure we have an acceptable surface for our AR app,
         // else display error message in our errorMessageLabel
@@ -183,9 +205,67 @@ extension ARViewController {
             // LOOK INTO THIS
             messageView.textView.delegate = self
             
+            // add user tap to our array if acceptable
+            //self.addUserTapsToArray(touchLocation)
+            
         }
     }
 
+    // insertExistingMessage will display AR messages retrieved from our database. For now
+    // we will use mock data to populate a message.
+    func insertExistingMessage(tap_data: Array<UITapGestureRecognizer>){
+        
+        // for-loop will load every existing AR message in our array
+        for sender in tap_data{
+            // Get the user's tap screen location.
+            let touchLocation = sender.location(in: ARView)
+            
+            // Make sure we have an acceptable surface for our AR app,
+            // else display error message in our errorMessageLabel
+            // ARView.raycast provides a 3D location in physical space that corresponds to a given 2D location on the iPhone screen
+            guard let raycastResult = ARView.raycast(from: touchLocation, allowing: .estimatedPlane, alignment: .any).first else{
+                errorMessageLabel.displayErrorMessage("No surface found, get closer to the object.", duration: 2.0)
+                return
+            }
+            
+            // Closure Expression Syntax
+            // @see https://docs.swift.org/swift-book/LanguageGuide/Closures.html#ID97
+            ARView.session.getGeoLocation(forPoint: raycastResult.worldTransform.translation) { (location, altitude, error) in
+                if let error = error {
+                    return
+                }
+                // GeoAnchor supported
+                // create the box
+                let frame = CGRect(origin: touchLocation, size: CGSize(width: 300, height: 200))
+                // create the message entity
+                let message = MessageEntity(frame: frame, worldTransform: raycastResult.worldTransform)
+                
+                // create a geo anchor
+                let geoAnchor = ARGeoAnchor(coordinate: location)
+                // create a geo anchor entity
+                // @see https://developer.apple.com/documentation/realitykit/anchorentity
+                let geoAnchorEntity = AnchorEntity(anchor: geoAnchor)
+                // add the entity to the anchor
+                geoAnchorEntity.addChild(message)
+                
+                // add the anchor to the ar view
+                self.ARView.scene.addAnchor(geoAnchorEntity)
+                
+                guard let messageView = message.view else { return }
+                self.ARView.addSubview(messageView)
+                
+                // Enable gestures on the user's message
+                self.messageGestureSetup(message)
+
+                // We need to add our message to our userMessages(contains all of the messages posted in AR world)
+                self.userMessages.append(message)
+                
+                // Volunteer to handle text view callbacks.
+                // LOOK INTO THIS
+                messageView.textView.delegate = self
+            }
+        }
+    }
     
     func deleteMessage(_ note: MessageEntity) {
         guard let index = userMessages.firstIndex(of: note) else { return }

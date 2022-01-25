@@ -63,6 +63,7 @@
 		078BF1FD2711277F00307C5E /* ProjectMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07B0339027964CEE00500E59 /* Riverside.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = Riverside.mov; sourceTree = "<group>"; };
 		07C7E7D4277977B20069C607 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		07E0766D279F977700CA50E8 /* LA_Neighborhood.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = LA_Neighborhood.mov; sourceTree = "<group>"; };
 		936932A12786922000EA8B68 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		936932A32786922200EA8B68 /* ARVC+ARCoachingDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARVC+ARCoachingDelegate.swift"; sourceTree = "<group>"; };
 		936932A52786922400EA8B68 /* ARVC+TextViewDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARVC+TextViewDelegates.swift"; sourceTree = "<group>"; };
@@ -123,6 +124,7 @@
 		078BF1D32711277B00307C5E = {
 			isa = PBXGroup;
 			children = (
+				07E0766D279F977700CA50E8 /* LA_Neighborhood.mov */,
 				07B0339027964CEE00500E59 /* Riverside.mov */,
 				078BF1DE2711277B00307C5E /* ProjectM */,
 				078BF1DD2711277B00307C5E /* Products */,
