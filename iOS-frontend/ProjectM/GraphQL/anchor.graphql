@@ -1,0 +1,23 @@
+mutation createAnchor {
+    createAnchor(input: {entity_id: "default-0001", lat: 1000.0, long: 1000.0, alt: 10.0}) {
+        id
+        create_date
+        entity_id
+        lat
+        long
+        alt
+    }
+}
+
+""" id query - no support yet
+query getAnchorByID {
+    getAnchor(id: "bd3fb78c-7ac0-4101-979c-3e7ba7252849") {
+        id
+        create_date
+        entity_id
+        lat
+        long
+        alt
+    }
+}
+"""

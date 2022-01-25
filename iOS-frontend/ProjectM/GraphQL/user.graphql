@@ -1,0 +1,18 @@
+query getUserByID {
+    getUser(id: "4769bf32-d94d-489b-acbc-43566a310281") {
+        id
+        username
+        create_date
+        status
+        profile_icon
+    }
+}
+
+
+mutation createUser {
+    createUser(input: {username: "MrTomatoHead"}) {
+        username
+        create_date
+        id
+    }
+}

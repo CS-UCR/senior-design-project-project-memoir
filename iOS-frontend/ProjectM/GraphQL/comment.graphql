@@ -1,0 +1,16 @@
+mutation createComment {
+    createComment(input: {authorID: "richard", body: "wow, nice comment!"}) {
+        id
+        "no support for author yet"
+        body
+        create_date
+    }
+}
+
+""" id query - no support yet
+query getCommentByID {
+    id
+    body
+    create_date
+}
+"""
