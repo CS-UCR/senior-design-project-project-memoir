@@ -1,16 +1,7 @@
-mutation createComment {
-    createComment(input: {authorID: "richard", body: "wow, nice comment!"}) {
+mutation createComment($commentInput: CreateCommentInput!) {
+    createComment(input: $commentInput) {
         id
-        "no support for author yet"
-        body
         create_date
+        body
     }
 }
-
-""" id query - no support yet
-query getCommentByID {
-    id
-    body
-    create_date
-}
-"""

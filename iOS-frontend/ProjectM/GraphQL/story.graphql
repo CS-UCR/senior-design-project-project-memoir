@@ -1,17 +1,8 @@
-mutation createStory(input: {authorID: "f86c898e-82f3-43a5-a870-7552a426dfcd", heading: "my house", body: "this is my story"}) {
-    id
-    "author - no support yet"
-    create_date
-    heading
-    body
+mutation createStory($storyInput: CreateStoryInput!) {
+    createStory(input: $storyInput) {
+        id
+        create_date
+        heading
+        body
+    }
 }
-
-"""
-query getStoryByID(id: "4769bf32-d94d-489b-acbc-43566a310281") {
-    id
-    "author - no support yet"
-    create_date
-    heading
-    body
-}
-"""

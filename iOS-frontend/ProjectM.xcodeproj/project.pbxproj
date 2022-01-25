@@ -14,8 +14,10 @@
 		7952813F279FD25B0019BD5B /* user.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 7952813B279FD25A0019BD5B /* user.graphql */; };
 		79528140279FD25B0019BD5B /* comment.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 7952813C279FD25B0019BD5B /* comment.graphql */; };
 		79528141279FD25B0019BD5B /* story.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 7952813D279FD25B0019BD5B /* story.graphql */; };
-		79528142279FD25B0019BD5B /* anchor.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 7952813E279FD25B0019BD5B /* anchor.graphql */; };
-		934F6DF0279BA5F3004CF324 /* AR-Session-LA.mov in Resources */ = {isa = PBXBuildFile; fileRef = 934F6DEF279BA5F3004CF324 /* AR-Session-LA.mov */; };
+		7952814627A084E90019BD5B /* anchor.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 7952814527A084E90019BD5B /* anchor.graphql */; };
+		7952814C27A085B60019BD5B /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7952814B27A085B60019BD5B /* API.swift */; };
+		7952814E27A09A5B0019BD5B /* IncompleteAPIQueries.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7952814D27A09A5B0019BD5B /* IncompleteAPIQueries.txt */; };
+		7952815227A09F070019BD5B /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 7952815127A09F070019BD5B /* schema.json */; };
 		936932A22786922000EA8B68 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936932A12786922000EA8B68 /* ARViewController.swift */; };
 		936932A42786922200EA8B68 /* ARVC+ARCoachingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936932A32786922200EA8B68 /* ARVC+ARCoachingDelegate.swift */; };
 		936932A62786922400EA8B68 /* ARVC+TextViewDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936932A52786922400EA8B68 /* ARVC+TextViewDelegates.swift */; };
@@ -31,9 +33,7 @@
 		936932BC2786925200EA8B68 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936932BB2786925200EA8B68 /* MessageView.swift */; };
 		936932C02786937C00EA8B68 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 936932BF2786937C00EA8B68 /* Main.storyboard */; };
 		936932CC2786B86500EA8B68 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 936932CB2786B86500EA8B68 /* Apollo */; };
-		936932CE2786B91E00EA8B68 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 936932CD2786B91E00EA8B68 /* schema.json */; };
 		936932D32786BB2300EA8B68 /* test.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 936932D22786BB2300EA8B68 /* test.graphql */; };
-		936932D92786BC3400EA8B68 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936932D82786BC3400EA8B68 /* API.swift */; };
 		936932DC2786BC8800EA8B68 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936932DB2786BC8800EA8B68 /* Network.swift */; };
 		93D34EF2278F67C700B2B852 /* AppSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 93D34EF1278F67C700B2B852 /* AppSettings.xcconfig */; };
 		93D34EF82790007900B2B852 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D34EF72790007900B2B852 /* Configuration.swift */; };
@@ -69,8 +69,10 @@
 		7952813B279FD25A0019BD5B /* user.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = user.graphql; sourceTree = "<group>"; };
 		7952813C279FD25B0019BD5B /* comment.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = comment.graphql; sourceTree = "<group>"; };
 		7952813D279FD25B0019BD5B /* story.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = story.graphql; sourceTree = "<group>"; };
-		7952813E279FD25B0019BD5B /* anchor.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = anchor.graphql; sourceTree = "<group>"; };
-		934F6DEF279BA5F3004CF324 /* AR-Session-LA.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "AR-Session-LA.mov"; sourceTree = "<group>"; };
+		7952814527A084E90019BD5B /* anchor.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = anchor.graphql; sourceTree = "<group>"; };
+		7952814B27A085B60019BD5B /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		7952814D27A09A5B0019BD5B /* IncompleteAPIQueries.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = IncompleteAPIQueries.txt; sourceTree = "<group>"; };
+		7952815127A09F070019BD5B /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		936932A12786922000EA8B68 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		936932A32786922200EA8B68 /* ARVC+ARCoachingDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARVC+ARCoachingDelegate.swift"; sourceTree = "<group>"; };
 		936932A52786922400EA8B68 /* ARVC+TextViewDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARVC+TextViewDelegates.swift"; sourceTree = "<group>"; };
@@ -85,14 +87,10 @@
 		936932B92786924E00EA8B68 /* ErrorMessageLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessageLabel.swift; sourceTree = "<group>"; };
 		936932BB2786925200EA8B68 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		936932BF2786937C00EA8B68 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		936932CD2786B91E00EA8B68 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		936932D22786BB2300EA8B68 /* test.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = test.graphql; sourceTree = "<group>"; };
-		936932D82786BC3400EA8B68 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		936932DB2786BC8800EA8B68 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		93D34EF1278F67C700B2B852 /* AppSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = AppSettings.xcconfig; sourceTree = "<group>"; };
 		93D34EF72790007900B2B852 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
-		93D9DFBB279363D800FB4A66 /* Riverside.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = Riverside.mov; sourceTree = "<group>"; };
-		93D9DFBD2794E95000FB4A66 /* ARSessionRiverside.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = ARSessionRiverside.mov; sourceTree = "<group>"; };
 		93D9DFBE2794EF2500FB4A66 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -125,9 +123,6 @@
 		078BF1D32711277B00307C5E = {
 			isa = PBXGroup;
 			children = (
-				93D9DFBD2794E95000FB4A66 /* ARSessionRiverside.mov */,
-				934F6DEF279BA5F3004CF324 /* AR-Session-LA.mov */,
-				93D9DFBB279363D800FB4A66 /* Riverside.mov */,
 				078BF1DE2711277B00307C5E /* ProjectM */,
 				078BF1DD2711277B00307C5E /* Products */,
 			);
@@ -157,8 +152,8 @@
 				936932D12786BA9F00EA8B68 /* GraphQL */,
 				936932DA2786BC7800EA8B68 /* Networking */,
 				071023A42775779A00B21474 /* Assets.xcassets */,
-				936932D82786BC3400EA8B68 /* API.swift */,
-				936932CD2786B91E00EA8B68 /* schema.json */,
+				7952815127A09F070019BD5B /* schema.json */,
+				7952814B27A085B60019BD5B /* API.swift */,
 				078BF1EA2711277E00307C5E /* LaunchScreen.storyboard */,
 				93D34EF1278F67C700B2B852 /* AppSettings.xcconfig */,
 				936932BF2786937C00EA8B68 /* Main.storyboard */,
@@ -243,11 +238,12 @@
 		936932D12786BA9F00EA8B68 /* GraphQL */ = {
 			isa = PBXGroup;
 			children = (
-				7952813E279FD25B0019BD5B /* anchor.graphql */,
+				7952813B279FD25A0019BD5B /* user.graphql */,
+				7952814527A084E90019BD5B /* anchor.graphql */,
 				7952813C279FD25B0019BD5B /* comment.graphql */,
 				7952813D279FD25B0019BD5B /* story.graphql */,
-				7952813B279FD25A0019BD5B /* user.graphql */,
 				936932D22786BB2300EA8B68 /* test.graphql */,
+				7952814D27A09A5B0019BD5B /* IncompleteAPIQueries.txt */,
 			);
 			path = GraphQL;
 			sourceTree = "<group>";
@@ -370,16 +366,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79528142279FD25B0019BD5B /* anchor.graphql in Resources */,
 				7952813F279FD25B0019BD5B /* user.graphql in Resources */,
-				936932CE2786B91E00EA8B68 /* schema.json in Resources */,
+				7952814627A084E90019BD5B /* anchor.graphql in Resources */,
 				936932C02786937C00EA8B68 /* Main.storyboard in Resources */,
 				79528141279FD25B0019BD5B /* story.graphql in Resources */,
-				934F6DF0279BA5F3004CF324 /* AR-Session-LA.mov in Resources */,
 				078BF1EC2711277E00307C5E /* LaunchScreen.storyboard in Resources */,
 				071023A52775779A00B21474 /* Assets.xcassets in Resources */,
+				7952815227A09F070019BD5B /* schema.json in Resources */,
 				79528140279FD25B0019BD5B /* comment.graphql in Resources */,
 				936932D32786BB2300EA8B68 /* test.graphql in Resources */,
+				7952814E27A09A5B0019BD5B /* IncompleteAPIQueries.txt in Resources */,
 				93D34EF2278F67C700B2B852 /* AppSettings.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,7 +399,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		936932CF2786B9E700EA8B68 /* Generate Apollo GraphQL API */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 12;
 			files = (
 			);
 			inputFileListPaths = (
@@ -415,7 +411,7 @@
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Don't run this during index builds\nif [ $ACTION = \"indexbuild\" ]; then exit 0; fi\n\n# Go to the build root and search up the chain to find the Derived Data Path where the source packages are checked out.\nDERIVED_DATA_CANDIDATE=\"${BUILD_ROOT}\"\n\nwhile ! [ -d \"${DERIVED_DATA_CANDIDATE}/SourcePackages\" ]; do\n  if [ \"${DERIVED_DATA_CANDIDATE}\" = / ]; then\n    echo >&2 \"error: Unable to locate SourcePackages directory from BUILD_ROOT: '${BUILD_ROOT}'\"\n    exit 1\n  fi\n\n  DERIVED_DATA_CANDIDATE=\"$(dirname \"${DERIVED_DATA_CANDIDATE}\")\"\ndone\n\n# Grab a reference to the directory where scripts are checked out\nSCRIPT_PATH=\"${DERIVED_DATA_CANDIDATE}/SourcePackages/checkouts/apollo-ios/scripts\"\n\nif [ -z \"${SCRIPT_PATH}\" ]; then\n    echo >&2 \"error: Couldn't find the CLI script in your checked out SPM packages; make sure to add the framework to your project.\"\n    exit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" API.swift\n\n";
 		};
@@ -427,6 +423,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				936932B02786923100EA8B68 /* UIView.swift in Sources */,
+				7952814C27A085B60019BD5B /* API.swift in Sources */,
 				936932A22786922000EA8B68 /* ARViewController.swift in Sources */,
 				936932A62786922400EA8B68 /* ARVC+TextViewDelegates.swift in Sources */,
 				936932AC2786922D00EA8B68 /* Keyboard.swift in Sources */,
@@ -443,7 +440,6 @@
 				936932BC2786925200EA8B68 /* MessageView.swift in Sources */,
 				936932A82786922600EA8B68 /* ARVC+UserGestures.swift in Sources */,
 				078BF1E22711277B00307C5E /* SceneDelegate.swift in Sources */,
-				936932D92786BC3400EA8B68 /* API.swift in Sources */,
 				936932B22786923200EA8B68 /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -612,7 +608,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9UBM9TUHXM;
+				DEVELOPMENT_TEAM = YS23Z3JRP5;
 				INFOPLIST_FILE = ProjectM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -634,7 +630,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9UBM9TUHXM;
+				DEVELOPMENT_TEAM = YS23Z3JRP5;
 				INFOPLIST_FILE = ProjectM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -802,7 +798,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9UBM9TUHXM;
+				DEVELOPMENT_TEAM = YS23Z3JRP5;
 				INFOPLIST_FILE = ProjectM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
