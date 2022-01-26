@@ -1,0 +1,10 @@
+mutation createAnchor($anchorInput: CreateAnchorInput!) {
+    createAnchor(input: $anchorInput) {
+        id
+        create_date
+        entity_id
+        lat
+        long
+        alt
+    }
+}

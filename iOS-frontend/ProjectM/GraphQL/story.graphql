@@ -1,0 +1,8 @@
+mutation createStory($storyInput: CreateStoryInput!) {
+    createStory(input: $storyInput) {
+        id
+        create_date
+        heading
+        body
+    }
+}
