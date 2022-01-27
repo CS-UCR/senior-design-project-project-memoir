@@ -1,14 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="COn-2P-SKb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Q1O-wb-VJ6">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Login View Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="4gg-HA-50z">
+            <objects>
+                <tabBarController hidesBottomBarWhenPushed="YES" id="Q1O-wb-VJ6" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ki3-Xz-mfj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" systemColor="opaqueSeparatorColor"/>
+                        <tabBarAppearance key="standardAppearance">
+                            <color key="backgroundColor" systemColor="systemGray2Color"/>
+                            <color key="selectionIndicatorTintColor" name="AccentColor"/>
+                        </tabBarAppearance>
+                        <tabBarAppearance key="scrollEdgeAppearance"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="COn-2P-SKb" kind="relationship" relationship="viewControllers" id="6f2-N0-zIr"/>
+                        <segue destination="lt2-YW-pVz" kind="relationship" relationship="viewControllers" id="Gx3-vd-xUl"/>
+                        <segue destination="5hs-XO-aTK" kind="relationship" relationship="viewControllers" id="uzC-Jp-z67"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uRD-pJ-0zU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="70" y="-612"/>
+        </scene>
+        <!--Home-->
         <scene sceneID="lQS-h4-TLb">
             <objects>
                 <viewController id="COn-2P-SKb" customClass="LoginViewController" customModule="ProjectM" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,17 +42,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DDa-AT-vTX">
-                                <rect key="frame" x="133" y="640" width="148" height="31"/>
-                                <color key="backgroundColor" systemColor="systemGreenColor"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Explore"/>
-                                <connections>
-                                    <action selector="exploreButton:" destination="COn-2P-SKb" eventType="touchUpInside" id="Onm-Zj-k0z"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ge-t9-jep">
-                                <rect key="frame" x="134" y="544" width="146" height="31"/>
+                                <rect key="frame" x="134" y="704" width="146" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="146" id="FbA-XP-eAt"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="TEST API"/>
                                 <connections>
@@ -37,24 +57,20 @@
                         <viewLayoutGuide key="safeArea" id="IMt-rp-RjQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="5ge-t9-jep" firstAttribute="leading" secondItem="IMt-rp-RjQ" secondAttribute="leading" constant="134" id="9eb-Xr-y0X"/>
-                            <constraint firstItem="DDa-AT-vTX" firstAttribute="top" secondItem="5ge-t9-jep" secondAttribute="bottom" constant="65" id="FPJ-Ub-TIH"/>
-                            <constraint firstItem="IMt-rp-RjQ" firstAttribute="trailing" secondItem="5ge-t9-jep" secondAttribute="trailing" constant="134" id="a3m-m9-ayR"/>
-                            <constraint firstItem="DDa-AT-vTX" firstAttribute="leading" secondItem="IMt-rp-RjQ" secondAttribute="leading" constant="133" id="e2o-Qi-CE8"/>
-                            <constraint firstItem="5ge-t9-jep" firstAttribute="top" secondItem="IMt-rp-RjQ" secondAttribute="top" constant="500" id="m1b-Ms-WxL"/>
-                            <constraint firstItem="DDa-AT-vTX" firstAttribute="top" secondItem="IMt-rp-RjQ" secondAttribute="top" constant="596" id="qPp-XU-4MV"/>
-                            <constraint firstItem="DDa-AT-vTX" firstAttribute="centerX" secondItem="oRr-41-BK8" secondAttribute="centerX" id="tp7-HW-AtD"/>
+                            <constraint firstItem="IMt-rp-RjQ" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="5ge-t9-jep" secondAttribute="trailing" constant="134" id="6iT-T4-i6Y"/>
+                            <constraint firstItem="5ge-t9-jep" firstAttribute="leading" relation="lessThanOrEqual" secondItem="IMt-rp-RjQ" secondAttribute="leading" constant="134" id="77z-pc-ew6"/>
+                            <constraint firstItem="IMt-rp-RjQ" firstAttribute="bottom" secondItem="5ge-t9-jep" secondAttribute="bottom" constant="78" id="e1Q-BY-Jau"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <segue destination="lt2-YW-pVz" kind="presentation" identifier="explore" modalPresentationStyle="fullScreen" id="fSS-Uo-QQG"/>
-                    </connections>
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="hPm-hl-LKH">
+                        <color key="badgeColor" name="AccentColor"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KAx-Y8-N2j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-781.15942028985512" y="150.66964285714286"/>
         </scene>
-        <!--View Controller-->
+        <!--Camera-->
         <scene sceneID="4cW-3b-WVq">
             <objects>
                 <viewController id="lt2-YW-pVz" customClass="ARViewController" customModule="ProjectM" customModuleProvider="target" sceneMemberID="viewController">
@@ -63,7 +79,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MaM-O2-B9G" userLabel="ARView" customClass="ARView" customModule="RealityKit">
-                                <rect key="frame" x="-7" y="0.0" width="421" height="903"/>
+                                <rect key="frame" x="-7" y="0.0" width="421" height="854"/>
                                 <subviews>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K6l-aL-URt" customClass="ErrorMessageLabel" customModule="ProjectM" customModuleProvider="target">
                                         <rect key="frame" x="33" y="52" width="355" height="40"/>
@@ -93,6 +109,7 @@
                             <constraint firstItem="MaM-O2-B9G" firstAttribute="leading" secondItem="Nkx-Nt-Ass" secondAttribute="leadingMargin" constant="-27" id="kzB-68-nCo"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Camera" image="arkit" catalog="system" id="wv9-Ud-7bG"/>
                     <navigationItem key="navigationItem" id="0ME-Bz-rR0"/>
                     <connections>
                         <outlet property="ARView" destination="MaM-O2-B9G" id="Mai-27-vng"/>
@@ -103,7 +120,7 @@
             </objects>
             <point key="canvasLocation" x="31.884057971014496" y="140.625"/>
         </scene>
-        <!--Profile View Controller-->
+        <!--Profile-->
         <scene sceneID="ywh-uO-Ld4">
             <objects>
                 <viewController id="5hs-XO-aTK" customClass="ProfileViewController" customModule="ProjectM" customModuleProvider="target" sceneMemberID="viewController">
@@ -141,6 +158,7 @@
                             <constraint firstItem="nL3-IK-9VZ" firstAttribute="top" secondItem="2wb-y9-11x" secondAttribute="top" constant="168" id="gop-wP-plB"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" id="O0a-tK-hSy"/>
                     <connections>
                         <outlet property="profileTable" destination="0AL-rv-28M" id="Du7-9R-th9"/>
                     </connections>
@@ -154,11 +172,20 @@
         <designable name="K6l-aL-URt"/>
     </designables>
     <resources>
+        <image name="arkit" catalog="system" width="128" height="128"/>
+        <image name="house" catalog="system" width="128" height="106"/>
+        <image name="person" catalog="system" width="128" height="117"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
