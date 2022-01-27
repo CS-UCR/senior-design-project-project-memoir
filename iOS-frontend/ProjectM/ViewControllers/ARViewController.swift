@@ -10,13 +10,13 @@ import RealityKit
 import Combine
 import ARKit
 
+
+
 class ARViewController: UIViewController, ARSessionDelegate {
-    // create mock data
-    // For now I am making mock variables here to test, later on we will use our data base
-    var data = ["id": 1, "longitude": 0.0, "latitude": 0.0, "message": "Hello World"] as [String : Any] as [String : Any] as [String : Any]
-    // Array holding previous user taps to save the location of AR messages
-    var tap_data = [UITapGestureRecognizer]()
-   
+    // Array containing the latitude, longitude, and altitude of AR message created.
+    // Append new data when user creates a new message
+    var messageLocation = [ARRaycastResult]()
+    
     @IBOutlet weak var ARView: ARView!
     
     // Hold messages users post
