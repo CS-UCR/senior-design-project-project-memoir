@@ -131,6 +131,143 @@ public struct CreateStoryInput: GraphQLMapConvertible {
   }
 }
 
+public final class GetAnchorByIdQuery: GraphQLQuery {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    query getAnchorByID($id: ID!) {
+      getAnchor(id: $id) {
+        __typename
+        create_date
+        entity_id
+        lat
+        long
+        alt
+      }
+    }
+    """
+
+  public let operationName: String = "getAnchorByID"
+
+  public var id: GraphQLID
+
+  public init(id: GraphQLID) {
+    self.id = id
+  }
+
+  public var variables: GraphQLMap? {
+    return ["id": id]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Query"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("getAnchor", arguments: ["id": GraphQLVariable("id")], type: .object(GetAnchor.selections)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(getAnchor: GetAnchor? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Query", "getAnchor": getAnchor.flatMap { (value: GetAnchor) -> ResultMap in value.resultMap }])
+    }
+
+    public var getAnchor: GetAnchor? {
+      get {
+        return (resultMap["getAnchor"] as? ResultMap).flatMap { GetAnchor(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "getAnchor")
+      }
+    }
+
+    public struct GetAnchor: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["Anchor"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("create_date", type: .scalar(String.self)),
+          GraphQLField("entity_id", type: .scalar(GraphQLID.self)),
+          GraphQLField("lat", type: .scalar(Double.self)),
+          GraphQLField("long", type: .scalar(Double.self)),
+          GraphQLField("alt", type: .scalar(Double.self)),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(createDate: String? = nil, entityId: GraphQLID? = nil, lat: Double? = nil, long: Double? = nil, alt: Double? = nil) {
+        self.init(unsafeResultMap: ["__typename": "Anchor", "create_date": createDate, "entity_id": entityId, "lat": lat, "long": long, "alt": alt])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var createDate: String? {
+        get {
+          return resultMap["create_date"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "create_date")
+        }
+      }
+
+      public var entityId: GraphQLID? {
+        get {
+          return resultMap["entity_id"] as? GraphQLID
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "entity_id")
+        }
+      }
+
+      public var lat: Double? {
+        get {
+          return resultMap["lat"] as? Double
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "lat")
+        }
+      }
+
+      public var long: Double? {
+        get {
+          return resultMap["long"] as? Double
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "long")
+        }
+      }
+
+      public var alt: Double? {
+        get {
+          return resultMap["alt"] as? Double
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "alt")
+        }
+      }
+    }
+  }
+}
+
 public final class CreateAnchorMutation: GraphQLMutation {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
@@ -279,6 +416,121 @@ public final class CreateAnchorMutation: GraphQLMutation {
   }
 }
 
+public final class GetCommentByIdQuery: GraphQLQuery {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    query getCommentByID($id: ID!) {
+      getComment(id: $id) {
+        __typename
+        id
+        create_date
+        body
+      }
+    }
+    """
+
+  public let operationName: String = "getCommentByID"
+
+  public var id: GraphQLID
+
+  public init(id: GraphQLID) {
+    self.id = id
+  }
+
+  public var variables: GraphQLMap? {
+    return ["id": id]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Query"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("getComment", arguments: ["id": GraphQLVariable("id")], type: .object(GetComment.selections)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(getComment: GetComment? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Query", "getComment": getComment.flatMap { (value: GetComment) -> ResultMap in value.resultMap }])
+    }
+
+    public var getComment: GetComment? {
+      get {
+        return (resultMap["getComment"] as? ResultMap).flatMap { GetComment(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "getComment")
+      }
+    }
+
+    public struct GetComment: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["Comment"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+          GraphQLField("create_date", type: .scalar(String.self)),
+          GraphQLField("body", type: .scalar(String.self)),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(id: GraphQLID, createDate: String? = nil, body: String? = nil) {
+        self.init(unsafeResultMap: ["__typename": "Comment", "id": id, "create_date": createDate, "body": body])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var id: GraphQLID {
+        get {
+          return resultMap["id"]! as! GraphQLID
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "id")
+        }
+      }
+
+      public var createDate: String? {
+        get {
+          return resultMap["create_date"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "create_date")
+        }
+      }
+
+      public var body: String? {
+        get {
+          return resultMap["body"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "body")
+        }
+      }
+    }
+  }
+}
+
 public final class CreateCommentMutation: GraphQLMutation {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
@@ -379,6 +631,132 @@ public final class CreateCommentMutation: GraphQLMutation {
         }
         set {
           resultMap.updateValue(newValue, forKey: "create_date")
+        }
+      }
+
+      public var body: String? {
+        get {
+          return resultMap["body"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "body")
+        }
+      }
+    }
+  }
+}
+
+public final class GetStoryByIdQuery: GraphQLQuery {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    query getStoryByID($id: ID!) {
+      getStory(id: $id) {
+        __typename
+        id
+        create_date
+        heading
+        body
+      }
+    }
+    """
+
+  public let operationName: String = "getStoryByID"
+
+  public var id: GraphQLID
+
+  public init(id: GraphQLID) {
+    self.id = id
+  }
+
+  public var variables: GraphQLMap? {
+    return ["id": id]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Query"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("getStory", arguments: ["id": GraphQLVariable("id")], type: .object(GetStory.selections)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(getStory: GetStory? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Query", "getStory": getStory.flatMap { (value: GetStory) -> ResultMap in value.resultMap }])
+    }
+
+    public var getStory: GetStory? {
+      get {
+        return (resultMap["getStory"] as? ResultMap).flatMap { GetStory(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "getStory")
+      }
+    }
+
+    public struct GetStory: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["Story"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+          GraphQLField("create_date", type: .scalar(String.self)),
+          GraphQLField("heading", type: .scalar(String.self)),
+          GraphQLField("body", type: .scalar(String.self)),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(id: GraphQLID, createDate: String? = nil, heading: String? = nil, body: String? = nil) {
+        self.init(unsafeResultMap: ["__typename": "Story", "id": id, "create_date": createDate, "heading": heading, "body": body])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var id: GraphQLID {
+        get {
+          return resultMap["id"]! as! GraphQLID
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "id")
+        }
+      }
+
+      public var createDate: String? {
+        get {
+          return resultMap["create_date"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "create_date")
+        }
+      }
+
+      public var heading: String? {
+        get {
+          return resultMap["heading"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "heading")
         }
       }
 

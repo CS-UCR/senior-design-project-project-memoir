@@ -1,5 +1,5 @@
 query getStoryByID($id: ID!) {
-    getStoryByID(id: $id) {
+    getStory(id: $id) {
         id
         create_date
         heading

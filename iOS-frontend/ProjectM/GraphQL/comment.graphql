@@ -1,5 +1,5 @@
 query getCommentByID($id: ID!) {
-    getCommentByID(id: $id) {
+    getComment(id: $id) {
         id
         create_date
         body
