@@ -1,3 +1,11 @@
+query getStoryByID($id: ID!) {
+    getStoryByID(id: $id) {
+        id
+        create_date
+        heading
+        body
+    }
+}
 mutation createStory($storyInput: CreateStoryInput!) {
     createStory(input: $storyInput) {
         id
