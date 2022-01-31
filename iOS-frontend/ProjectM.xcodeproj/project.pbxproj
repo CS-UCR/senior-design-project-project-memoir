@@ -13,7 +13,6 @@
 		078BF1E42711277B00307C5E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078BF1E32711277B00307C5E /* ViewController.swift */; };
 		078BF1E72711277B00307C5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 078BF1E52711277B00307C5E /* Main.storyboard */; };
 		078BF1E92711277E00307C5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 078BF1E82711277E00307C5E /* Assets.xcassets */; };
-		078BF1EC2711277E00307C5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 078BF1EA2711277E00307C5E /* LaunchScreen.storyboard */; };
 		078BF1F72711277F00307C5E /* ProjectMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078BF1F62711277F00307C5E /* ProjectMTests.swift */; };
 		078BF2022711277F00307C5E /* ProjectMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078BF2012711277F00307C5E /* ProjectMUITests.swift */; };
 		07912A03272C6C2100E48FA6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07912A02272C6C2000E48FA6 /* SignUpViewController.swift */; };
@@ -38,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		025305D927A7C2E5006442DD /* ProjectM.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ProjectM.entitlements; sourceTree = "<group>"; };
 		0739A4662728980E00497D11 /* AppleIDButtonAuthorizaiton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIDButtonAuthorizaiton.swift; sourceTree = "<group>"; };
 		078BF1DC2711277B00307C5E /* ProjectM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		078BF1DF2711277B00307C5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,7 +45,6 @@
 		078BF1E32711277B00307C5E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		078BF1E62711277B00307C5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		078BF1E82711277E00307C5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		078BF1EB2711277E00307C5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		078BF1ED2711277E00307C5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		078BF1F22711277F00307C5E /* ProjectMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		078BF1F62711277F00307C5E /* ProjectMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMTests.swift; sourceTree = "<group>"; };
@@ -105,6 +104,7 @@
 		078BF1DE2711277B00307C5E /* ProjectM */ = {
 			isa = PBXGroup;
 			children = (
+				025305D927A7C2E5006442DD /* ProjectM.entitlements */,
 				078BF1DF2711277B00307C5E /* AppDelegate.swift */,
 				078BF1E32711277B00307C5E /* ViewController.swift */,
 				0739A4662728980E00497D11 /* AppleIDButtonAuthorizaiton.swift */,
@@ -113,7 +113,6 @@
 				078BF1E12711277B00307C5E /* SceneDelegate.swift */,
 				078BF1E52711277B00307C5E /* Main.storyboard */,
 				078BF1E82711277E00307C5E /* Assets.xcassets */,
-				078BF1EA2711277E00307C5E /* LaunchScreen.storyboard */,
 				078BF1ED2711277E00307C5E /* Info.plist */,
 			);
 			path = ProjectM;
@@ -242,7 +241,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				078BF1EC2711277E00307C5E /* LaunchScreen.storyboard in Resources */,
 				078BF1E92711277E00307C5E /* Assets.xcassets in Resources */,
 				078BF1E72711277B00307C5E /* Main.storyboard in Resources */,
 			);
@@ -316,14 +314,6 @@
 				078BF1E62711277B00307C5E /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		078BF1EA2711277E00307C5E /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				078BF1EB2711277E00307C5E /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -450,9 +440,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ProjectM/ProjectM.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = C3353ZR648;
+				DEVELOPMENT_TEAM = 9UBM9TUHXM;
 				INFOPLIST_FILE = ProjectM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -472,9 +463,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ProjectM/ProjectM.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = C3353ZR648;
+				DEVELOPMENT_TEAM = 9UBM9TUHXM;
 				INFOPLIST_FILE = ProjectM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
