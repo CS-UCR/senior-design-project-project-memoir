@@ -1,3 +1,11 @@
+query getCommentByID($id: ID!) {
+    getComment(id: $id) {
+        id
+        create_date
+        body
+    }
+}
+
 mutation createComment($commentInput: CreateCommentInput!) {
     createComment(input: $commentInput) {
         id
