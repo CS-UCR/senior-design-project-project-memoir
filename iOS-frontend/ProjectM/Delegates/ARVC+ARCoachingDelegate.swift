@@ -41,5 +41,10 @@ extension ARViewController: ARCoachingOverlayViewDelegate {
         view.isUserInteractionEnabled = true
     }
     
+    
+    func coachingOverlayViewDidRequestSessionReset(_ coachingOverlayView: ARCoachingOverlayView) {
+        runARSession()
+    }
+    
 }
 

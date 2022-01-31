@@ -1,0 +1,28 @@
+query getStoryByID($id: String!) {
+    getStoryByID(id: $id) {
+        id
+        create_date
+        heading
+        body
+    }
+}
+
+query getAnchorByID($id: ID!){
+    getAnchor(id: $id) {
+        id
+        create_date
+        entity_id
+        lat
+        long
+        alt
+    }
+}
+
+query getCommentByID($id: String!) {
+    getCommentByID(id: $id) {
+        id
+        create_date
+        body
+    }
+}
+

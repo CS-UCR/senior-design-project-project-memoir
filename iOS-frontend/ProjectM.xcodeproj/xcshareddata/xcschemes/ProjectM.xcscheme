@@ -39,8 +39,7 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
-      allowLocationSimulation = "YES"
-      allowDeviceSensorReplayData = "YES">
+      allowLocationSimulation = "YES">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
@@ -52,7 +51,7 @@
          </BuildableReference>
       </BuildableProductRunnable>
       <DeviceSensorReplayFileReference
-         identifier = "../../Riverside.mov">
+         identifier = "../../../../../../Downloads/Riverside.mov">
       </DeviceSensorReplayFileReference>
    </LaunchAction>
    <ProfileAction
