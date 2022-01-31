@@ -51,7 +51,7 @@
          </BuildableReference>
       </BuildableProductRunnable>
       <DeviceSensorReplayFileReference
-         identifier = "../../AR_Outside_Test.mov">
+         identifier = "../../../../../../Downloads/Riverside.mov">
       </DeviceSensorReplayFileReference>
    </LaunchAction>
    <ProfileAction

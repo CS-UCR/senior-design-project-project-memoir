@@ -1,0 +1,16 @@
+query getUserByID ($id: ID!){
+    getUser(id: $id) {
+        id
+        username
+        create_date
+        status
+        profile_icon
+    }
+}
+mutation createUser ($username: String!){
+    createUser(input: {username: $username}) {
+        username
+        create_date
+        id
+    }
+}

@@ -159,6 +159,14 @@ extension ARViewController {
             // add our raycastResult to our messageLocation (located in ARViewController)
             // We append the raycastResult to store the x,y,z coordinates for our AR message.
             self.messageLocation.append(raycastResult)
+
+            let anchorData = CreateAnchorInput(lat: location.latitude, long: location.longitude)
+
+            Network.shared.apollo.perform(mutation: CreateAnchorMutation(anchorInput: anchorData)) { result in
+              guard let data = try? result.get().data else { return }
+                print("Added anchor:\(data.createAnchor?.id) to database")
+            }
+
             // GeoAnchor supported
             // create the box
             let frame = CGRect(origin: touchLocation, size: CGSize(width: 300, height: 200))

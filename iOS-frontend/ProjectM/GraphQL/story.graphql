@@ -1,0 +1,17 @@
+query getStoryByID($id: ID!) {
+    getStory(id: $id) {
+        id
+        create_date
+        heading
+        body
+    }
+}
+
+mutation createStory($storyInput: CreateStoryInput!) {
+    createStory(input: $storyInput) {
+        id
+        create_date
+        heading
+        body
+    }
+}
