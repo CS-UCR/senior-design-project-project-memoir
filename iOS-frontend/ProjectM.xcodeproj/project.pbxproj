@@ -11,6 +11,8 @@
 		078BF1E22711277B00307C5E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078BF1E12711277B00307C5E /* SceneDelegate.swift */; };
 		078BF1EC2711277E00307C5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 078BF1EA2711277E00307C5E /* LaunchScreen.storyboard */; };
 		07C7E7D5277977B20069C607 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C7E7D4277977B20069C607 /* AppDelegate.swift */; };
+		935D0D722798D6B1000C81D0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935D0D712798D6B1000C81D0 /* ProfileViewController.swift */; };
+		934F6DF0279BA5F3004CF324 /* AR-Session-LA.mov in Resources */ = {isa = PBXBuildFile; fileRef = 934F6DEF279BA5F3004CF324 /* AR-Session-LA.mov */; };
 		7952813F279FD25B0019BD5B /* user.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 7952813B279FD25A0019BD5B /* user.graphql */; };
 		79528140279FD25B0019BD5B /* comment.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 7952813C279FD25B0019BD5B /* comment.graphql */; };
 		79528141279FD25B0019BD5B /* story.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 7952813D279FD25B0019BD5B /* story.graphql */; };
@@ -20,7 +22,6 @@
 		7952815227A09F070019BD5B /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 7952815127A09F070019BD5B /* schema.json */; };
 		934FC77627A11BE500BCB4D0 /* AR-Arts-Building.mov in Resources */ = {isa = PBXBuildFile; fileRef = 934FC77527A11BE500BCB4D0 /* AR-Arts-Building.mov */; };
 		934FC77827A11C8A00BCB4D0 /* AR-Bourns.mov in Resources */ = {isa = PBXBuildFile; fileRef = 934FC77727A11C8A00BCB4D0 /* AR-Bourns.mov */; };
-		934FC77A27A1275000BCB4D0 /* AR-Session-LA.mov in Resources */ = {isa = PBXBuildFile; fileRef = 934FC77927A1275000BCB4D0 /* AR-Session-LA.mov */; };
 		936932A22786922000EA8B68 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936932A12786922000EA8B68 /* ARViewController.swift */; };
 		936932A42786922200EA8B68 /* ARVC+ARCoachingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936932A32786922200EA8B68 /* ARVC+ARCoachingDelegate.swift */; };
 		936932A62786922400EA8B68 /* ARVC+TextViewDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936932A52786922400EA8B68 /* ARVC+TextViewDelegates.swift */; };
@@ -69,6 +70,8 @@
 		078BF1F22711277F00307C5E /* ProjectMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		078BF1FD2711277F00307C5E /* ProjectMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07C7E7D4277977B20069C607 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		935D0D712798D6B1000C81D0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		934F6DEF279BA5F3004CF324 /* AR-Session-LA.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "AR-Session-LA.mov"; sourceTree = "<group>"; };
 		7952813B279FD25A0019BD5B /* user.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = user.graphql; sourceTree = "<group>"; };
 		7952813C279FD25B0019BD5B /* comment.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = comment.graphql; sourceTree = "<group>"; };
 		7952813D279FD25B0019BD5B /* story.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = story.graphql; sourceTree = "<group>"; };
@@ -78,7 +81,6 @@
 		7952815127A09F070019BD5B /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		934FC77527A11BE500BCB4D0 /* AR-Arts-Building.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "AR-Arts-Building.mov"; sourceTree = "<group>"; };
 		934FC77727A11C8A00BCB4D0 /* AR-Bourns.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "AR-Bourns.mov"; sourceTree = "<group>"; };
-		934FC77927A1275000BCB4D0 /* AR-Session-LA.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = "AR-Session-LA.mov"; path = "../../../../Downloads/AR-Session-LA.mov"; sourceTree = "<group>"; };
 		936932A12786922000EA8B68 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		936932A32786922200EA8B68 /* ARVC+ARCoachingDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARVC+ARCoachingDelegate.swift"; sourceTree = "<group>"; };
 		936932A52786922400EA8B68 /* ARVC+TextViewDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARVC+TextViewDelegates.swift"; sourceTree = "<group>"; };
@@ -173,6 +175,13 @@
 			path = ProjectM;
 			sourceTree = "<group>";
 		};
+		935D0D732798D865000C81D0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		936932C12786AEA600EA8B68 /* Messages */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +232,7 @@
 			children = (
 				936932B12786923200EA8B68 /* LoginViewController.swift */,
 				936932A12786922000EA8B68 /* ARViewController.swift */,
+				935D0D712798D6B1000C81D0 /* ProfileViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -439,6 +449,7 @@
 				936932B02786923100EA8B68 /* UIView.swift in Sources */,
 				7952814C27A085B60019BD5B /* API.swift in Sources */,
 				936932A22786922000EA8B68 /* ARViewController.swift in Sources */,
+				935D0D722798D6B1000C81D0 /* ProfileViewController.swift in Sources */,
 				936932A62786922400EA8B68 /* ARVC+TextViewDelegates.swift in Sources */,
 				936932AC2786922D00EA8B68 /* Keyboard.swift in Sources */,
 				936932AE2786922E00EA8B68 /* SIMD.swift in Sources */,
