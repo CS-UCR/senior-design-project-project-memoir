@@ -5,6 +5,7 @@ query getCommentByID($id: ID!) {
         body
     }
 }
+
 mutation createComment($commentInput: CreateCommentInput!) {
     createComment(input: $commentInput) {
         id

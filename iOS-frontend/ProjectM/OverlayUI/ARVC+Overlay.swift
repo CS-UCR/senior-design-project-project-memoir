@@ -12,6 +12,8 @@ extension ARViewController {
     // setup the UI for our AR screen
     func overlayUISetup(){
         // Setting up the shadeView, which is used to dim the camera feed when a user is editing message (helps to draw the user's focus).
+        runARSession()
+        
         setupShadeView()
         // Adding a clear button, the user should always be able to remove all messages in the AR Experience.
         addClearButton()

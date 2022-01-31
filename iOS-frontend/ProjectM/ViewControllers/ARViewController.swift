@@ -30,23 +30,20 @@ class ARViewController: UIViewController, ARSessionDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        ARGeoTrackingConfiguration.checkAvailability { (available, error) in
-            guard available else {
-                print("geo location does not works :( !")
-                return }
-            print("geo location does works :) !")
-            self.ARView.session.run(ARGeoTrackingConfiguration())
-        }
         // Update our screen constantly since user's phone constantly moves
         subscription = ARView.scene.subscribe(to: SceneEvents.Update.self) { [unowned self] in
             self.updateScene(on: $0)
         }
+        
+        ARView.automaticallyConfigureSession = false
+        ARView.session.delegate = self
+
         // setup gestures to recognize user actions
         arViewUserGestures()
         // setup
         overlayUISetup()
-        
-        ARView.session.delegate = self
+        // run ar session
+        runARSession()
     }
 
 
@@ -69,6 +66,19 @@ class ARViewController: UIViewController, ARSessionDelegate {
         
     }
     
+    func runARSession() {
+        
+        ARGeoTrackingConfiguration.checkAvailability { (available, error) in
+            guard available else {
+                print("geo location does not works :( !")
+                self.runARSession()
+                return
+            }
+            print("geo location does works :) !")
+            let geoTrackingConfig = ARGeoTrackingConfiguration()
+            self.ARView.session.run(geoTrackingConfig)
+        }
+    }
     
     
     func updateScene(on event: SceneEvents.Update) {

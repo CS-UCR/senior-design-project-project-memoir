@@ -6,6 +6,7 @@ query getStoryByID($id: ID!) {
         body
     }
 }
+
 mutation createStory($storyInput: CreateStoryInput!) {
     createStory(input: $storyInput) {
         id
