@@ -529,6 +529,7 @@ public final class GetCommentByIdQuery: GraphQLQuery {
       }
     }
   }
+}
 
 public final class CreateCommentMutation: GraphQLMutation {
   /// The raw GraphQL definition of this operation.
