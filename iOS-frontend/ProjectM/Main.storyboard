@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Q1O-wb-VJ6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pYA-hk-d7H">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
-
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -168,13 +167,133 @@
             </objects>
             <point key="canvasLocation" x="859.4202898550725" y="140.625"/>
         </scene>
+        <!--Landing Page-->
+        <scene sceneID="4NY-Ee-Y4Y">
+            <objects>
+                <viewController title="Landing Page" id="pYA-hk-d7H" customClass="LandingViewController" customModule="ProjectM" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="klh-PW-ePg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hix-9S-3iO" customClass="AppleIDAuthorization" customModule="ProjectM" customModuleProvider="target">
+                                <rect key="frame" x="82" y="643" width="250" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="pPd-dY-cIh"/>
+                                </constraints>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Memoir" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QtW-Nh-Xdp">
+                                <rect key="frame" x="100" y="253" width="215" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.200383962" green="0.39810430050000001" blue="0.96133407360000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="NotoSansOriya" family="Noto Sans Oriya" pointSize="36"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vk5-36-LIv">
+                                <rect key="frame" x="136" y="727" width="142" height="39"/>
+                                <fontDescription key="fontDescription" name="NotoSansOriya" family="Noto Sans Oriya" pointSize="19"/>
+                                <state key="normal" title="...or just explore">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Q1O-wb-VJ6" kind="presentation" modalPresentationStyle="fullScreen" id="YSd-F8-hF9"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="zh0-zp-gg5">
+                                <rect key="frame" x="87" y="117" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="XpX-h7-K0g"/>
+                        <color key="backgroundColor" red="0.96862745289999996" green="0.96862745289999996" blue="0.96862745289999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="vk5-36-LIv" firstAttribute="leading" secondItem="XpX-h7-K0g" secondAttribute="leading" constant="136" id="3pi-oO-TMx"/>
+                            <constraint firstItem="vk5-36-LIv" firstAttribute="top" secondItem="hix-9S-3iO" secondAttribute="bottom" constant="34" id="4Aw-4a-hTc"/>
+                            <constraint firstItem="hix-9S-3iO" firstAttribute="leading" secondItem="XpX-h7-K0g" secondAttribute="leading" constant="82" id="7Yp-Ya-eCy"/>
+                            <constraint firstItem="XpX-h7-K0g" firstAttribute="trailing" secondItem="vk5-36-LIv" secondAttribute="trailing" constant="136" id="G5R-1r-FXW"/>
+                            <constraint firstItem="hix-9S-3iO" firstAttribute="centerX" secondItem="klh-PW-ePg" secondAttribute="centerX" id="LTb-DK-XhA"/>
+                            <constraint firstItem="XpX-h7-K0g" firstAttribute="bottom" secondItem="hix-9S-3iO" secondAttribute="bottom" constant="169" id="nUb-IN-OTU"/>
+                            <constraint firstItem="XpX-h7-K0g" firstAttribute="trailing" secondItem="hix-9S-3iO" secondAttribute="trailing" constant="82" id="uOA-ef-iYa"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1yo-HO-bb6" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1071" y="-1447"/>
+        </scene>
+        <!--Create Page-->
+        <scene sceneID="S0m-GN-bHa">
+            <objects>
+                <viewController title="Create Page" id="oiq-k0-IOb" customClass="SignUpViewController" customModule="ProjectM" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TUw-Pf-6SO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yuf-Se-7RK">
+                                <rect key="frame" x="122.5" y="102.5" width="172" height="84"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="52"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_profile_world" translatesAutoresizingMaskIntoConstraints="NO" id="YNp-Zu-q6a">
+                                <rect key="frame" x="-205.5" y="441" width="825" height="188"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="188" id="b0j-LO-wno"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubg-AD-tBu">
+                                <rect key="frame" x="105" y="745" width="204" height="52"/>
+                                <fontDescription key="fontDescription" name="NotoSansOriya" family="Noto Sans Oriya" pointSize="28"/>
+                                <state key="normal" title="Make Memories">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Q1O-wb-VJ6" kind="presentation" modalPresentationStyle="fullScreen" id="rMT-UP-UT5"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C7y-3V-06g">
+                                <rect key="frame" x="20" y="290" width="374" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="NotoSansOriya" family="Noto Sans Oriya" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="39Q-tf-S83"/>
+                        <color key="backgroundColor" red="0.96862745289999996" green="0.96862745289999996" blue="0.96862745289999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="yuf-Se-7RK" firstAttribute="top" secondItem="39Q-tf-S83" secondAttribute="top" constant="58.5" id="40G-u8-XZR"/>
+                            <constraint firstItem="39Q-tf-S83" firstAttribute="trailing" secondItem="ubg-AD-tBu" secondAttribute="trailing" constant="105" id="9q9-Zg-sfG"/>
+                            <constraint firstItem="39Q-tf-S83" firstAttribute="bottom" secondItem="ubg-AD-tBu" secondAttribute="bottom" constant="65" id="H2O-EX-6V3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YNp-Zu-q6a" secondAttribute="trailing" constant="-225.5" id="dCG-on-Rl4"/>
+                            <constraint firstItem="ubg-AD-tBu" firstAttribute="top" secondItem="YNp-Zu-q6a" secondAttribute="bottom" constant="116" id="jLS-Ca-cMV"/>
+                            <constraint firstItem="ubg-AD-tBu" firstAttribute="leading" secondItem="39Q-tf-S83" secondAttribute="leading" constant="105" id="kMA-S0-NfE"/>
+                            <constraint firstItem="yuf-Se-7RK" firstAttribute="leading" secondItem="39Q-tf-S83" secondAttribute="leading" constant="122.5" id="oIG-2f-0Gx"/>
+                            <constraint firstItem="39Q-tf-S83" firstAttribute="trailing" secondItem="yuf-Se-7RK" secondAttribute="trailing" constant="119.5" id="qcm-Q4-xcV"/>
+                            <constraint firstItem="YNp-Zu-q6a" firstAttribute="leading" secondItem="TUw-Pf-6SO" secondAttribute="leadingMargin" constant="-225.5" id="zhL-OF-vde"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="cfB-yK-U9B"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ydo-Lp-MV7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1071" y="-612"/>
+        </scene>
     </scenes>
     <designables>
         <designable name="K6l-aL-URt"/>
+        <designable name="hix-9S-3iO">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
     </designables>
+    <inferredMetricsTieBreakers>
+        <segue reference="YSd-F8-hF9"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="arkit" catalog="system" width="128" height="128"/>
         <image name="house" catalog="system" width="128" height="106"/>
+        <image name="login_profile_world" width="825.2021484375" height="591.41900634765625"/>
+        <image name="logo" width="374" height="334"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
