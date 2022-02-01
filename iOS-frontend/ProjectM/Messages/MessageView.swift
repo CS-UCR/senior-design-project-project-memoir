@@ -28,8 +28,10 @@ class MessageView: UIView{
     init(frame: CGRect, user_message: MessageEntity) {
         super.init(frame: frame)
         userMessage = user_message
+  //      self.deleteMessage(note:userMessage)
         setupBlurBackgroundContainer()
         setupTextbox()
+       // setupDeleteButton()
         lastFrame = frame
     }
     
@@ -84,6 +86,7 @@ class MessageView: UIView{
         textView.textAlignment = .left
         // add done button to the top right of keyboard, so user can close keyboard
         textView.addDoneButton()
+        
         // place holder
         textView.text = "New Message..."
         textView.textColor = .darkGray

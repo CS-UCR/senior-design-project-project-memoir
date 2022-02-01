@@ -206,5 +206,7 @@ extension ARViewController {
     func userTappedClear(_ sender: UIButton) {
         clear()
     }
+    
+    
 }
 

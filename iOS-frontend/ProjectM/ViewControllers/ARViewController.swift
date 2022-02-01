@@ -115,7 +115,6 @@ class ARViewController: UIViewController, ARSessionDelegate {
         // for loop removes message from our list of messages
         for message in userMessages {
             deleteMessage(message)
-        }
     }
     
     func session(_ session: ARSession, didFailWithError error: Error) {

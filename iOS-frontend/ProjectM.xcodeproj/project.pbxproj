@@ -11,6 +11,7 @@
 		078BF1E22711277B00307C5E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078BF1E12711277B00307C5E /* SceneDelegate.swift */; };
 		078BF1EC2711277E00307C5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 078BF1EA2711277E00307C5E /* LaunchScreen.storyboard */; };
 		07C7E7D5277977B20069C607 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C7E7D4277977B20069C607 /* AppDelegate.swift */; };
+		29BA5BFD27A87391007096F8 /* AppSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 29BA5BFC27A87391007096F8 /* AppSettings.xcconfig */; };
 		7952813F279FD25B0019BD5B /* user.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 7952813B279FD25A0019BD5B /* user.graphql */; };
 		79528140279FD25B0019BD5B /* comment.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 7952813C279FD25B0019BD5B /* comment.graphql */; };
 		79528141279FD25B0019BD5B /* story.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 7952813D279FD25B0019BD5B /* story.graphql */; };
@@ -18,9 +19,6 @@
 		7952814C27A085B60019BD5B /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7952814B27A085B60019BD5B /* API.swift */; };
 		7952814E27A09A5B0019BD5B /* IncompleteAPIQueries.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7952814D27A09A5B0019BD5B /* IncompleteAPIQueries.txt */; };
 		7952815227A09F070019BD5B /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 7952815127A09F070019BD5B /* schema.json */; };
-		934FC77627A11BE500BCB4D0 /* AR-Arts-Building.mov in Resources */ = {isa = PBXBuildFile; fileRef = 934FC77527A11BE500BCB4D0 /* AR-Arts-Building.mov */; };
-		934FC77827A11C8A00BCB4D0 /* AR-Bourns.mov in Resources */ = {isa = PBXBuildFile; fileRef = 934FC77727A11C8A00BCB4D0 /* AR-Bourns.mov */; };
-		934FC77A27A1275000BCB4D0 /* AR-Session-LA.mov in Resources */ = {isa = PBXBuildFile; fileRef = 934FC77927A1275000BCB4D0 /* AR-Session-LA.mov */; };
 		936932A22786922000EA8B68 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936932A12786922000EA8B68 /* ARViewController.swift */; };
 		936932A42786922200EA8B68 /* ARVC+ARCoachingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936932A32786922200EA8B68 /* ARVC+ARCoachingDelegate.swift */; };
 		936932A62786922400EA8B68 /* ARVC+TextViewDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936932A52786922400EA8B68 /* ARVC+TextViewDelegates.swift */; };
@@ -38,7 +36,6 @@
 		936932CC2786B86500EA8B68 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 936932CB2786B86500EA8B68 /* Apollo */; };
 		936932D32786BB2300EA8B68 /* test.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 936932D22786BB2300EA8B68 /* test.graphql */; };
 		936932DC2786BC8800EA8B68 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936932DB2786BC8800EA8B68 /* Network.swift */; };
-		93D34EF2278F67C700B2B852 /* AppSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 93D34EF1278F67C700B2B852 /* AppSettings.xcconfig */; };
 		93D34EF82790007900B2B852 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D34EF72790007900B2B852 /* Configuration.swift */; };
 		93D9DFBF2794EF2500FB4A66 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D9DFBE2794EF2500FB4A66 /* Utilities.swift */; };
 /* End PBXBuildFile section */
@@ -69,6 +66,7 @@
 		078BF1F22711277F00307C5E /* ProjectMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		078BF1FD2711277F00307C5E /* ProjectMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07C7E7D4277977B20069C607 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		29BA5BFC27A87391007096F8 /* AppSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = AppSettings.xcconfig; sourceTree = "<group>"; };
 		7952813B279FD25A0019BD5B /* user.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = user.graphql; sourceTree = "<group>"; };
 		7952813C279FD25B0019BD5B /* comment.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = comment.graphql; sourceTree = "<group>"; };
 		7952813D279FD25B0019BD5B /* story.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = story.graphql; sourceTree = "<group>"; };
@@ -76,9 +74,6 @@
 		7952814B27A085B60019BD5B /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		7952814D27A09A5B0019BD5B /* IncompleteAPIQueries.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = IncompleteAPIQueries.txt; sourceTree = "<group>"; };
 		7952815127A09F070019BD5B /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
-		934FC77527A11BE500BCB4D0 /* AR-Arts-Building.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "AR-Arts-Building.mov"; sourceTree = "<group>"; };
-		934FC77727A11C8A00BCB4D0 /* AR-Bourns.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "AR-Bourns.mov"; sourceTree = "<group>"; };
-		934FC77927A1275000BCB4D0 /* AR-Session-LA.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = "AR-Session-LA.mov"; path = "../../../../Downloads/AR-Session-LA.mov"; sourceTree = "<group>"; };
 		936932A12786922000EA8B68 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		936932A32786922200EA8B68 /* ARVC+ARCoachingDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARVC+ARCoachingDelegate.swift"; sourceTree = "<group>"; };
 		936932A52786922400EA8B68 /* ARVC+TextViewDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARVC+TextViewDelegates.swift"; sourceTree = "<group>"; };
@@ -96,7 +91,6 @@
 		936932D22786BB2300EA8B68 /* test.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = test.graphql; sourceTree = "<group>"; };
 		936932DB2786BC8800EA8B68 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		93C0E3BC27A118810024BBBA /* Riverside.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = Riverside.mov; path = ../../../../Downloads/Riverside.mov; sourceTree = "<group>"; };
-		93D34EF1278F67C700B2B852 /* AppSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = AppSettings.xcconfig; sourceTree = "<group>"; };
 		93D34EF72790007900B2B852 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		93D9DFBE2794EF2500FB4A66 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,9 +125,6 @@
 			isa = PBXGroup;
 			children = (
 				93C0E3BC27A118810024BBBA /* Riverside.mov */,
-				934FC77727A11C8A00BCB4D0 /* AR-Bourns.mov */,
-				934FC77927A1275000BCB4D0 /* AR-Session-LA.mov */,
-				934FC77527A11BE500BCB4D0 /* AR-Arts-Building.mov */,
 				078BF1DE2711277B00307C5E /* ProjectM */,
 				078BF1DD2711277B00307C5E /* Products */,
 			);
@@ -166,7 +157,7 @@
 				7952815127A09F070019BD5B /* schema.json */,
 				7952814B27A085B60019BD5B /* API.swift */,
 				078BF1EA2711277E00307C5E /* LaunchScreen.storyboard */,
-				93D34EF1278F67C700B2B852 /* AppSettings.xcconfig */,
+				29BA5BFC27A87391007096F8 /* AppSettings.xcconfig */,
 				936932BF2786937C00EA8B68 /* Main.storyboard */,
 				078BF1ED2711277E00307C5E /* Info.plist */,
 			);
@@ -334,7 +325,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1250;
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1320;
 				TargetAttributes = {
 					078BF1DB2711277B00307C5E = {
 						CreatedOnToolsVersion = 12.5;
@@ -377,20 +368,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29BA5BFD27A87391007096F8 /* AppSettings.xcconfig in Resources */,
 				7952813F279FD25B0019BD5B /* user.graphql in Resources */,
-				934FC77627A11BE500BCB4D0 /* AR-Arts-Building.mov in Resources */,
 				7952814627A084E90019BD5B /* anchor.graphql in Resources */,
 				936932C02786937C00EA8B68 /* Main.storyboard in Resources */,
 				79528141279FD25B0019BD5B /* story.graphql in Resources */,
 				078BF1EC2711277E00307C5E /* LaunchScreen.storyboard in Resources */,
 				071023A52775779A00B21474 /* Assets.xcassets in Resources */,
 				7952815227A09F070019BD5B /* schema.json in Resources */,
-				934FC77827A11C8A00BCB4D0 /* AR-Bourns.mov in Resources */,
-				934FC77A27A1275000BCB4D0 /* AR-Session-LA.mov in Resources */,
 				79528140279FD25B0019BD5B /* comment.graphql in Resources */,
 				936932D32786BB2300EA8B68 /* test.graphql in Resources */,
 				7952814E27A09A5B0019BD5B /* IncompleteAPIQueries.txt in Resources */,
-				93D34EF2278F67C700B2B852 /* AppSettings.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,7 +489,6 @@
 /* Begin XCBuildConfiguration section */
 		078BF2042711277F00307C5E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 93D34EF1278F67C700B2B852 /* AppSettings.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -563,7 +550,6 @@
 		};
 		078BF2052711277F00307C5E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 93D34EF1278F67C700B2B852 /* AppSettings.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -624,14 +610,15 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9UBM9TUHXM;
+				DEVELOPMENT_TEAM = QA57MVQ2ZV;
 				INFOPLIST_FILE = ProjectM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.memoir;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = memoir360;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -646,14 +633,15 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9UBM9TUHXM;
+				DEVELOPMENT_TEAM = QA57MVQ2ZV;
 				INFOPLIST_FILE = ProjectM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.memoir;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = memoir360;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -747,7 +735,6 @@
 		};
 		93D34EF3278F6EAE00B2B852 /* Staging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 93D34EF1278F67C700B2B852 /* AppSettings.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -814,14 +801,15 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9UBM9TUHXM;
+				DEVELOPMENT_TEAM = QA57MVQ2ZV;
 				INFOPLIST_FILE = ProjectM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.memoir;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = memoir360;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
