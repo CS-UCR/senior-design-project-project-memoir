@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0288C41D27A942E6009C09B8 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0288C41C27A942E6009C09B8 /* CreateAccountViewController.swift */; };
 		0299FBD527A8692200941CC3 /* AppleIDAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0299FBD427A8692200941CC3 /* AppleIDAuthorization.swift */; };
 		0299FBD727A86D7400941CC3 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0299FBD627A86D7400941CC3 /* LandingViewController.swift */; };
 		02D4B52627A7ED6F009065A3 /* AppSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 02D4B52527A7ED6F009065A3 /* AppSettings.xcconfig */; };
@@ -61,6 +62,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0288C41C27A942E6009C09B8 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		0299FBD127A8669600941CC3 /* ProjectM.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ProjectM.entitlements; sourceTree = "<group>"; };
 		0299FBD427A8692200941CC3 /* AppleIDAuthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIDAuthorization.swift; sourceTree = "<group>"; };
 		0299FBD627A86D7400941CC3 /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				935D0D712798D6B1000C81D0 /* ProfileViewController.swift */,
 				0299FBD427A8692200941CC3 /* AppleIDAuthorization.swift */,
 				0299FBD627A86D7400941CC3 /* LandingViewController.swift */,
+				0288C41C27A942E6009C09B8 /* CreateAccountViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 				936932AA2786922A00EA8B68 /* ARScreenSpace.swift in Sources */,
 				07C7E7D5277977B20069C607 /* AppDelegate.swift in Sources */,
 				936932B42786923600EA8B68 /* MessageEntity.swift in Sources */,
+				0288C41D27A942E6009C09B8 /* CreateAccountViewController.swift in Sources */,
 				936932DC2786BC8800EA8B68 /* Network.swift in Sources */,
 				936932B82786924400EA8B68 /* ARVC+Overlay.swift in Sources */,
 				93D34EF82790007900B2B852 /* Configuration.swift in Sources */,
