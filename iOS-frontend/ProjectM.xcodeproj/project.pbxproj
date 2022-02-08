@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0288C41D27A942E6009C09B8 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0288C41C27A942E6009C09B8 /* CreateAccountViewController.swift */; };
-		0299FBD527A8692200941CC3 /* AppleIDAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0299FBD427A8692200941CC3 /* AppleIDAuthorization.swift */; };
 		0299FBD727A86D7400941CC3 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0299FBD627A86D7400941CC3 /* LandingViewController.swift */; };
 		02D4B52627A7ED6F009065A3 /* AppSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 02D4B52527A7ED6F009065A3 /* AppSettings.xcconfig */; };
 		071023A52775779A00B21474 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 071023A42775779A00B21474 /* Assets.xcassets */; };
@@ -64,7 +63,6 @@
 /* Begin PBXFileReference section */
 		0288C41C27A942E6009C09B8 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		0299FBD127A8669600941CC3 /* ProjectM.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ProjectM.entitlements; sourceTree = "<group>"; };
-		0299FBD427A8692200941CC3 /* AppleIDAuthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIDAuthorization.swift; sourceTree = "<group>"; };
 		0299FBD627A86D7400941CC3 /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		02D4B52527A7ED6F009065A3 /* AppSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = AppSettings.xcconfig; path = ../../../../../Downloads/AppSettings.xcconfig; sourceTree = "<group>"; };
 		071023A42775779A00B21474 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -223,7 +221,6 @@
 				936932B12786923200EA8B68 /* LoginViewController.swift */,
 				936932A12786922000EA8B68 /* ARViewController.swift */,
 				935D0D712798D6B1000C81D0 /* ProfileViewController.swift */,
-				0299FBD427A8692200941CC3 /* AppleIDAuthorization.swift */,
 				0299FBD627A86D7400941CC3 /* LandingViewController.swift */,
 				0288C41C27A942E6009C09B8 /* CreateAccountViewController.swift */,
 			);
@@ -445,7 +442,6 @@
 				936932AC2786922D00EA8B68 /* Keyboard.swift in Sources */,
 				936932AE2786922E00EA8B68 /* SIMD.swift in Sources */,
 				936932A42786922200EA8B68 /* ARVC+ARCoachingDelegate.swift in Sources */,
-				0299FBD527A8692200941CC3 /* AppleIDAuthorization.swift in Sources */,
 				936932BA2786924E00EA8B68 /* ErrorMessageLabel.swift in Sources */,
 				936932AA2786922A00EA8B68 /* ARScreenSpace.swift in Sources */,
 				07C7E7D5277977B20069C607 /* AppDelegate.swift in Sources */,

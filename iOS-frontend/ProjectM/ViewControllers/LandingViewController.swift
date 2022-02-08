@@ -19,36 +19,16 @@ class LandingViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         authorizationButton.frame = CGRect(x: 68, y: 565, width: 250, height: 50)
-//        authorizationButton.frame = CGRect(x: 0, y: 500, width: 250, height: 50)
+
         authorizationButton.translatesAutoresizingMaskIntoConstraints = false
-//        authorizationButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 0.0)
-        
-//        NSLayoutConstraint.activate([
-//            authorizationButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 0.0),
-//            authorizationButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0.0),
-//            authorizationButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0.0),
-//            authorizationButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0.0)
-//        ])
-        
-//        authorizationButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true;
-//        authorizationButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true;
         
         authorizationButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true;
-//        authorizationButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0.0).isActive = true;
-        
-//        authorizationButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0.0).isActive = true;
-//        authorizationButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0.0).isActive = true;
+
         authorizationButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 100).isActive = true;
         
         
         authorizationButton.widthAnchor.constraint(equalToConstant: 250).isActive = true;
         authorizationButton.heightAnchor.constraint(equalToConstant: 50).isActive = true;
-        
-        
-//        authorizationButton.constraint(equalToConstant: 50)
-//        authorizationButton.constraints
-        
-        
     }
 
      // When sign in is clicked, execute requests to Apple (Delegations)
