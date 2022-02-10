@@ -179,11 +179,11 @@ extension ARViewController {
             let geoAnchorEntity = AnchorEntity(anchor: geoAnchor)
             // add the entity to the anchor
             geoAnchorEntity.addChild(message)
-            
             // add the anchor to the ar view
-            // TESTING
-            //self.ARView.scene.add(geoAnchorEntity)
             self.ARView.scene.addAnchor(geoAnchorEntity)
+            // TESTING
+            // ADD GEOANCHOR TO ARRAY
+            self.geoAnchors_array.append(geoAnchor)
             
             guard let messageView = message.view else { return }
             self.ARView.addSubview(messageView)

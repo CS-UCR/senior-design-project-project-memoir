@@ -22,6 +22,9 @@ class ARViewController: UIViewController, ARSessionDelegate {
     // Hold messages users post
 //    var userMessages = [MessageEntity]()
     var userMessages = [MessageEntity]()
+    // TESTING: geoAnchors_array WILL HOLD ANCHORS SO WE CAN SAVE THEM LATER.
+    // CANNOT USE userMessages above since it is an entity and not an anchor
+    var geoAnchors_array =  [ARAnchor]()
     
     @IBOutlet weak var errorMessageLabel: ErrorMessageLabel!
     var subscription: Cancellable!
@@ -49,7 +52,7 @@ class ARViewController: UIViewController, ARSessionDelegate {
         // setup
         overlayUISetup()
         // get mock data which will print our mock data for now
-        getMockData()
+//        getMockData()
         // place mock data message in our AR world
         // Look into reverse engineering how to place AR message
         placeARMessage()
@@ -57,7 +60,6 @@ class ARViewController: UIViewController, ARSessionDelegate {
         // run ar session
         runARSession()
     }
-
 
     
     override func viewWillAppear(_ animated: Bool) {
@@ -70,6 +72,7 @@ class ARViewController: UIViewController, ARSessionDelegate {
         
     }
     
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -78,8 +81,27 @@ class ARViewController: UIViewController, ARSessionDelegate {
         
     }
     
+    
+    @IBAction func menuButtonClicked(_ sender: Any) {
+        presentMenuOptions()
+    }
+    
+
+    // Presents the available actions when the user presses the menu button.
+    func presentMenuOptions() {
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "Load Anchors …", style: .default, handler: { (_) in
+            //self.loadAnchors()
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Save Anchors …", style: .default, handler: { (_) in
+            //self.saveAnchors()
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        present(actionSheet, animated: true)
+    }
+    
+    
     func runARSession() {
-        
         ARGeoTrackingConfiguration.checkAvailability { (available, error) in
             guard available else {
                 print("geo location does not works :( !")
@@ -129,19 +151,7 @@ class ARViewController: UIViewController, ARSessionDelegate {
             deleteMessage(message)
         }
     }
-    
 
-    func session(_ session: ARSession, didAdd anchors: [ARAnchor]) {
-        // CYCLE THROUGH ALL OF OUR GEOANCHORS
-        for geoAnchor in anchors.compactMap({ $0 as? ARGeoAnchor }) {
-            self.ARView.scene.addAnchor(geoAnchorEntity)
-        }
-           
-        // Remember the geo anchor we just added
-        let anchorInfo = GeoAnchorWithAssociatedData(geoAnchor: geoAnchor, mapOverlay: anchorIndicator)
-        self.geoAnchors.append(anchorInfo)
-    }
-    
     
     
     func session(_ session: ARSession, didFailWithError error: Error) {
