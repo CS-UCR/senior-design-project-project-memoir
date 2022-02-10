@@ -50,9 +50,6 @@
             ReferencedContainer = "container:ProjectM.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <DeviceSensorReplayFileReference
-         identifier = "../../../../../../Downloads/Riverside.mov">
-      </DeviceSensorReplayFileReference>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

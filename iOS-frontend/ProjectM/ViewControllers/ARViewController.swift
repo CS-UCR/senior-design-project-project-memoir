@@ -20,6 +20,7 @@ class ARViewController: UIViewController, ARSessionDelegate {
     @IBOutlet weak var ARView: ARView!
     
     // Hold messages users post
+//    var userMessages = [MessageEntity]()
     var userMessages = [MessageEntity]()
     
     @IBOutlet weak var errorMessageLabel: ErrorMessageLabel!
@@ -128,6 +129,20 @@ class ARViewController: UIViewController, ARSessionDelegate {
             deleteMessage(message)
         }
     }
+    
+
+    func session(_ session: ARSession, didAdd anchors: [ARAnchor]) {
+        // CYCLE THROUGH ALL OF OUR GEOANCHORS
+        for geoAnchor in anchors.compactMap({ $0 as? ARGeoAnchor }) {
+            self.ARView.scene.addAnchor(geoAnchorEntity)
+        }
+           
+        // Remember the geo anchor we just added
+        let anchorInfo = GeoAnchorWithAssociatedData(geoAnchor: geoAnchor, mapOverlay: anchorIndicator)
+        self.geoAnchors.append(anchorInfo)
+    }
+    
+    
     
     func session(_ session: ARSession, didFailWithError error: Error) {
         guard error is ARError else { return }

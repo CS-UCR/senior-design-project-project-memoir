@@ -132,13 +132,13 @@ extension ARViewController {
     }
     
     
-    
-
     // Insert new message in our ARView
     fileprivate func insertNewMessage(_ sender: UITapGestureRecognizer) {
+        // A
         // Get the user's tap screen location.
         let touchLocation = sender.location(in: ARView)
        
+        // B
         // ARView.raycast turns the users click on their 2D screen into a 3D point for our AR world
         // Ex: x,y -> x,y,z
         // Make sure we have an acceptable surface for our AR app,
@@ -158,7 +158,7 @@ extension ARViewController {
             }
             // add our raycastResult to our messageLocation (located in ARViewController)
             // We append the raycastResult to store the x,y,z coordinates for our AR message.
-            self.messageLocation.append(raycastResult)
+            // self.messageLocation.append(raycastResult)
 
             let anchorData = CreateAnchorInput(lat: location.latitude, long: location.longitude)
 
@@ -181,6 +181,8 @@ extension ARViewController {
             geoAnchorEntity.addChild(message)
             
             // add the anchor to the ar view
+            // TESTING
+            //self.ARView.scene.add(geoAnchorEntity)
             self.ARView.scene.addAnchor(geoAnchorEntity)
             
             guard let messageView = message.view else { return }

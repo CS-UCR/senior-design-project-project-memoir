@@ -11,7 +11,7 @@ import UIKit
 extension ARViewController {
     // get test data from our mock query
     func getMockData(){
-        print(data)
+ 
     }
     // make sure our test data is valid
     func isMockDataValid(){
