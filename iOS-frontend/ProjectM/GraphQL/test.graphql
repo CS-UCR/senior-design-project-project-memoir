@@ -1,0 +1,6 @@
+query TestQuery {
+  getUser(id: "753882cb-506a-402a-9ed0-ed14a413f368") {
+    id
+    username
+  }
+}
