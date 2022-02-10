@@ -24,8 +24,13 @@ class ARViewController: UIViewController, ARSessionDelegate {
     var userMessages = [MessageEntity]()
     // TESTING: geoAnchors_array WILL HOLD ANCHORS SO WE CAN SAVE THEM LATER.
     // CANNOT USE userMessages above since it is an entity and not an anchor
-    var geoAnchors_array =  [ARAnchor]()
-    
+    var geoAnchors_array=[ARAnchor]()
+    // TESTING
+    // Gets the anchors from the last frame captured by rear iPhone camera
+    var currentAnchors: [ARAnchor] {
+        return ARView.session.currentFrame?.anchors ?? []
+    }
+    var savedGeoAnchors = [ARAnchor]()
     @IBOutlet weak var errorMessageLabel: ErrorMessageLabel!
     var subscription: Cancellable!
     // Dim background so user can focus on message while typing
@@ -81,25 +86,33 @@ class ARViewController: UIViewController, ARSessionDelegate {
         
     }
     
-    
-    @IBAction func menuButtonClicked(_ sender: Any) {
-        presentMenuOptions()
-    }
-    
 
     // Presents the available actions when the user presses the menu button.
     func presentMenuOptions() {
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         actionSheet.addAction(UIAlertAction(title: "Load Anchors …", style: .default, handler: { (_) in
-            //self.loadAnchors()
+            self.loadAnchors()
         }))
         actionSheet.addAction(UIAlertAction(title: "Save Anchors …", style: .default, handler: { (_) in
-            //self.saveAnchors()
+            self.saveAnchors()
         }))
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         present(actionSheet, animated: true)
     }
     
+    
+    // Save anchors to server
+    // This is meant to replicate server
+    func saveAnchors(){
+        //
+        savedGeoAnchors = geoAnchors_array
+    }
+    
+    // Load anchors from "server"
+    func loadAnchors(){
+        geoAnchors_array = savedGeoAnchors
+        insertExistingMessage(geoAnchors_array: [ARAnchor])
+    }
     
     func runARSession() {
         ARGeoTrackingConfiguration.checkAvailability { (available, error) in
