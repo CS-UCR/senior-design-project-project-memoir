@@ -8,6 +8,25 @@ query getAnchorByID($id: ID!) {
     }
 }
 
+query listAnchors($limit: Int, $nextToken: String) {
+    listAnchors(limit: $limit, nextToken: $nextToken) {
+        nextToken
+        items {
+            id
+            create_date
+            entity_id
+            message {
+                id
+                body
+                modified_date
+            }
+            lat
+            long
+            alt
+        }
+    }
+}
+
 mutation createAnchor($anchorInput: CreateAnchorInput!) {
     createAnchor(input: $anchorInput) {
         id
@@ -16,5 +35,20 @@ mutation createAnchor($anchorInput: CreateAnchorInput!) {
         lat
         long
         alt
+    }
+}
+
+mutation deleteAnchor($anchorInput: DeleteAnchorInput!) {
+    deleteAnchor(input: $anchorInput) {
+        id
+        create_date
+        entity_id
+        lat
+        long
+        alt
+        message {
+            id
+            body
+        }
     }
 }
