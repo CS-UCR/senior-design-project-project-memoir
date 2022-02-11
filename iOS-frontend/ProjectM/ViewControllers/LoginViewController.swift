@@ -24,11 +24,12 @@ class LoginViewController: UIViewController {
     // Just for testing
     @IBAction func TestAPI(_ sender: Any) {
         // fetch and confirm query is functioning
-        Network.shared.apollo.fetch(query: GetAnchorByIdQuery(id: "56300c84-a641-4a92-8006-b7d52e4a34d8")) { result in
+        Network.shared.apollo.fetch(query: ListAnchorsQuery(limit: 3)) { result in
+          print(result)
           switch result {
           case .success(let graphQLResult):
              
-              let alert = UIAlertController(title: "API CALL", message: graphQLResult.data?.getAnchor?.entityId, preferredStyle: .alert)
+              let alert = UIAlertController(title: "API CALL", message: "items: \(graphQLResult.data?.listAnchors?.items)", preferredStyle: .alert)
 
               alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
               NSLog("The \"OK\" alert occured.")
