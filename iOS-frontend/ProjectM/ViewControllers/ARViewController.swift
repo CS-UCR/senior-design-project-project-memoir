@@ -72,8 +72,30 @@ class ARViewController: UIViewController, ARSessionDelegate {
         // run ar session
         runARSession()
     }
+        func placeExistingMessages() {
+            Network.shared.apollo.fetch(query: ListAnchorsQuery(limit: 100)) { result in
+                print(result)
+                switch result {
+                case .success(let graphQLResult):
+                    
+                    guard let items = graphQLResult.data?.listAnchors?.items else { break }
+                    
+                    for optionalItem in items {
+                        
+                        guard let item = optionalItem else { continue }
+                        guard let lat = item.lat else {continue}
+                        guard let long = item.long else {continue}
+                        print("adding at", lat, long)
+                        let loc = CLLocationCoordinate2D(latitude: lat, longitude: long)
+                        self.addGeoLocationToAnchor(at: loc)
+                    }
+                    
+                case .failure(_):
+                    print("error")
+                }
+            }
+        }
 
-    // Create an edit box entity and hide it off the screen
     func placeEditBox() {
         guard let view = view else {
             fatalError("Called getCenterPoint(_point:) on a screen space component with no view.")
@@ -154,6 +176,7 @@ class ARViewController: UIViewController, ARSessionDelegate {
 
             let geoTrackingConfig = ARGeoTrackingConfiguration()
             self.ARView.session.run(geoTrackingConfig)
+            self.placeExistingMessages()
 
             // Test placing anchors
             // let cords1 = CLLocationCoordinate2D(latitude: 33.977197859645955, longitude: -117.34819358120566)
@@ -192,17 +215,6 @@ class ARViewController: UIViewController, ARSessionDelegate {
             let entity = try? Entity.load(named: "pin")
             geoAnchorEntity.addChild(entity!)
             self.ARView.scene.addAnchor(geoAnchorEntity)
-            
-            let anchorData = CreateAnchorInput(lat: geoAnchor.coordinate.latitude, long: geoAnchor.coordinate.longitude)
-            // Save to database
-            do {
-                try Network.shared.apollo.perform(mutation: CreateAnchorMutation(anchorInput: anchorData)) { result in
-                 guard let data = try? result.get().data else { return }
-                   print("Added anchor:\(data.createAnchor?.id) to database")
-                }
-            } catch {
-                print("Unexpected error: \(error).")
-            }
         }
     }
     
