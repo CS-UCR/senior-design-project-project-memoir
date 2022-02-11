@@ -24,20 +24,20 @@ class ARViewController: UIViewController, ARSessionDelegate {
     var userMessages = [MessageEntity]()
     // TESTING: geoAnchors_array WILL HOLD ANCHORS SO WE CAN SAVE THEM LATER.
     // CANNOT USE userMessages above since it is an entity and not an anchor
-    var geoAnchors_array=[ARAnchor]()
+    var geoAnchors_array=[ARGeoAnchor]()
     // TESTING
     // Gets the anchors from the last frame captured by rear iPhone camera
     var currentAnchors: [ARAnchor] {
         return ARView.session.currentFrame?.anchors ?? []
     }
-    var savedGeoAnchors = [ARAnchor]()
+    var savedGeoAnchors = [ARGeoAnchor]()
     @IBOutlet weak var errorMessageLabel: ErrorMessageLabel!
     var subscription: Cancellable!
     // Dim background so user can focus on message while typing
     var shadeView: UIView!
     // Get the keyboard height once user starts typing
     var keyboardHeight: CGFloat!
-    // Button will remove all messages on the screen
+    // Button will remove all mes ewsages on the screen
     var clearButton: UIButton!
 
     
@@ -104,14 +104,18 @@ class ARViewController: UIViewController, ARSessionDelegate {
     // Save anchors to server
     // This is meant to replicate server
     func saveAnchors(){
-        //
-        savedGeoAnchors = geoAnchors_array
+        if !geoAnchors_array.isEmpty {
+            savedGeoAnchors = geoAnchors_array
+        }
     }
     
     // Load anchors from "server"
     func loadAnchors(){
         geoAnchors_array = savedGeoAnchors
-        insertExistingMessage(geoAnchors_array: [ARAnchor])
+        for geoAnchor in geoAnchors_array {
+            insertExistingMessage(geoAnchor)
+        }
+        
     }
     
     func runARSession() {
@@ -165,6 +169,51 @@ class ARViewController: UIViewController, ARSessionDelegate {
         }
     }
 
+    
+    // MARK: - ARSessionDelegate
+    // THIS FUNCTION HELPS US ADD THE AR ANCHOR TO OUR AR WORLD AND MAP VIEW FOUND
+    // ON THE BOTTOM HALF
+    func session(_ session: ARSession, didAdd anchors: [ARAnchor]) {
+        // CYCLE THROUGH ALL OF OUR GEOANCHORS
+        for geoAnchor in anchors.compactMap({ $0 as? ARGeoAnchor }) {
+            // create geoAnchorEntity for our message
+            let geoAnchorEntity = AnchorEntity(anchor: geoAnchor)
+            // create the box
+            let frame = CGRect(origin: CGPoint(x: 0,y: 0), size: CGSize(width: 300, height: 200))
+            // create the message entity
+            let message = MessageEntity(frame: frame, worldTransform: raycastResult.worldTransform)
+            // add the entity to the anchor
+            geoAnchorEntity.addChild(message)
+            
+            
+            // add the anchor to the ar view
+            self.ARView.scene.addAnchor(geoAnchorEntity)
+            // TESTING
+            // ADD GEOANCHOR TO ARRAY
+            self.geoAnchors_array.append(geoAnchor)
+            
+            guard let messageView = message.view else { return }
+            self.ARView.addSubview(messageView)
+            
+            // Enable gestures on the user's message
+            self.messageGestureSetup(message)
+
+            // We need to add our message to our userMessages(contains all of the messages posted in AR world)
+            self.userMessages.append(message)
+            
+            // Volunteer to handle text view callbacks.
+            // LOOK INTO THIS
+            messageView.textView.delegate = self
+            
+            
+            
+            self.geoAnchors_array.append(geoAnchor)
+        }
+           
+        
+        
+    }
+    
     
     
     func session(_ session: ARSession, didFailWithError error: Error) {
