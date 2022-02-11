@@ -44,21 +44,30 @@ class ARViewController: UIViewController, ARSessionDelegate {
         overlayUISetup()
         // run ar session
         runARSession()
-      
         placeExistingMessages()
-     
     }
     
     func placeExistingMessages() {
-        
-        let loc = CLLocationCoordinate2D(latitude: 33.99077064251944, longitude: -117.34891502488703)
-
-        let locations:[CLLocationCoordinate2D] = [
-            loc
-        ]
-        
-        for location in locations {
-            self.createGeoAnchorEntity(coordinate: location)
+        Network.shared.apollo.fetch(query: ListAnchorsQuery(limit: 3)) { result in
+            print(result)
+            switch result {
+            case .success(let graphQLResult):
+                
+                guard let items = graphQLResult.data?.listAnchors?.items else { break }
+                
+                for optionalItem in items {
+                    
+                    guard let item = optionalItem else { continue }
+                    guard let lat = item.lat else {continue}
+                    guard let long = item.long else {continue}
+                    
+                    let loc = CLLocationCoordinate2D(latitude: lat, longitude: long)
+                    self.createGeoAnchorEntity(coordinate: loc)
+                }
+                
+            case .failure(_):
+                print("error")
+            }
         }
     }
     
