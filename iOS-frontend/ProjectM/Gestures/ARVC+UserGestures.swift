@@ -86,6 +86,7 @@ extension ARViewController {
         for message in userMessages where message.isEditing { return }
         // Create a new message at the tap location if user was not
         // editing message.
+        print("tap")
         insertNewMessage(sender)
     }
     
@@ -142,19 +143,23 @@ extension ARViewController {
         // Make sure we have an acceptable surface for our AR app,
         // else display error message in our errorMessageLabel
         // ARView.raycast provides a 3D location in physical space that corresponds to a given 2D location on the iPhone screen
+        print("before")
         guard let raycastResult = ARView.raycast(from: touchLocation, allowing: .estimatedPlane, alignment: .any).first else{
             errorMessageLabel.displayErrorMessage("No surface found, get closer to the object.", duration: 2.0)
             return
         }
+        print("after")
+        print(raycastResult)
         
         // Closure Expression Syntax
         // @see https://docs.swift.org/swift-book/LanguageGuide/Closures.html#ID97
         ARView.session.getGeoLocation(forPoint: raycastResult.worldTransform.translation) { (location, altitude, error) in
             if let error = error {
+                print(error)
                 return
             }
 
-            let anchorData = CreateAnchorInput(lat: location.latitude, long: location.longitude)
+            let anchorData = CreateAnchorInput(lat: location.latitude, long: location.longitude, alt: altitude)
 
             Network.shared.apollo.perform(mutation: CreateAnchorMutation(anchorInput: anchorData)) { result in
               guard let data = try? result.get().data else { return }
@@ -163,12 +168,13 @@ extension ARViewController {
 
             // GeoAnchor supported
             // create the box
-            let frame = CGRect(origin: touchLocation, size: CGSize(width: 300, height: 200))
+            let frame = CGRect(origin: CGPoint(x:0, y:0), size: CGSize(width: 300, height: 200))
             // create the message entity
             let message = MessageEntity(frame: frame, worldTransform: raycastResult.worldTransform)
             
             // create a geo anchor
             let geoAnchor = ARGeoAnchor(coordinate: location)
+            print(location, altitude)
             // create a geo anchor entity
             // @see https://developer.apple.com/documentation/realitykit/anchorentity
             let geoAnchorEntity = AnchorEntity(anchor: geoAnchor)

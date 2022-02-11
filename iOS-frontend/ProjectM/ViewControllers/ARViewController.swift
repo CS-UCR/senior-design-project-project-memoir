@@ -44,9 +44,51 @@ class ARViewController: UIViewController, ARSessionDelegate {
         overlayUISetup()
         // run ar session
         runARSession()
+      
+        placeExistingMessages()
+     
     }
+    
+    func placeExistingMessages() {
+        
+        let loc = CLLocationCoordinate2D(latitude: 33.99077064251944, longitude: -117.34891502488703)
 
+        let locations:[CLLocationCoordinate2D] = [
+            loc
+        ]
+        
+        for location in locations {
+            self.createGeoAnchorEntity(coordinate: location)
+        }
+    }
+    
+    func createGeoAnchorEntity(coordinate: CLLocationCoordinate2D) {
+        
+        let frame = CGRect(origin: CGPoint(x:0, y:0), size: CGSize(width: 300, height: 200))
+        // create the message entity
+        
+        let test = simd_float4x4()
+        let message = MessageEntity(frame: frame, worldTransform: test)
+        
+        // create a geo anchor
+        let geoAnchor = ARGeoAnchor(coordinate: coordinate)
+        let geoAnchorEntity = AnchorEntity(anchor: geoAnchor)
 
+        geoAnchorEntity.addChild(message)
+
+        self.ARView.scene.addAnchor(geoAnchorEntity)
+        
+        guard let messageView = message.view else { return }
+        self.ARView.addSubview(messageView)
+
+        // NOTE(bryan): This should only happen if you are the creator of the message
+        // Enable gestures on the user's message
+        self.messageGestureSetup(message)
+
+        // We need to add our message to our userMessages(contains all of the messages posted in AR world)
+        self.userMessages.append(message)
+        messageView.textView.delegate = self
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

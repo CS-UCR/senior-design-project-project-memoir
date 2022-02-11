@@ -21,7 +21,7 @@ class MessageEntity: Entity, HasARScreenSpace {
     // the hit test result relative to the world coordinate system.
     init(frame: CGRect, worldTransform: simd_float4x4) {
         super.init()
-        self.transform.matrix = worldTransform
+        //self.transform.matrix = worldTransform
         arScreenSpace.view = MessageView(frame: frame, user_message: self)
     }
     // Subclass Entity requires use to include 'required init()' so our code will run
