@@ -113,7 +113,7 @@ class ARViewController: UIViewController, ARSessionDelegate {
     func loadAnchors(){
         geoAnchors_array = savedGeoAnchors
         for geoAnchor in geoAnchors_array {
-            insertExistingMessage(geoAnchor)
+            prepareToAddGeoAnchor(geoAnchor)
         }
         
     }
@@ -181,7 +181,7 @@ class ARViewController: UIViewController, ARSessionDelegate {
             // create the box
             let frame = CGRect(origin: CGPoint(x: 0,y: 0), size: CGSize(width: 300, height: 200))
             // create the message entity
-            let message = MessageEntity(frame: frame, worldTransform: raycastResult.worldTransform)
+            let message = MessageEntity(frame: frame)
             // add the entity to the anchor
             geoAnchorEntity.addChild(message)
             

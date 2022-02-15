@@ -82,6 +82,8 @@ extension ARViewController {
     @objc
     // userTapsOnARView will add a new message to our screen if necessary
     func userTapsOnARView(_ sender: UITapGestureRecognizer){
+        // Ignore the tap if the user is editing a message and return.
+        for message in userMessages where message.isEditing { return }
         // The users tap on the iPhone will give us an (x,y) coordinates on the iPhone screen.
         let user_click = sender.location(in: ARView)
         
@@ -93,10 +95,12 @@ extension ARViewController {
         
         
         // Ignore the tap if the user is editing a message and return.
-        for message in userMessages where message.isEditing { return }
+        //for message in userMessages where message.isEditing { return }
         // Create a new message at the tap location if user was not
         // editing message.
-        insertNewMessage(sender)
+        //insertNewMessage(sender)
+        // TESTING
+        //
 
     }
 
@@ -165,157 +169,69 @@ extension ARViewController {
         var geoAnchor: ARGeoAnchor!
         // Assign geoLocation
         geoAnchor = ARGeoAnchor(coordinate: location)
+        prepareToAddGeoAnchor(geoAnchor)
     }
     
     
     //
-    fileprivate func prepareToAddGeoAnchor(_ geoAnchor: ARGeoAnchor){
+    func prepareToAddGeoAnchor(_ geoAnchor: ARGeoAnchor){
         ARView.session.add(anchor: geoAnchor)
     }
     
     
     
-    // Insert new message in our ARView
-    fileprivate func insertNewMessage(_ sender: UITapGestureRecognizer) {
-        // A
-        // Get the user's tap screen location.
-        let touchLocation = sender.location(in: ARView)
-       
-        // B
-        // ARView.raycast turns the users click on their 2D screen into a 3D point for our AR world
-        // Ex: x,y -> x,y,z
-        // Make sure we have an acceptable surface for our AR app,
-        // else display error message in our errorMessageLabel
-        guard let raycastResult = ARView.raycast(from: touchLocation, allowing: .estimatedPlane, alignment: .any).first else{
-            errorMessageLabel.displayErrorMessage("No surface found, get closer to the object.", duration: 2.0)
-            return
-        }
-        
-        // Parse the information from our raycastResult, else we encountered an error.
-        // We will use these coordinates to place our AR message
-        // Closure Expression Syntax
-        // @see https://docs.swift.org/swift-book/LanguageGuide/Closures.html#ID97
-        ARView.session.getGeoLocation(forPoint: raycastResult.worldTransform.translation) { (location, altitude, error) in
-            if let error = error {
-                return
-            }
-            // add our raycastResult to our messageLocation (located in ARViewController)
-            // We append the raycastResult to store the x,y,z coordinates for our AR message.
-            // self.messageLocation.append(raycastResult)
-
-            let anchorData = CreateAnchorInput(lat: location.latitude, long: location.longitude)
-
-            Network.shared.apollo.perform(mutation: CreateAnchorMutation(anchorInput: anchorData)) { result in
-              guard let data = try? result.get().data else { return }
-                print("Added anchor:\(data.createAnchor?.id) to database")
-            }
-
-            // GeoAnchor supported
-            // create a geo anchor
-            let geoAnchor = ARGeoAnchor(coordinate: location)
-            // create a geo anchor entity
-            // @see https://developer.apple.com/documentation/realitykit/anchorentity
-            let geoAnchorEntity = AnchorEntity(anchor: geoAnchor)
-            // create the box
-            let frame = CGRect(origin: touchLocation, size: CGSize(width: 300, height: 200))
-            // create the message entity
-            let message = MessageEntity(frame: frame, worldTransform: raycastResult.worldTransform)
-            // add the entity to the anchor
-            geoAnchorEntity.addChild(message)
-            // add the anchor to the ar view
-            self.ARView.scene.addAnchor(geoAnchorEntity)
-            // TESTING
-            // ADD GEOANCHOR TO ARRAY
-            self.geoAnchors_array.append(geoAnchor)
-            
-            guard let messageView = message.view else { return }
-            self.ARView.addSubview(messageView)
-            
-            // Enable gestures on the user's message
-            self.messageGestureSetup(message)
-
-            // We need to add our message to our userMessages(contains all of the messages posted in AR world)
-            self.userMessages.append(message)
-            
-            // Volunteer to handle text view callbacks.
-            // LOOK INTO THIS
-            messageView.textView.delegate = self
-            
-        }
-    }
-
-    // insertExistingMessage will display AR messages retrieved from our database.
-    // messageLocation is an array containing the location and altitude of message.
-    // At the moment I am only using coordinates to populate message box. Once I get that I want
-    // to populate message
-    func insertExistingMessage(_ geoAnchor: ARGeoAnchor){
-        ARView.session.add(anchor: geoAnchor)
-    }
-        
-        
-        
-//                            // GeoAnchor supported
-//                            // create the box
-//                            let frame = CGRect(origin: CGPoint(x: 0,y: 0), size: CGSize(width: 300, height: 200))
-//                            // create a geo anchor
-//                            let geoAnchor = ARGeoAnchor(coordinate: geoAnchor)
-//                            // create a geo anchor entity
-//                            // @see https://developer.apple.com/documentation/realitykit/anchorentity
-//                            let geoAnchorEntity = AnchorEntity(anchor: geoAnchor)
-//                            // create the message entity
-//                            let message = MessageEntity(frame: frame, worldTransform: messageLocation.worldTransform)
-//                            // add the entity to the anchor
-//                            geoAnchorEntity.addChild(message)
+//    // Insert new message in our ARView
+//    fileprivate func insertNewMessage(_ sender: UITapGestureRecognizer) {
+//        // A
+//        // Get the user's tap screen location.
+//        let touchLocation = sender.location(in: ARView)
 //
-//                            // add the anchor to the ar view
-//                            self.ARView.scene.addAnchor(geoAnchorEntity)
+//        // B
+//        // ARView.raycast turns the users click on their 2D screen into a 3D point for our AR world
+//        // Ex: x,y -> x,y,z
+//        // Make sure we have an acceptable surface for our AR app,
+//        // else display error message in our errorMessageLabel
+//        guard let raycastResult = ARView.raycast(from: touchLocation, allowing: .estimatedPlane, alignment: .any).first else{
+//            errorMessageLabel.displayErrorMessage("No surface found, get closer to the object.", duration: 2.0)
+//            return
+//        }
 //
-//                            guard let messageView = message.view else { return }
-//                            self.ARView.addSubview(messageView)
+//        // Parse the information from our raycastResult, else we encountered an error.
+//        // We will use these coordinates to place our AR message
+//        // Closure Expression Syntax
+//        // @see https://docs.swift.org/swift-book/LanguageGuide/Closures.html#ID97
+//        ARView.session.getGeoLocation(forPoint: raycastResult.worldTransform.translation) { (location, altitude, error) in
+//            if let error = error {
+//                return
+//            }
+//            // add our raycastResult to our messageLocation (located in ARViewController)
+//            // We append the raycastResult to store the x,y,z coordinates for our AR message.
+//            // self.messageLocation.append(raycastResult)
 //
-//                            // Enable gestures on the user's message
-//                            self.messageGestureSetup(message)
+//            let anchorData = CreateAnchorInput(lat: location.latitude, long: location.longitude)
 //
-//                            // We need to add our message to our userMessages(contains all of the messages posted in AR world)
-//                            self.userMessages.append(message)
-//
-//                            // Volunteer to handle text view callbacks.
-//                            // LOOK INTO THIS
-//                            messageView.textView.delegate = self
-//
-//            print("-------------------------------------------")
-//            print("insert new message tap: ")
-//            print("location: ")
-//            print(type(of: location))
-//            print(location)
-//            print("altitude: ")
-//            print(type(of: altitude))
-//            print(altitude)
-//            print("-------------------------------------------")
-//
-//            // print result from above
-//            //    location:
-//            //    CLLocationCoordinate2D
-//            //    CLLocationCoordinate2D(latitude: 37.702678828713765, longitude: -122.46743365842842)
-//            //    altitude:
-//            //    Double
-//            //    88.55350195523351
+//            Network.shared.apollo.perform(mutation: CreateAnchorMutation(anchorInput: anchorData)) { result in
+//              guard let data = try? result.get().data else { return }
+//                print("Added anchor:\(data.createAnchor?.id) to database")
+//            }
 //
 //            // GeoAnchor supported
-//            // create the box
-//            let frame = CGRect(origin: CGPoint(x: 200,y: 200), size: CGSize(width: 300, height: 200))
-//            // create the message entity
-//            let message = MessageEntity(frame: frame, worldTransform: messageLocation.worldTransform)
 //            // create a geo anchor
 //            let geoAnchor = ARGeoAnchor(coordinate: location)
 //            // create a geo anchor entity
 //            // @see https://developer.apple.com/documentation/realitykit/anchorentity
 //            let geoAnchorEntity = AnchorEntity(anchor: geoAnchor)
+//            // create the box
+            let frame = CGRect(origin: touchLocation, size: CGSize(width: 300, height: 200))
+//            // create the message entity
+//            let message = MessageEntity(frame: frame, worldTransform: raycastResult.worldTransform)
 //            // add the entity to the anchor
 //            geoAnchorEntity.addChild(message)
-//
 //            // add the anchor to the ar view
 //            self.ARView.scene.addAnchor(geoAnchorEntity)
+//            // TESTING
+//            // ADD GEOANCHOR TO ARRAY
+//            self.geoAnchors_array.append(geoAnchor)
 //
 //            guard let messageView = message.view else { return }
 //            self.ARView.addSubview(messageView)
@@ -330,11 +246,100 @@ extension ARViewController {
 //            // LOOK INTO THIS
 //            messageView.textView.delegate = self
 //
-//            // add user tap to our array if acceptable
-//            //self.addUserTapsToArray(touchLocation)
 //        }
 //    }
-    
+//
+//    // insertExistingMessage will display AR messages retrieved from our database.
+//    // messageLocation is an array containing the location and altitude of message.
+//    // At the moment I am only using coordinates to populate message box. Once I get that I want
+//    // to populate message
+//    func insertExistingMessage(_ geoAnchor: ARGeoAnchor){
+//        ARView.session.add(anchor: geoAnchor)
+//    }
+//
+//
+//
+////                            // GeoAnchor supported
+////                            // create the box
+////                            let frame = CGRect(origin: CGPoint(x: 0,y: 0), size: CGSize(width: 300, height: 200))
+////                            // create a geo anchor
+////                            let geoAnchor = ARGeoAnchor(coordinate: geoAnchor)
+////                            // create a geo anchor entity
+////                            // @see https://developer.apple.com/documentation/realitykit/anchorentity
+////                            let geoAnchorEntity = AnchorEntity(anchor: geoAnchor)
+////                            // create the message entity
+////                            let message = MessageEntity(frame: frame, worldTransform: messageLocation.worldTransform)
+////                            // add the entity to the anchor
+////                            geoAnchorEntity.addChild(message)
+////
+////                            // add the anchor to the ar view
+////                            self.ARView.scene.addAnchor(geoAnchorEntity)
+////
+////                            guard let messageView = message.view else { return }
+////                            self.ARView.addSubview(messageView)
+////
+////                            // Enable gestures on the user's message
+////                            self.messageGestureSetup(message)
+////
+////                            // We need to add our message to our userMessages(contains all of the messages posted in AR world)
+////                            self.userMessages.append(message)
+////
+////                            // Volunteer to handle text view callbacks.
+////                            // LOOK INTO THIS
+////                            messageView.textView.delegate = self
+////
+////            print("-------------------------------------------")
+////            print("insert new message tap: ")
+////            print("location: ")
+////            print(type(of: location))
+////            print(location)
+////            print("altitude: ")
+////            print(type(of: altitude))
+////            print(altitude)
+////            print("-------------------------------------------")
+////
+////            // print result from above
+////            //    location:
+////            //    CLLocationCoordinate2D
+////            //    CLLocationCoordinate2D(latitude: 37.702678828713765, longitude: -122.46743365842842)
+////            //    altitude:
+////            //    Double
+////            //    88.55350195523351
+////
+////            // GeoAnchor supported
+////            // create the box
+////            let frame = CGRect(origin: CGPoint(x: 200,y: 200), size: CGSize(width: 300, height: 200))
+////            // create the message entity
+////            let message = MessageEntity(frame: frame, worldTransform: messageLocation.worldTransform)
+////            // create a geo anchor
+////            let geoAnchor = ARGeoAnchor(coordinate: location)
+////            // create a geo anchor entity
+////            // @see https://developer.apple.com/documentation/realitykit/anchorentity
+////            let geoAnchorEntity = AnchorEntity(anchor: geoAnchor)
+////            // add the entity to the anchor
+////            geoAnchorEntity.addChild(message)
+////
+////            // add the anchor to the ar view
+////            self.ARView.scene.addAnchor(geoAnchorEntity)
+////
+////            guard let messageView = message.view else { return }
+////            self.ARView.addSubview(messageView)
+////
+////            // Enable gestures on the user's message
+////            self.messageGestureSetup(message)
+////
+////            // We need to add our message to our userMessages(contains all of the messages posted in AR world)
+////            self.userMessages.append(message)
+////
+////            // Volunteer to handle text view callbacks.
+////            // LOOK INTO THIS
+////            messageView.textView.delegate = self
+////
+////            // add user tap to our array if acceptable
+////            //self.addUserTapsToArray(touchLocation)
+////        }
+////    }
+//
     
     
     func deleteMessage(_ note: MessageEntity) {
