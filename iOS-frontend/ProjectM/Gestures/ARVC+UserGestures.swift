@@ -90,6 +90,8 @@ extension ARViewController {
         // Perform ARKit raycast on tap location
         if let result = ARView.raycast(from: user_click, allowing: .estimatedPlane, alignment: .any).first {
             getGeoLocation(worldPosition: result)
+        } else {
+            errorMessageLabel.displayErrorMessage("No raycast result.\nTry pointing at a different area\nor move closer to the surface.")
         }
 
     }
@@ -135,7 +137,7 @@ extension ARViewController {
         }
     }
     
-    
+    // STARTS HERE
     // getGeoLocation gets us the location and altitude based on where the user clicks on their iphone screen
     fileprivate func getGeoLocation(worldPosition: ARRaycastResult){
         // Parse the information from our raycastResult, else we encountered an error.
@@ -163,7 +165,7 @@ extension ARViewController {
         prepareToAddGeoAnchor(geoAnchor)
     }
     
-    
+    // ENDS HERE
     // prepareToAddGeoAnchor adds the geoAnchor to our AR world
     func prepareToAddGeoAnchor(_ geoAnchor: ARGeoAnchor){
         ARView.session.add(anchor: geoAnchor)
