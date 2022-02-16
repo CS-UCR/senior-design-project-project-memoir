@@ -51,16 +51,14 @@ class ARViewController: UIViewController, ARSessionDelegate {
         
         ARView.automaticallyConfigureSession = false
         ARView.session.delegate = self
-
         // setup gestures to recognize user actions
         arViewUserGestures()
         // setup
         overlayUISetup()
-        // get mock data which will print our mock data for now
-//        getMockData()
-        // place mock data message in our AR world
-        // Look into reverse engineering how to place AR message
-        placeARMessage()
+        // ARView.session.delegate periodically receives video images
+        // captured with position tracking information
+        // Link about video images captures:
+        // https://developer.apple.com/documentation/arkit/arframe
         ARView.session.delegate = self
         // run ar session
         runARSession()
@@ -87,7 +85,7 @@ class ARViewController: UIViewController, ARSessionDelegate {
     }
     
 
-    // Presents the available actions when the user presses the menu button.
+    // Presents the available actions when the user presses the Save/Load button.
     func presentMenuOptions() {
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         actionSheet.addAction(UIAlertAction(title: "Load Anchors …", style: .default, handler: { (_) in
@@ -184,8 +182,6 @@ class ARViewController: UIViewController, ARSessionDelegate {
             let message = MessageEntity(frame: frame)
             // add the entity to the anchor
             geoAnchorEntity.addChild(message)
-            
-            
             // add the anchor to the ar view
             self.ARView.scene.addAnchor(geoAnchorEntity)
             // TESTING
@@ -205,13 +201,8 @@ class ARViewController: UIViewController, ARSessionDelegate {
             // LOOK INTO THIS
             messageView.textView.delegate = self
             
-            
-            
             self.geoAnchors_array.append(geoAnchor)
         }
-           
-        
-        
     }
     
     

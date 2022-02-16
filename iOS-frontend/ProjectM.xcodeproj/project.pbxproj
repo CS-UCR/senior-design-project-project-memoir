@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		071023A52775779A00B21474 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 071023A42775779A00B21474 /* Assets.xcassets */; };
-		0718759B27979CCC00556988 /* ARVC+TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0718759A27979CCC00556988 /* ARVC+TestData.swift */; };
-		0772C1C927B58EE6005970E3 /* ARVC+LoadSaveGeoAnchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0772C1C827B58EE6005970E3 /* ARVC+LoadSaveGeoAnchors.swift */; };
 		078BF1E22711277B00307C5E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078BF1E12711277B00307C5E /* SceneDelegate.swift */; };
 		078BF1EC2711277E00307C5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 078BF1EA2711277E00307C5E /* LaunchScreen.storyboard */; };
 		07B37A1827AF102E00285BB5 /* AR Session 12.mov in Resources */ = {isa = PBXBuildFile; fileRef = 07B37A1727AF102E00285BB5 /* AR Session 12.mov */; };
@@ -62,8 +60,6 @@
 
 /* Begin PBXFileReference section */
 		071023A42775779A00B21474 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0718759A27979CCC00556988 /* ARVC+TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARVC+TestData.swift"; sourceTree = "<group>"; };
-		0772C1C827B58EE6005970E3 /* ARVC+LoadSaveGeoAnchors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARVC+LoadSaveGeoAnchors.swift"; sourceTree = "<group>"; };
 		078BF1DC2711277B00307C5E /* ProjectM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		078BF1E12711277B00307C5E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		078BF1EB2711277E00307C5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -130,22 +126,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0718759927979C8100556988 /* Mock Data */ = {
-			isa = PBXGroup;
-			children = (
-				0718759A27979CCC00556988 /* ARVC+TestData.swift */,
-			);
-			path = "Mock Data";
-			sourceTree = "<group>";
-		};
-		0772C1C727B58E96005970E3 /* LoadSave Data */ = {
-			isa = PBXGroup;
-			children = (
-				0772C1C827B58EE6005970E3 /* ARVC+LoadSaveGeoAnchors.swift */,
-			);
-			path = "LoadSave Data";
-			sourceTree = "<group>";
-		};
 		078BF1D32711277B00307C5E = {
 			isa = PBXGroup;
 			children = (
@@ -171,8 +151,6 @@
 		078BF1DE2711277B00307C5E /* ProjectM */ = {
 			isa = PBXGroup;
 			children = (
-				0772C1C727B58E96005970E3 /* LoadSave Data */,
-				0718759927979C8100556988 /* Mock Data */,
 				936932C82786AFF700EA8B68 /* Delegates */,
 				936932C12786AEA600EA8B68 /* Messages */,
 				936932C72786AF5C00EA8B68 /* Gestures */,
@@ -460,7 +438,6 @@
 				936932A22786922000EA8B68 /* ARViewController.swift in Sources */,
 				935D0D722798D6B1000C81D0 /* ProfileViewController.swift in Sources */,
 				936932A62786922400EA8B68 /* ARVC+TextViewDelegates.swift in Sources */,
-				0718759B27979CCC00556988 /* ARVC+TestData.swift in Sources */,
 				936932AC2786922D00EA8B68 /* Keyboard.swift in Sources */,
 				936932AE2786922E00EA8B68 /* SIMD.swift in Sources */,
 				936932A42786922200EA8B68 /* ARVC+ARCoachingDelegate.swift in Sources */,
@@ -474,7 +451,6 @@
 				93D9DFBF2794EF2500FB4A66 /* Utilities.swift in Sources */,
 				936932BC2786925200EA8B68 /* MessageView.swift in Sources */,
 				936932A82786922600EA8B68 /* ARVC+UserGestures.swift in Sources */,
-				0772C1C927B58EE6005970E3 /* ARVC+LoadSaveGeoAnchors.swift in Sources */,
 				078BF1E22711277B00307C5E /* SceneDelegate.swift in Sources */,
 				936932B22786923200EA8B68 /* LoginViewController.swift in Sources */,
 			);
