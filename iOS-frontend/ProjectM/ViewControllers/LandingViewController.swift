@@ -4,6 +4,8 @@ import AuthenticationServices
 import UIKit
 
 class LandingViewController: UIViewController {
+    
+    let existingAppleToke = "000572.19df8806be9f4125b79e49acee16f73a.1935"
 
     private let authorizationButton = ASAuthorizationAppleIDButton(authorizationButtonType: .default, authorizationButtonStyle: .black)
 
@@ -60,15 +62,28 @@ extension LandingViewController: ASAuthorizationControllerDelegate {
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         switch authorization.credential{
         case let credentials as ASAuthorizationAppleIDCredential:
+            // TEST
+            let userCred = credentials.user
+            //
             let firstName = credentials.fullName?.givenName
             let lastName = credentials.fullName?.familyName
             let email = credentials.email
             
             
+            print("user cred")
+            print(userCred)
+            print("-------------")
             print("successful authorization")
             print(firstName)
             
-            self.performSegue(withIdentifier: "new_account_segue", sender: self)
+            
+            if userCred != existingAppleToke{
+                self.performSegue(withIdentifier: "new_account_segue", sender: self)
+            }
+            else{
+                self.performSegue(withIdentifier: "has_account_segue", sender: self)
+                
+            }
             
             break
         default:

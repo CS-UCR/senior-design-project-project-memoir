@@ -53,13 +53,6 @@
                                     <action selector="TestAPI:" destination="COn-2P-SKb" eventType="touchUpInside" id="rOz-Z2-hue"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eY1-nF-li0">
-                                <rect key="frame" x="186" y="322" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IMt-rp-RjQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -174,14 +167,6 @@
                                     <segue destination="Q1O-wb-VJ6" kind="presentation" identifier="explore" modalPresentationStyle="fullScreen" id="YSd-F8-hF9"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b7m-uW-r6h">
-                                <rect key="frame" x="125" y="68" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.80239929269999999" green="1" blue="0.85055053849999995" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XpX-h7-K0g"/>
                         <color key="backgroundColor" red="0.96862745289999996" green="0.96862745289999996" blue="0.96862745289999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -199,7 +184,7 @@
                     </view>
                     <connections>
                         <segue destination="oiq-k0-IOb" kind="presentation" identifier="new_account_segue" modalPresentationStyle="fullScreen" id="fFg-DJ-JiH"/>
-                        <segue destination="Q1O-wb-VJ6" kind="presentation" identifier="has_account_segue" id="eEP-1J-IHr"/>
+                        <segue destination="Q1O-wb-VJ6" kind="presentation" identifier="has_account_segue" modalPresentationStyle="fullScreen" id="eEP-1J-IHr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1yo-HO-bb6" sceneMemberID="firstResponder"/>
@@ -336,7 +321,7 @@
         <designable name="K6l-aL-URt"/>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="YSd-F8-hF9"/>
+        <segue reference="rMT-UP-UT5"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arkit" catalog="system" width="128" height="128"/>
