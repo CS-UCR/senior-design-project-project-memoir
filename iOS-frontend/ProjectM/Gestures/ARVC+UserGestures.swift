@@ -139,7 +139,7 @@ extension ARViewController {
     
     // STARTS HERE
     // getGeoLocation gets us the location and altitude based on where the user clicks on their iphone screen
-    fileprivate func getGeoLocation(worldPosition: ARRaycastResult){
+    func getGeoLocation(worldPosition: ARRaycastResult){
         // Parse the information from our raycastResult, else we encountered an error.
         // We will use these coordinates to place our AR message
         // Closure Expression Syntax
@@ -157,7 +157,7 @@ extension ARViewController {
     
     
     // addGeoLocation creates an ARGeoAnchor to assign it a location
-    fileprivate func addGeoLocationToAnchor(at location: CLLocationCoordinate2D, altitude: CLLocationDistance? = nil){
+    func addGeoLocationToAnchor(at location: CLLocationCoordinate2D, altitude: CLLocationDistance? = nil){
         // Create a geoAnchor variable to assign it our location
         var geoAnchor: ARGeoAnchor!
         // Assign geoLocation

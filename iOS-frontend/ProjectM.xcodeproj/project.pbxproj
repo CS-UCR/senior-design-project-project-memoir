@@ -10,7 +10,6 @@
 		071023A52775779A00B21474 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 071023A42775779A00B21474 /* Assets.xcassets */; };
 		078BF1E22711277B00307C5E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078BF1E12711277B00307C5E /* SceneDelegate.swift */; };
 		078BF1EC2711277E00307C5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 078BF1EA2711277E00307C5E /* LaunchScreen.storyboard */; };
-		07B37A1827AF102E00285BB5 /* AR Session 12.mov in Resources */ = {isa = PBXBuildFile; fileRef = 07B37A1727AF102E00285BB5 /* AR Session 12.mov */; };
 		07C7E7D5277977B20069C607 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C7E7D4277977B20069C607 /* AppDelegate.swift */; };
 		7952813F279FD25B0019BD5B /* user.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 7952813B279FD25A0019BD5B /* user.graphql */; };
 		79528140279FD25B0019BD5B /* comment.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 7952813C279FD25B0019BD5B /* comment.graphql */; };
@@ -37,6 +36,9 @@
 		936932CC2786B86500EA8B68 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 936932CB2786B86500EA8B68 /* Apollo */; };
 		936932D32786BB2300EA8B68 /* test.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 936932D22786BB2300EA8B68 /* test.graphql */; };
 		936932DC2786BC8800EA8B68 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936932DB2786BC8800EA8B68 /* Network.swift */; };
+		9397714C27BDE7A500698077 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9397714B27BDE7A500698077 /* Entity.swift */; };
+		9397715027BE070E00698077 /* message.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 9397714F27BE070E00698077 /* message.usdz */; };
+		9397715227BE091600698077 /* bounce-message.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 9397715127BE091600698077 /* bounce-message.usdz */; };
 		93D34EF82790007900B2B852 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D34EF72790007900B2B852 /* Configuration.swift */; };
 		93D9DFBF2794EF2500FB4A66 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D9DFBE2794EF2500FB4A66 /* Utilities.swift */; };
 /* End PBXBuildFile section */
@@ -66,11 +68,7 @@
 		078BF1ED2711277E00307C5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		078BF1F22711277F00307C5E /* ProjectMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		078BF1FD2711277F00307C5E /* ProjectMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		07B0339027964CEE00500E59 /* Riverside.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = Riverside.mov; sourceTree = "<group>"; };
-		07B37A1727AF102E00285BB5 /* AR Session 12.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "AR Session 12.mov"; sourceTree = "<group>"; };
 		07C7E7D4277977B20069C607 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		07E0766E27A07E9B00CA50E8 /* AR_Message_Test.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = AR_Message_Test.mov; sourceTree = "<group>"; };
-		07E0766F27A08D6900CA50E8 /* AR_Outside_Test.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = AR_Outside_Test.mov; sourceTree = "<group>"; };
 		7952813B279FD25A0019BD5B /* user.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = user.graphql; sourceTree = "<group>"; };
 		7952813C279FD25B0019BD5B /* comment.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = comment.graphql; sourceTree = "<group>"; };
 		7952813D279FD25B0019BD5B /* story.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = story.graphql; sourceTree = "<group>"; };
@@ -95,6 +93,10 @@
 		936932BF2786937C00EA8B68 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		936932D22786BB2300EA8B68 /* test.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = test.graphql; sourceTree = "<group>"; };
 		936932DB2786BC8800EA8B68 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		9397714A27BDE49500698077 /* Arcade.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = Arcade.mov; sourceTree = "<group>"; };
+		9397714B27BDE7A500698077 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		9397714F27BE070E00698077 /* message.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = message.usdz; sourceTree = "<group>"; };
+		9397715127BE091600698077 /* bounce-message.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "bounce-message.usdz"; sourceTree = "<group>"; };
 		93D34EF1278F67C700B2B852 /* AppSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = AppSettings.xcconfig; sourceTree = "<group>"; };
 		93D34EF72790007900B2B852 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		93D9DFBE2794EF2500FB4A66 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
@@ -129,10 +131,7 @@
 		078BF1D32711277B00307C5E = {
 			isa = PBXGroup;
 			children = (
-				07B37A1727AF102E00285BB5 /* AR Session 12.mov */,
-				07E0766F27A08D6900CA50E8 /* AR_Outside_Test.mov */,
-				07E0766E27A07E9B00CA50E8 /* AR_Message_Test.mov */,
-				07B0339027964CEE00500E59 /* Riverside.mov */,
+				9397714A27BDE49500698077 /* Arcade.mov */,
 				078BF1DE2711277B00307C5E /* ProjectM */,
 				078BF1DD2711277B00307C5E /* Products */,
 			);
@@ -166,6 +165,8 @@
 				7952814B27A085B60019BD5B /* API.swift */,
 				078BF1EA2711277E00307C5E /* LaunchScreen.storyboard */,
 				93D34EF1278F67C700B2B852 /* AppSettings.xcconfig */,
+				9397715127BE091600698077 /* bounce-message.usdz */,
+				9397714F27BE070E00698077 /* message.usdz */,
 				936932BF2786937C00EA8B68 /* Main.storyboard */,
 				078BF1ED2711277E00307C5E /* Info.plist */,
 			);
@@ -210,6 +211,7 @@
 			children = (
 				936932AB2786922D00EA8B68 /* Keyboard.swift */,
 				936932AF2786923000EA8B68 /* UIView.swift */,
+				9397714B27BDE7A500698077 /* Entity.swift */,
 				93D9DFBE2794EF2500FB4A66 /* Utilities.swift */,
 				936932AD2786922E00EA8B68 /* SIMD.swift */,
 				93D34EF72790007900B2B852 /* Configuration.swift */,
@@ -377,7 +379,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07B37A1827AF102E00285BB5 /* AR Session 12.mov in Resources */,
+				9397715027BE070E00698077 /* message.usdz in Resources */,
 				7952813F279FD25B0019BD5B /* user.graphql in Resources */,
 				7952814627A084E90019BD5B /* anchor.graphql in Resources */,
 				936932C02786937C00EA8B68 /* Main.storyboard in Resources */,
@@ -386,6 +388,7 @@
 				071023A52775779A00B21474 /* Assets.xcassets in Resources */,
 				7952815227A09F070019BD5B /* schema.json in Resources */,
 				79528140279FD25B0019BD5B /* comment.graphql in Resources */,
+				9397715227BE091600698077 /* bounce-message.usdz in Resources */,
 				936932D32786BB2300EA8B68 /* test.graphql in Resources */,
 				7952814E27A09A5B0019BD5B /* IncompleteAPIQueries.txt in Resources */,
 			);
@@ -435,6 +438,7 @@
 			files = (
 				936932B02786923100EA8B68 /* UIView.swift in Sources */,
 				7952814C27A085B60019BD5B /* API.swift in Sources */,
+				9397714C27BDE7A500698077 /* Entity.swift in Sources */,
 				936932A22786922000EA8B68 /* ARViewController.swift in Sources */,
 				935D0D722798D6B1000C81D0 /* ProfileViewController.swift in Sources */,
 				936932A62786922400EA8B68 /* ARVC+TextViewDelegates.swift in Sources */,
@@ -629,7 +633,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Memoir.carlos;
+				PRODUCT_BUNDLE_IDENTIFIER = com.memoir;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -651,7 +655,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Memoir.carlos;
+				PRODUCT_BUNDLE_IDENTIFIER = com.memoir;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -818,7 +822,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Memoir.carlos;
+				PRODUCT_BUNDLE_IDENTIFIER = com.memoir;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

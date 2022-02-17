@@ -9,7 +9,8 @@ import UIKit
 import RealityKit
 import Combine
 import ARKit
-
+import MapKit
+var added = false;
 
 
 class ARViewController: UIViewController, ARSessionDelegate {
@@ -39,15 +40,17 @@ class ARViewController: UIViewController, ARSessionDelegate {
     var keyboardHeight: CGFloat!
     // Button will remove all mes ewsages on the screen
     var clearButton: UIButton!
+    
+    let locationManager = CLLocationManager()
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Update our screen constantly since user's phone constantly moves
-        subscription = ARView.scene.subscribe(to: SceneEvents.Update.self) { [unowned self] in
-            self.updateScene(on: $0)
-        }
+//        subscription = ARView.scene.subscribe(to: SceneEvents.Update.self) { [unowned self] in
+//            self.updateScene(on: $0)
+//        }
         
         ARView.automaticallyConfigureSession = false
         ARView.session.delegate = self
@@ -62,6 +65,16 @@ class ARViewController: UIViewController, ARSessionDelegate {
         ARView.session.delegate = self
         // run ar session
         runARSession()
+        
+//        let cords = CLLocationCoordinate2D(latitude: 33.97545299302514, longitude: -117.32085115871458)
+//        let cords = CLLocationCoordinate2D(latitude: 33.977191868698796, longitude: -117.34820318635201)
+
+        let cords3 = CLLocationCoordinate2D(latitude: 33.977197859645955, longitude: -117.34819358120566)
+        //33.97717592429079,-117.34847608532891
+        let cords4 = CLLocationCoordinate2D(latitude: 33.97717306726972, longitude: -117.34821592500165)
+        //self.addGeoLocationToAnchor(at: cords)
+        self.addGeoLocationToAnchor(at: cords3)
+        self.addGeoLocationToAnchor(at: cords4)
     }
 
     
@@ -126,31 +139,13 @@ class ARViewController: UIViewController, ARSessionDelegate {
             print("geo location does works :) !")
             let geoTrackingConfig = ARGeoTrackingConfiguration()
             self.ARView.session.run(geoTrackingConfig)
-        }
-    }
-    
-    
-    func updateScene(on event: SceneEvents.Update) {
-        // Make sure messages are not being updated by user, else do not accept messages
-        let messagesToUpdate = userMessages.compactMap { !$0.isEditing && !$0.isDragging ? $0 : nil }
-        // get one message at a time.
-        // for loop will iterate through each note
-        for message in messagesToUpdate {
-            // Get a 3D point (user's message) and convert it to 2D
-            guard let projectedPoint = ARView.project(message.position) else { return }
-            // Get the camera point of view.
-            let cameraForward = ARView.cameraTransform.matrix.columns.2.xyz
-            // get location of note and arview camera location in order to normalize
-            let cameraToWorldPointDirection = normalize(message.transform.translation - ARView.cameraTransform.translation)
-            // get dot product
-            let dotProduct = dot(cameraForward, cameraToWorldPointDirection)
-            // if dotProduct is greater than 0, user can see message from their iphone's point of view
-            let isVisible = dotProduct < 0
-
-            // Since phone is constantly moving, we need to update the user's point of view constantly.
-            // This will help us display the messages in the correct location
-            message.projection = Projection(projectedPoint: projectedPoint, isVisible: isVisible)
-            message.updateScreenPosition()
+            
+            let cords3 = CLLocationCoordinate2D(latitude: 33.977197859645955, longitude: -117.34819358120566)
+            //33.97717592429079,-117.34847608532891
+            let cords4 = CLLocationCoordinate2D(latitude: 33.97717306726972, longitude: -117.34821592500165)
+            //self.addGeoLocationToAnchor(at: cords)
+            self.addGeoLocationToAnchor(at: cords3)
+            self.addGeoLocationToAnchor(at: cords4)
         }
     }
     
@@ -171,44 +166,49 @@ class ARViewController: UIViewController, ARSessionDelegate {
     // MARK: - ARSessionDelegate
     // THIS FUNCTION HELPS US ADD THE AR ANCHOR TO OUR AR WORLD AND MAP VIEW FOUND
     // ON THE BOTTOM HALF
+    
     func session(_ session: ARSession, didAdd anchors: [ARAnchor]) {
         // CYCLE THROUGH ALL OF OUR GEOANCHORS
+        print("added anchor in session")
         for geoAnchor in anchors.compactMap({ $0 as? ARGeoAnchor }) {
             // create geoAnchorEntity for our message
-            let geoAnchorEntity = AnchorEntity(anchor: geoAnchor)
+           // let geoAnchorEntity = AnchorEntity(anchor: geoAnchor)
             // create the box
-            let frame = CGRect(origin: CGPoint(x: 0,y: 0), size: CGSize(width: 300, height: 200))
-            // create the message entity
-            let message = MessageEntity(frame: frame)
-            // add the entity to the anchor
-            geoAnchorEntity.addChild(message)
-            // add the anchor to the ar view
-            self.ARView.scene.addAnchor(geoAnchorEntity)
-            // TESTING
-            // ADD GEOANCHOR TO ARRAY
-            self.geoAnchors_array.append(geoAnchor)
             
-            guard let messageView = message.view else { return }
-            self.ARView.addSubview(messageView)
-            
-            // Enable gestures on the user's message
-            self.messageGestureSetup(message)
+            let geoAnchorEntity = AnchorEntity(anchor: geoAnchor)
+            //view.scene.anchors.append(anchor)
 
-            // We need to add our message to our userMessages(contains all of the messages posted in AR world)
-            self.userMessages.append(message)
-            
-            // Volunteer to handle text view callbacks.
-            // LOOK INTO THIS
-            messageView.textView.delegate = self
-            
-            self.geoAnchors_array.append(geoAnchor)
+            // Add a Box entity with a blue material
+//            let box = MeshResource.generateBox(size: 0.5, cornerRadius: 0.05)
+//            let material = SimpleMaterial(color: .blue, isMetallic: true)
+//            let diceEntity = ModelEntity(mesh: box, materials: [material])
+//            let distanceFromGround: Float = 3
+//
+            let entity = try? Entity.load(named: "bounce-message")
+            print("🥶",entity?.children)
+            let radians = 90 * Float.pi / 180.0
+            entity?.transform.scale *= 2
+            entity?.transform.rotation += simd_quatf(angle: radians, axis: SIMD3<Float>(0,1,0))
+
+            //diceEntity.move(by: [-10, 0, 0], scale: .one * 10, after: 0.5, duration: 5.0)
+//            let frame = CGRect(origin: CGPoint(x: 0,y: 0), size: CGSize(width: 300, height: 200))
+            // create the message entity
+           // let message = MessageEntity(frame: frame)
+            // add the entity to the anchor
+            geoAnchorEntity.addChild(entity!)
+            // add the anchor to the ar view
+           // let distance = distanceFromDevice(geoAnchor.coordinate);
+            self.ARView.scene.addAnchor(geoAnchorEntity)
         }
     }
     
     
     
     func session(_ session: ARSession, didFailWithError error: Error) {
-        guard error is ARError else { return }
+        guard error is ARError else {
+            print("session error: \(error)")
+            return
+        }
         
         let errorWithInfo = error as NSError
         let messages = [
@@ -227,6 +227,14 @@ class ARViewController: UIViewController, ARSessionDelegate {
             }
             alertController.addAction(restartAction)
             self.present(alertController, animated: true, completion: nil)
+        }
+    }
+    
+    func distanceFromDevice(_ coordinate: CLLocationCoordinate2D) -> Double {
+        if let devicePosition = locationManager.location?.coordinate {
+            return MKMapPoint(coordinate).distance(to: MKMapPoint(devicePosition))
+        } else {
+            return 0
         }
     }
     
