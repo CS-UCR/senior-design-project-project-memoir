@@ -8,55 +8,63 @@
 import Foundation
 import UIKit
 
+
+private let reuseIdentifier = "ProfileRow"
+
 class ProfileViewController: UIViewController {
-    @IBOutlet weak var profileTable: UITableView!
+
+    
+    var tableView: UITableView!
+    var profileImageHeader: ProfileImageHeader!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        profileTable.register(UITableViewCell.self, forCellReuseIdentifier: "profileCell")
-        profileTable.dataSource = self
+        configureProfilePage()
     }
+    
+    
+    func configureTableView(){
+        tableView = UITableView()
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.rowHeight = 60
+        
+        tableView.register(ProfileRow.self, forCellReuseIdentifier: reuseIdentifier)
+        view.addSubview(tableView)
+        tableView.frame = view.frame
+        
+        let frame = CGRect(x: 0, y: 88, width: view.frame.width, height: 100)
+        profileImageHeader = ProfileImageHeader(frame: frame)
+        tableView.tableHeaderView = profileImageHeader
+        tableView.tableFooterView = UIView()
+    }
+    
+    
+    func configureProfilePage(){
+        configureTableView()
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.barStyle = .black
+        navigationController?.navigationBar.barTintColor = UIColor(red: 205/255, green: 255/255, blue: 217/255, alpha: 1)
+        navigationItem.title = "Profile"
+    }
+    
 }
 
-let profileOptionsOne = ["One", "Two", "Three"]
-let profileOptionsTwo = ["One", "Two"]
 
-extension ProfileViewController : UITableViewDataSource  {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 2;
-    }
+
+extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var count : Int
-        if(section == 0){
-            count = profileOptionsOne.count
-        } else {
-            count = profileOptionsTwo.count
-        }
-        return count
+        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       // Fetch a cell of the appropriate type.
-       let cell = tableView.dequeueReusableCell(withIdentifier: "profileCell", for: indexPath)
-        
-        var labelTxt : String
-        if(indexPath.section == 0){
-            labelTxt = profileOptionsOne[indexPath.row]
-        } else {
-            labelTxt = profileOptionsTwo[indexPath.row]
-        }
-        cell.textLabel!.text = labelTxt
-
-       return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! ProfileRow
+        return cell
     }
-}
-
-
-extension ProfileViewController : UITableViewDelegate {
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-
-        return "Section \(section + 1)"
-    }
+    
+    
 }

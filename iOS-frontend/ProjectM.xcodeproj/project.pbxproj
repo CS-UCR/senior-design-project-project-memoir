@@ -9,8 +9,10 @@
 /* Begin PBXBuildFile section */
 		0288C41D27A942E6009C09B8 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0288C41C27A942E6009C09B8 /* CreateAccountViewController.swift */; };
 		0299FBD727A86D7400941CC3 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0299FBD627A86D7400941CC3 /* LandingViewController.swift */; };
-		02D4B52627A7ED6F009065A3 /* AppSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 02D4B52527A7ED6F009065A3 /* AppSettings.xcconfig */; };
 		071023A52775779A00B21474 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 071023A42775779A00B21474 /* Assets.xcassets */; };
+		07724B6827BE218000C7C7DF /* AppSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 07724B6727BE218000C7C7DF /* AppSettings.xcconfig */; };
+		07724B6B27BE2E7F00C7C7DF /* ProfileImageHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07724B6A27BE2E7F00C7C7DF /* ProfileImageHeader.swift */; };
+		07724B6D27BE2FDD00C7C7DF /* ProfileRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07724B6C27BE2FDD00C7C7DF /* ProfileRow.swift */; };
 		078BF1E22711277B00307C5E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078BF1E12711277B00307C5E /* SceneDelegate.swift */; };
 		078BF1EC2711277E00307C5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 078BF1EA2711277E00307C5E /* LaunchScreen.storyboard */; };
 		07C7E7D5277977B20069C607 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C7E7D4277977B20069C607 /* AppDelegate.swift */; };
@@ -64,8 +66,10 @@
 		0288C41C27A942E6009C09B8 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		0299FBD127A8669600941CC3 /* ProjectM.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ProjectM.entitlements; sourceTree = "<group>"; };
 		0299FBD627A86D7400941CC3 /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
-		02D4B52527A7ED6F009065A3 /* AppSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = AppSettings.xcconfig; path = ../../../../../Downloads/AppSettings.xcconfig; sourceTree = "<group>"; };
 		071023A42775779A00B21474 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		07724B6727BE218000C7C7DF /* AppSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = AppSettings.xcconfig; sourceTree = "<group>"; };
+		07724B6A27BE2E7F00C7C7DF /* ProfileImageHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageHeader.swift; sourceTree = "<group>"; };
+		07724B6C27BE2FDD00C7C7DF /* ProfileRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRow.swift; sourceTree = "<group>"; };
 		078BF1DC2711277B00307C5E /* ProjectM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		078BF1E12711277B00307C5E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		078BF1EB2711277E00307C5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -127,6 +131,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07724B6927BE2DF300C7C7DF /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				07724B6A27BE2E7F00C7C7DF /* ProfileImageHeader.swift */,
+				07724B6C27BE2FDD00C7C7DF /* ProfileRow.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		078BF1D32711277B00307C5E = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +161,7 @@
 		078BF1DE2711277B00307C5E /* ProjectM */ = {
 			isa = PBXGroup;
 			children = (
+				07724B6927BE2DF300C7C7DF /* Profile */,
 				0299FBD127A8669600941CC3 /* ProjectM.entitlements */,
 				936932C82786AFF700EA8B68 /* Delegates */,
 				936932C12786AEA600EA8B68 /* Messages */,
@@ -160,7 +174,7 @@
 				936932D12786BA9F00EA8B68 /* GraphQL */,
 				936932DA2786BC7800EA8B68 /* Networking */,
 				071023A42775779A00B21474 /* Assets.xcassets */,
-				02D4B52527A7ED6F009065A3 /* AppSettings.xcconfig */,
+				07724B6727BE218000C7C7DF /* AppSettings.xcconfig */,
 				7952815127A09F070019BD5B /* schema.json */,
 				7952814B27A085B60019BD5B /* API.swift */,
 				078BF1EA2711277E00307C5E /* LaunchScreen.storyboard */,
@@ -377,8 +391,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07724B6827BE218000C7C7DF /* AppSettings.xcconfig in Resources */,
 				7952813F279FD25B0019BD5B /* user.graphql in Resources */,
-				02D4B52627A7ED6F009065A3 /* AppSettings.xcconfig in Resources */,
 				7952814627A084E90019BD5B /* anchor.graphql in Resources */,
 				936932C02786937C00EA8B68 /* Main.storyboard in Resources */,
 				79528141279FD25B0019BD5B /* story.graphql in Resources */,
@@ -444,6 +458,7 @@
 				936932A42786922200EA8B68 /* ARVC+ARCoachingDelegate.swift in Sources */,
 				936932BA2786924E00EA8B68 /* ErrorMessageLabel.swift in Sources */,
 				936932AA2786922A00EA8B68 /* ARScreenSpace.swift in Sources */,
+				07724B6B27BE2E7F00C7C7DF /* ProfileImageHeader.swift in Sources */,
 				07C7E7D5277977B20069C607 /* AppDelegate.swift in Sources */,
 				936932B42786923600EA8B68 /* MessageEntity.swift in Sources */,
 				0288C41D27A942E6009C09B8 /* CreateAccountViewController.swift in Sources */,
@@ -452,6 +467,7 @@
 				93D34EF82790007900B2B852 /* Configuration.swift in Sources */,
 				93D9DFBF2794EF2500FB4A66 /* Utilities.swift in Sources */,
 				936932BC2786925200EA8B68 /* MessageView.swift in Sources */,
+				07724B6D27BE2FDD00C7C7DF /* ProfileRow.swift in Sources */,
 				936932A82786922600EA8B68 /* ARVC+UserGestures.swift in Sources */,
 				078BF1E22711277B00307C5E /* SceneDelegate.swift in Sources */,
 				936932B22786923200EA8B68 /* LoginViewController.swift in Sources */,
