@@ -19,7 +19,6 @@ class MessageEntity: Entity, HasARScreenSpace {
     var arScreenSpace = ARScreenSpace()
     // Initialize a new message and the position and orientation of
     // the hit test result relative to the world coordinate system.
-//    init(frame: CGRect, worldTransform: simd_float4x4) {
     init(frame: CGRect){
         super.init()
         //self.transform.matrix = worldTransform

@@ -19,10 +19,10 @@ class ARViewController: UIViewController, ARSessionDelegate {
     var messageLocation = [ARRaycastResult]()
     
     @IBOutlet weak var ARView: ARView!
-    
+
     // Hold messages users post
-//    var userMessages = [MessageEntity]()
     var userMessages = [MessageEntity]()
+    var editMessageBox: MessageEntity!
     // TESTING: geoAnchors_array WILL HOLD ANCHORS SO WE CAN SAVE THEM LATER.
     // CANNOT USE userMessages above since it is an entity and not an anchor
     var geoAnchors_array=[ARGeoAnchor]()
@@ -32,7 +32,6 @@ class ARViewController: UIViewController, ARSessionDelegate {
         return ARView.session.currentFrame?.anchors ?? []
     }
     var savedGeoAnchors = [ARGeoAnchor]()
-    @IBOutlet weak var errorMessageLabel: ErrorMessageLabel!
     var subscription: Cancellable!
     // Dim background so user can focus on message while typing
     var shadeView: UIView!
@@ -42,15 +41,20 @@ class ARViewController: UIViewController, ARSessionDelegate {
     var clearButton: UIButton!
     
     let locationManager = CLLocationManager()
-
     
+    @IBAction func showEditBox(_ sender: Any) {
+        // Get a 3D point (user's message) and convert it to 2D
+        self.showEditBox()
+    }
+
+    func showEditBox() {
+        guard let messageView = self.editMessageBox.view else { return }
+        messageView.textView.becomeFirstResponder()
+        focusOnMessageView(messageView)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Update our screen constantly since user's phone constantly moves
-//        subscription = ARView.scene.subscribe(to: SceneEvents.Update.self) { [unowned self] in
-//            self.updateScene(on: $0)
-//        }
         
         ARView.automaticallyConfigureSession = false
         ARView.session.delegate = self
@@ -63,20 +67,28 @@ class ARViewController: UIViewController, ARSessionDelegate {
         // Link about video images captures:
         // https://developer.apple.com/documentation/arkit/arframe
         ARView.session.delegate = self
+
+        placeEditBox()
         // run ar session
         runARSession()
-        
-//        let cords = CLLocationCoordinate2D(latitude: 33.97545299302514, longitude: -117.32085115871458)
-//        let cords = CLLocationCoordinate2D(latitude: 33.977191868698796, longitude: -117.34820318635201)
-
-        let cords3 = CLLocationCoordinate2D(latitude: 33.977197859645955, longitude: -117.34819358120566)
-        //33.97717592429079,-117.34847608532891
-        let cords4 = CLLocationCoordinate2D(latitude: 33.97717306726972, longitude: -117.34821592500165)
-        //self.addGeoLocationToAnchor(at: cords)
-        self.addGeoLocationToAnchor(at: cords3)
-        self.addGeoLocationToAnchor(at: cords4)
     }
 
+    // Create an edit box entity and hide it off the screen
+    func placeEditBox() {
+        guard let view = view else {
+            fatalError("Called getCenterPoint(_point:) on a screen space component with no view.")
+        }
+        
+        let frame = CGRect(origin: CGPoint(x:view.frame.width/2 - 150, y:view.frame.height + 200), size: CGSize(width: 300, height: 200))
+
+        let message = MessageEntity(frame: frame)
+        guard let messageView = message.view as? MessageView else { return }
+
+        messageView.textView.delegate = self
+
+        self.ARView.addSubview(messageView)
+        self.editMessageBox = message
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -88,13 +100,14 @@ class ARViewController: UIViewController, ARSessionDelegate {
         
     }
     
-    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         // Prevent the screen from being dimmed to avoid interuppting the AR experience.
         UIApplication.shared.isIdleTimerDisabled = true
-        
+
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
     }
     
 
@@ -136,16 +149,18 @@ class ARViewController: UIViewController, ARSessionDelegate {
                 self.runARSession()
                 return
             }
+            
             print("geo location does works :) !")
+
             let geoTrackingConfig = ARGeoTrackingConfiguration()
             self.ARView.session.run(geoTrackingConfig)
-            
-            let cords3 = CLLocationCoordinate2D(latitude: 33.977197859645955, longitude: -117.34819358120566)
-            //33.97717592429079,-117.34847608532891
-            let cords4 = CLLocationCoordinate2D(latitude: 33.97717306726972, longitude: -117.34821592500165)
-            //self.addGeoLocationToAnchor(at: cords)
-            self.addGeoLocationToAnchor(at: cords3)
-            self.addGeoLocationToAnchor(at: cords4)
+
+            // Test placing anchors
+            // let cords1 = CLLocationCoordinate2D(latitude: 33.977197859645955, longitude: -117.34819358120566)
+            // let cords2 = CLLocationCoordinate2D(latitude: 33.97717306726972, longitude: -117.34821592500165)
+            // self.addGeoLocationToAnchor(at: cords)
+            // self.addGeoLocationToAnchor(at: cords1)
+            // self.addGeoLocationToAnchor(at: cords2)
         }
     }
     
@@ -172,32 +187,10 @@ class ARViewController: UIViewController, ARSessionDelegate {
         print("added anchor in session")
         for geoAnchor in anchors.compactMap({ $0 as? ARGeoAnchor }) {
             // create geoAnchorEntity for our message
-           // let geoAnchorEntity = AnchorEntity(anchor: geoAnchor)
-            // create the box
             
             let geoAnchorEntity = AnchorEntity(anchor: geoAnchor)
-            //view.scene.anchors.append(anchor)
-
-            // Add a Box entity with a blue material
-//            let box = MeshResource.generateBox(size: 0.5, cornerRadius: 0.05)
-//            let material = SimpleMaterial(color: .blue, isMetallic: true)
-//            let diceEntity = ModelEntity(mesh: box, materials: [material])
-//            let distanceFromGround: Float = 3
-//
-            let entity = try? Entity.load(named: "bounce-message")
-            print("🥶",entity?.children)
-            let radians = 90 * Float.pi / 180.0
-            entity?.transform.scale *= 2
-            entity?.transform.rotation += simd_quatf(angle: radians, axis: SIMD3<Float>(0,1,0))
-
-            //diceEntity.move(by: [-10, 0, 0], scale: .one * 10, after: 0.5, duration: 5.0)
-//            let frame = CGRect(origin: CGPoint(x: 0,y: 0), size: CGSize(width: 300, height: 200))
-            // create the message entity
-           // let message = MessageEntity(frame: frame)
-            // add the entity to the anchor
+            let entity = try? Entity.load(named: "pin")
             geoAnchorEntity.addChild(entity!)
-            // add the anchor to the ar view
-           // let distance = distanceFromDevice(geoAnchor.coordinate);
             self.ARView.scene.addAnchor(geoAnchorEntity)
         }
     }

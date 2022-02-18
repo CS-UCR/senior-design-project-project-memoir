@@ -33,7 +33,6 @@ extension ARViewController {
     // panUserMessage allows the user to drag a message in our AR world
     // Ex: if the user placed the message at the wrong location (too high or too low)
     fileprivate func panUserMessage(_ sender: UIPanGestureRecognizer, _ messageView: MessageView, _ panLocation: CGPoint) {
-        errorMessageLabel.isHidden = true
         // feedbackGenerator allows us to use the taptic engine to improve feedback
         // Ex: Remove any lag when the user is draggin a message
         let feedbackGenerator = UIImpactFeedbackGenerator()
@@ -91,7 +90,7 @@ extension ARViewController {
         if let result = ARView.raycast(from: user_click, allowing: .estimatedPlane, alignment: .any).first {
             getGeoLocation(worldPosition: result)
         } else {
-            errorMessageLabel.displayErrorMessage("No raycast result.\nTry pointing at a different area\nor move closer to the surface.")
+            
         }
 
     }
@@ -110,7 +109,6 @@ extension ARViewController {
     // panOnMessageView allows user to drag message
     func panOnMessageView(_ sender: UIPanGestureRecognizer) {
         // hide error message label while user is dragging message
-        errorMessageLabel.isHidden = true
         
         guard let messageView = sender.view as? MessageView else { return }
         // get pan location from our AR world
@@ -132,7 +130,6 @@ extension ARViewController {
             messagView.userMessage.transform.matrix = raycastResult.worldTransform
         // else display error message
         } else {
-            errorMessageLabel.displayErrorMessage("No surface detected, unable to reposition note.", duration: 2.0)
             messagView.userMessage.shouldAnimate = true
         }
     }
@@ -154,7 +151,6 @@ extension ARViewController {
         }
         
     }
-    
     
     // addGeoLocation creates an ARGeoAnchor to assign it a location
     func addGeoLocationToAnchor(at location: CLLocationCoordinate2D, altitude: CLLocationDistance? = nil){
