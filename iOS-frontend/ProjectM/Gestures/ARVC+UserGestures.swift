@@ -28,8 +28,19 @@ extension ARViewController {
         // If user taps on message, call userTapsOnMessageView
         let tapMessageView = UITapGestureRecognizer(target: self, action: #selector(userTapsOnMessagView(_:)))
         note.view?.addGestureRecognizer(tapMessageView)
+        note.view?.deleteButton.messageEntity = note
+        note.view?.deleteButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
     }
     
+    @objc
+    func buttonAction(sender: DeleteUIButton!) {
+        do {
+            deleteMessage(sender.messageEntity!)
+        } catch {
+            print(error)
+        }
+        //print(sender?.messageEntity)
+    }
     // panUserMessage allows the user to drag a message in our AR world
     // Ex: if the user placed the message at the wrong location (too high or too low)
     fileprivate func panUserMessage(_ sender: UIPanGestureRecognizer, _ messageView: MessageView, _ panLocation: CGPoint) {

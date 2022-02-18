@@ -7,11 +7,16 @@
 
 import UIKit
 
+class DeleteUIButton: UIButton {
+    var messageEntity: MessageEntity?
+}
 
 // Create the appearance of our user message
 class MessageView: UIView{
     // Displays text and supports text editing
     var textView: UITextView!
+    // Add delete button
+    var deleteButton: DeleteUIButton!
     // Allows userMessage to access MessageEntity methods.
     weak var userMessage: MessageEntity!
     // Apply a blurry background when user is typing
@@ -30,6 +35,7 @@ class MessageView: UIView{
         userMessage = user_message
         setupBlurBackgroundContainer()
         setupTextbox()
+        setupDeleteButton()
         lastFrame = frame
     }
     
@@ -87,6 +93,20 @@ class MessageView: UIView{
         // place holder
         textView.text = "New Message..."
         textView.textColor = .darkGray
+    }
+    
+    fileprivate func setupDeleteButton() {
+        let buttonSpacing: CGFloat = 10
+        deleteButton = DeleteUIButton(type: .system)
+        deleteButton.setTitle("delete", for: .normal)
+        
+        deleteButton.translatesAutoresizingMaskIntoConstraints = false
+        blurBackground.contentView.addSubview(deleteButton)
+        
+        NSLayoutConstraint.activate([
+            deleteButton.topAnchor.constraint(equalTo: blurBackground.contentView.topAnchor, constant: buttonSpacing),
+            deleteButton.trailingAnchor.constraint(equalTo: blurBackground.contentView.trailingAnchor, constant: -buttonSpacing)
+        ])
     }
     
 }
