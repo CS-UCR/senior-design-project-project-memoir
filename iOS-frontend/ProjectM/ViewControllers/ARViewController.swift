@@ -192,6 +192,17 @@ class ARViewController: UIViewController, ARSessionDelegate {
             let entity = try? Entity.load(named: "pin")
             geoAnchorEntity.addChild(entity!)
             self.ARView.scene.addAnchor(geoAnchorEntity)
+            
+            let anchorData = CreateAnchorInput(lat: geoAnchor.coordinate.latitude, long: geoAnchor.coordinate.longitude)
+            // Save to database
+            do {
+                try Network.shared.apollo.perform(mutation: CreateAnchorMutation(anchorInput: anchorData)) { result in
+                 guard let data = try? result.get().data else { return }
+                   print("Added anchor:\(data.createAnchor?.id) to database")
+                }
+            } catch {
+                print("Unexpected error: \(error).")
+            }
         }
     }
     
