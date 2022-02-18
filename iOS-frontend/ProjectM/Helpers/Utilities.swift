@@ -25,3 +25,8 @@ extension simd_float4x4 {
         }
     }
 }
+
+
+extension Entity {
+    
+}

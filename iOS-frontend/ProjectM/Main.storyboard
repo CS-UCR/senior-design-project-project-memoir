@@ -81,22 +81,19 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MaM-O2-B9G" userLabel="ARView" customClass="ARView" customModule="RealityKit">
                                 <rect key="frame" x="-7" y="0.0" width="421" height="854"/>
                                 <subviews>
-                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K6l-aL-URt" customClass="ErrorMessageLabel" customModule="ProjectM" customModuleProvider="target">
-                                        <rect key="frame" x="33" y="52" width="355" height="40"/>
-                                        <color key="backgroundColor" red="0.6922967941" green="0.6922967941" blue="0.6922967941" alpha="0.88345296959999997" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="eQD-1n-a6G"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U0d-jz-2ib">
+                                        <rect key="frame" x="302.5" y="732" width="110.5" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="add message"/>
+                                        <connections>
+                                            <action selector="showEditBox:" destination="lt2-YW-pVz" eventType="touchUpInside" id="SpQ-qw-zkb"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="K6l-aL-URt" firstAttribute="centerX" secondItem="MaM-O2-B9G" secondAttribute="centerX" id="Nvz-Dj-eca"/>
-                                    <constraint firstItem="K6l-aL-URt" firstAttribute="top" secondItem="MaM-O2-B9G" secondAttribute="topMargin" id="l0y-zb-Ow9"/>
-                                    <constraint firstItem="K6l-aL-URt" firstAttribute="leading" secondItem="MaM-O2-B9G" secondAttribute="leading" constant="33" id="rfh-Z1-tee"/>
+                                    <constraint firstAttribute="trailing" secondItem="U0d-jz-2ib" secondAttribute="trailing" constant="8" id="QBZ-j1-guJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="U0d-jz-2ib" secondAttribute="bottom" constant="91" id="wh7-8G-8Mm"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -113,7 +110,6 @@
                     <navigationItem key="navigationItem" id="0ME-Bz-rR0"/>
                     <connections>
                         <outlet property="ARView" destination="MaM-O2-B9G" id="Mai-27-vng"/>
-                        <outlet property="errorMessageLabel" destination="K6l-aL-URt" id="U2h-0h-38O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vgv-rB-fhw" sceneMemberID="firstResponder"/>
@@ -165,7 +161,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8SX-t7-rRE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="859.4202898550725" y="140.625"/>
+            <point key="canvasLocation" x="1399" y="141"/>
         </scene>
         <!--Landing Page-->
         <scene sceneID="4NY-Ee-Y4Y">

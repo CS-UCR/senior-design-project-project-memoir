@@ -92,6 +92,9 @@
             <point key="canvasLocation" x="31.884057971014496" y="140.625"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="K6l-aL-URt"/>
+    </designables>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

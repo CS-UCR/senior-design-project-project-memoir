@@ -28,16 +28,17 @@ extension UITextView {
         let doneToolBar = UIToolbar(frame: CGRect(origin: .zero, size: CGSize(width: UIScreen.main.bounds.width, height: 44)))
         doneToolBar.barStyle = .default
         // doneButton represents the 'Done' button on the top left of keyboard
-        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(dismissKeyboard))
+        
+        let submitButton = UIBarButtonItem(title: "Submit", style: .done, target: self, action: #selector(addMessage))
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil);
         // Add doneButton to our tool bar
-        doneToolBar.items = [doneButton]
+        doneToolBar.items = [flexibleSpace, submitButton]
         // Get buttom to appear on top of keyboard to make it clickable
         inputAccessoryView = doneToolBar
     }
     
     @objc
-    // Set endEditing to true once we dismissKeyboard
-    func dismissKeyboard() {
+    func addMessage() {
         endEditing(true)
     }
     
