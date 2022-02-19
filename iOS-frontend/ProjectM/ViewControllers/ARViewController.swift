@@ -72,8 +72,30 @@ class ARViewController: UIViewController, ARSessionDelegate {
         // run ar session
         runARSession()
     }
+        func placeExistingMessages() {
+            Network.shared.apollo.fetch(query: ListAnchorsQuery(limit: 100)) { result in
+                print(result)
+                switch result {
+                case .success(let graphQLResult):
+                    
+                    guard let items = graphQLResult.data?.listAnchors?.items else { break }
+                    
+                    for optionalItem in items {
+                        
+                        guard let item = optionalItem else { continue }
+                        guard let lat = item.lat else {continue}
+                        guard let long = item.long else {continue}
+                        print("adding at", lat, long)
+                        let loc = CLLocationCoordinate2D(latitude: lat, longitude: long)
+                        self.addGeoLocationToAnchor(at: loc)
+                    }
+                    
+                case .failure(_):
+                    print("error")
+                }
+            }
+        }
 
-    // Create an edit box entity and hide it off the screen
     func placeEditBox() {
         guard let view = view else {
             fatalError("Called getCenterPoint(_point:) on a screen space component with no view.")
@@ -154,6 +176,7 @@ class ARViewController: UIViewController, ARSessionDelegate {
 
             let geoTrackingConfig = ARGeoTrackingConfiguration()
             self.ARView.session.run(geoTrackingConfig)
+            self.placeExistingMessages()
 
             // Test placing anchors
             // let cords1 = CLLocationCoordinate2D(latitude: 33.977197859645955, longitude: -117.34819358120566)

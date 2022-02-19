@@ -42,6 +42,15 @@ extension ARViewController: UITextViewDelegate {
         // print(messageView.textView.text)
         messageView.textView.text = ""
         if let devicePosition = locationManager.location?.coordinate {
+            do {
+                let anchorData = CreateAnchorInput(lat: devicePosition.latitude, long: devicePosition.longitude)
+                try Network.shared.apollo.perform(mutation: CreateAnchorMutation(anchorInput: anchorData)) { result in
+                 guard let data = try? result.get().data else { return }
+                   print("Added anchor:\(data.createAnchor?.id) to database")
+                }
+            } catch {
+                print("Unexpected error: \(error).")
+            }
             self.addGeoLocationToAnchor(at: devicePosition)
         } else {
         }

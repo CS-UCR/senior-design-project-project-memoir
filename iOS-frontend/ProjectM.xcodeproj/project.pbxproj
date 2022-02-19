@@ -521,6 +521,7 @@
 /* Begin XCBuildConfiguration section */
 		078BF2042711277F00307C5E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93D34EF1278F67C700B2B852 /* AppSettings.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -582,6 +583,7 @@
 		};
 		078BF2052711277F00307C5E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93D34EF1278F67C700B2B852 /* AppSettings.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -650,7 +652,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.memoir.ucr;
+				PRODUCT_BUNDLE_IDENTIFIER = com.memoir;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -767,6 +769,7 @@
 		};
 		93D34EF3278F6EAE00B2B852 /* Staging */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93D34EF1278F67C700B2B852 /* AppSettings.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -841,7 +844,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.memoir.ucr;
+				PRODUCT_BUNDLE_IDENTIFIER = com.memoir;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
