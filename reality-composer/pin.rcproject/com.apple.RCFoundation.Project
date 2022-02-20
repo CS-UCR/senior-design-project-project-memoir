@@ -31,60 +31,27 @@
                                     {
                                       "configurationBox" : {
                                         "configuration" : {
-                                          "animationStyle" : "playful",
-                                          "duration" : 1,
-                                          "emphasisAnimationType" : "pulse",
-                                          "iterations" : 1,
+                                          "audioType" : "play",
+                                          "filePath" : "audio:com.apple.rc.audio.sound-effects.cork-pop-fx-02\/Cork%20Pop%20FX%2002.caf",
+                                          "loops" : false,
+                                          "multiplePerformType" : "ignore request",
                                           "target" : [
                                             "210E69BC-E85B-4611-B7B6-824F430052DD"
-                                          ]
-                                        },
-                                        "name" : {
-                                          "type" : "emphasis"
-                                        }
-                                      },
-                                      "identifier" : "907F913B-928E-4CB5-8ACD-6E4296E83F22",
-                                      "isEnabled" : true
-                                    }
-                                  ],
-                                  "__version" : 1
-                                }
-                              ],
-                              "identifier" : "4C72D666-A311-4B67-AE41-96CD3FC9926B",
-                              "isEnabled" : true
-                            }
-                          ],
-                          "__version" : 1
-                        },
-                        {
-                          "__content" : [
-                            {
-                              "configurations" : [
-                                {
-                                  "__content" : [
-                                    {
-                                      "configurationBox" : {
-                                        "configuration" : {
-                                          "audioType" : "play",
-                                          "loops" : false,
-                                          "target" : [
-
                                           ],
-                                          "volume" : 0.5
+                                          "volume" : 1
                                         },
                                         "name" : {
-                                          "arguments" : "stereoBypass",
-                                          "type" : "soundtrack"
+                                          "type" : "audio"
                                         }
                                       },
-                                      "identifier" : "A97DBB7B-D30B-402D-AA54-2837724D94BC",
+                                      "identifier" : "731FB856-0885-4931-BF74-877626C27611",
                                       "isEnabled" : true
                                     }
                                   ],
                                   "__version" : 1
                                 }
                               ],
-                              "identifier" : "C3608499-6419-4D67-9B97-4DB4A531B048",
+                              "identifier" : "22109F2E-7BC3-4B64-B4D9-071DBA92C56B",
                               "isEnabled" : true
                             }
                           ],
@@ -97,7 +64,7 @@
                         0.69019609689712524,
                         1
                       ],
-                      "identifier" : "C55F53AA-502F-48E7-91D2-7EEE45669FEB",
+                      "identifier" : "DF9AAB84-0D63-4419-A616-4387942255DF",
                       "isEnabled" : true,
                       "isLooping" : false,
                       "isModal" : false,
@@ -108,15 +75,13 @@
                             {
                               "configurationBox" : {
                                 "configuration" : {
-                                  "distance" : 1,
                                   "target" : [
                                     "210E69BC-E85B-4611-B7B6-824F430052DD"
-                                  ],
-                                  "type" : 0
+                                  ]
                                 },
-                                "name" : "proximity"
+                                "name" : "tapTarget"
                               },
-                              "identifier" : "270103E1-22C0-498E-A9D2-36B8B71A4AD5",
+                              "identifier" : "A16DCA15-7D35-4ECC-BD1C-8148A53ABDA9",
                               "isEnabled" : true
                             }
                           ],
@@ -363,21 +328,21 @@
               "title" : "Scene",
               "viewTransform" : {
                 "cameraTransform" : [
-                  0.87785196304321289,
-                  1.3055414527229914e-08,
-                  -0.47893220186233521,
+                  0.81483078002929688,
+                  -2.9802322387695312e-08,
+                  -0.57969886064529419,
                   0,
-                  -0.0968218594789505,
-                  0.97935211658477783,
-                  -0.17746806144714355,
+                  -0.28302749991416931,
+                  0.87271386384963989,
+                  -0.39782649278640747,
                   0,
-                  0.46904334425926208,
-                  0.2021617591381073,
-                  0.85972607135772705,
+                  0.50591129064559937,
+                  0.48823201656341553,
+                  0.71111416816711426,
                   0,
-                  0.99982082843780518,
-                  0.57313227653503418,
-                  1.3287177085876465,
+                  1.3101922273635864,
+                  1.1133629083633423,
+                  1.8416202068328857,
                   1
                 ],
                 "sceneTransform" : [
