@@ -12,7 +12,6 @@
 <Include project description?
 
 ## Team
-<a href="https://github.com/msalloum" target="_blank"><img src="https://avatars3.githubusercontent.com/u/1790819?s=400&v=4" align="left" height="30px">Mariam Salloum</a><br><br>
 <a href="https://www.linkedin.com/in/richardvduong/" target="_blank"><img src="http://richardduong.com/resources/profile-picture1.jpg" align="left" height="30px">Richard Duong</a><br><br>
 <a href= "https://www.linkedin.com/in/adenghadimi/" target="_blank"><img src= "https://aghad.github.io/me.jpg" align="left" height ="30px"> Aden Ghadimi</a><br><br>
 <a href= "https://www.linkedin.com/in/marco-alexi-sta-ana-946556209/" target="_blank"><img src= "https://media-exp1.licdn.com/dms/image/C4D03AQED53VHwi5a-g/profile-displayphoto-shrink_800_800/0/1621479166911?e=1651104000&v=beta&t=knTTtq9Wj6yUSvwSAy4dSPhNSJ8sKcu8fbTLyJLD5DM" align="left" height ="30px"> Marco Alexi Sta Ana</a><br><br>
