@@ -25,7 +25,6 @@ class LoginViewController: UIViewController {
     @IBAction func TestAPI(_ sender: Any) {
         // fetch and confirm query is functioning
         Network.shared.apollo.fetch(query: ListAnchorsQuery(limit: 3)) { result in
-          print(result)
           switch result {
           case .success(let graphQLResult):
              

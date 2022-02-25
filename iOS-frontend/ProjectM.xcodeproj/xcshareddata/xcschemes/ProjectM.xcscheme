@@ -52,7 +52,7 @@
          </BuildableReference>
       </BuildableProductRunnable>
       <DeviceSensorReplayFileReference
-         identifier = "../../Arcade.mov">
+         identifier = "../../../../../../Downloads/Arcade.mov">
       </DeviceSensorReplayFileReference>
    </LaunchAction>
    <ProfileAction

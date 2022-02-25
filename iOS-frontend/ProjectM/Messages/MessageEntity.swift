@@ -28,8 +28,4 @@ class MessageEntity: Entity, HasARScreenSpace {
     required init() {
         fatalError("init() has not been implemented")
     }
-    
-    
-    
 }
-
