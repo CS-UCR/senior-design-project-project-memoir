@@ -21,6 +21,7 @@
 		7952814C27A085B60019BD5B /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7952814B27A085B60019BD5B /* API.swift */; };
 		7952814E27A09A5B0019BD5B /* IncompleteAPIQueries.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7952814D27A09A5B0019BD5B /* IncompleteAPIQueries.txt */; };
 		7952815227A09F070019BD5B /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 7952815127A09F070019BD5B /* schema.json */; };
+		79D5537E27C6E64500211DA4 /* pin.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 79D5537D27C6E64500211DA4 /* pin.rcproject */; };
 		935D0D722798D6B1000C81D0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935D0D712798D6B1000C81D0 /* ProfileViewController.swift */; };
 		936932A22786922000EA8B68 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936932A12786922000EA8B68 /* ARViewController.swift */; };
 		936932A42786922200EA8B68 /* ARVC+ARCoachingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936932A32786922200EA8B68 /* ARVC+ARCoachingDelegate.swift */; };
@@ -42,7 +43,6 @@
 		9397714C27BDE7A500698077 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9397714B27BDE7A500698077 /* Entity.swift */; };
 		9397715027BE070E00698077 /* message.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 9397714F27BE070E00698077 /* message.usdz */; };
 		9397715227BE091600698077 /* bounce-message.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 9397715127BE091600698077 /* bounce-message.usdz */; };
-		939B68A627C0543700258D12 /* pin.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 939B68A527C0543700258D12 /* pin.usdz */; };
 		93D34EF82790007900B2B852 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D34EF72790007900B2B852 /* Configuration.swift */; };
 		93D9DFBF2794EF2500FB4A66 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D9DFBE2794EF2500FB4A66 /* Utilities.swift */; };
 /* End PBXBuildFile section */
@@ -84,6 +84,8 @@
 		7952814B27A085B60019BD5B /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		7952814D27A09A5B0019BD5B /* IncompleteAPIQueries.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = IncompleteAPIQueries.txt; sourceTree = "<group>"; };
 		7952815127A09F070019BD5B /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
+		79D5536F27C17C1E00211DA4 /* AR_Session_Horizontal.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = AR_Session_Horizontal.mov; sourceTree = "<group>"; };
+		79D5537D27C6E64500211DA4 /* pin.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = pin.rcproject; sourceTree = "<group>"; };
 		935D0D712798D6B1000C81D0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		936932A12786922000EA8B68 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		936932A32786922200EA8B68 /* ARVC+ARCoachingDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARVC+ARCoachingDelegate.swift"; sourceTree = "<group>"; };
@@ -101,11 +103,9 @@
 		936932BF2786937C00EA8B68 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		936932D22786BB2300EA8B68 /* test.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = test.graphql; sourceTree = "<group>"; };
 		936932DB2786BC8800EA8B68 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
-		9397714A27BDE49500698077 /* Arcade.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = Arcade.mov; sourceTree = "<group>"; };
 		9397714B27BDE7A500698077 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		9397714F27BE070E00698077 /* message.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = message.usdz; sourceTree = "<group>"; };
 		9397715127BE091600698077 /* bounce-message.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "bounce-message.usdz"; sourceTree = "<group>"; };
-		939B68A527C0543700258D12 /* pin.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = pin.usdz; path = "../../reality-composer/pin.usdz"; sourceTree = "<group>"; };
 		93D34EF1278F67C700B2B852 /* AppSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = AppSettings.xcconfig; sourceTree = "<group>"; };
 		93D34EF72790007900B2B852 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		93D9DFBE2794EF2500FB4A66 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
@@ -140,7 +140,7 @@
 		078BF1D32711277B00307C5E = {
 			isa = PBXGroup;
 			children = (
-				9397714A27BDE49500698077 /* Arcade.mov */,
+				79D5536F27C17C1E00211DA4 /* AR_Session_Horizontal.mov */,
 				078BF1DE2711277B00307C5E /* ProjectM */,
 				078BF1DD2711277B00307C5E /* Products */,
 			);
@@ -176,7 +176,7 @@
 				7952814B27A085B60019BD5B /* API.swift */,
 				078BF1EA2711277E00307C5E /* LaunchScreen.storyboard */,
 				93D34EF1278F67C700B2B852 /* AppSettings.xcconfig */,
-				939B68A527C0543700258D12 /* pin.usdz */,
+				79D5537D27C6E64500211DA4 /* pin.rcproject */,
 				9397715127BE091600698077 /* bounce-message.usdz */,
 				9397714F27BE070E00698077 /* message.usdz */,
 				936932BF2786937C00EA8B68 /* Main.storyboard */,
@@ -400,7 +400,6 @@
 				936932C02786937C00EA8B68 /* Main.storyboard in Resources */,
 				79528141279FD25B0019BD5B /* story.graphql in Resources */,
 				078BF1EC2711277E00307C5E /* LaunchScreen.storyboard in Resources */,
-				939B68A627C0543700258D12 /* pin.usdz in Resources */,
 				071023A52775779A00B21474 /* Assets.xcassets in Resources */,
 				7952815227A09F070019BD5B /* schema.json in Resources */,
 				79528140279FD25B0019BD5B /* comment.graphql in Resources */,
@@ -458,6 +457,7 @@
 				0299FBD727A86D7400941CC3 /* LandingViewController.swift in Sources */,
 				936932A22786922000EA8B68 /* ARViewController.swift in Sources */,
 				935D0D722798D6B1000C81D0 /* ProfileViewController.swift in Sources */,
+				79D5537E27C6E64500211DA4 /* pin.rcproject in Sources */,
 				936932A62786922400EA8B68 /* ARVC+TextViewDelegates.swift in Sources */,
 				936932AC2786922D00EA8B68 /* Keyboard.swift in Sources */,
 				936932AE2786922E00EA8B68 /* SIMD.swift in Sources */,
@@ -652,7 +652,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.memoir;
+				PRODUCT_BUNDLE_IDENTIFIER = com.memoir.ucr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -675,7 +675,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.memoir;
+				PRODUCT_BUNDLE_IDENTIFIER = com.memoir.ucr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -844,7 +844,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.memoir;
+				PRODUCT_BUNDLE_IDENTIFIER = com.memoir.ucr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

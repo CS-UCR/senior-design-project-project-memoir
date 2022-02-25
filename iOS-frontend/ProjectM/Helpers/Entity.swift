@@ -18,4 +18,12 @@ extension Entity {
             self.move(to: transform, relativeTo: self.parent, duration: duration, timingFunction: .easeInOut)
         }
     }
+    
+    func randomScale() {
+      var newTransform = self.transform
+      newTransform.scale = .init(
+        repeating: Float.random(in: 0.5...1.5)
+      )
+      self.transform = newTransform
+    }
 }

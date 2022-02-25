@@ -10,15 +10,6 @@ import ARKit
 import RealityKit
 
 extension ARViewController {
-    // Setup the gestures for our AR world
-    func arViewUserGestures(){
-        // If tapGesture is recognized from user, go to userTapsOnARView() below.
-        let userTapGesture = UITapGestureRecognizer(target: self, action: #selector(userTapsOnARView))
-        // Attach gesture recognizer for user's tap in our ARView
-        ARView.addGestureRecognizer(userTapGesture)
-
-    }
-    
     // Set up gestures for user to use on messages
     // Ex: drag message or tap on message to edit
     func messageGestureSetup(_ note: MessageEntity) {
@@ -92,19 +83,30 @@ extension ARViewController {
     @objc
     // userTapsOnARView will add a new message to our screen if necessary
     func userTapsOnARView(_ sender: UITapGestureRecognizer){
-        // Ignore the tap if the user is editing a message and return.
-        for message in userMessages where message.isEditing { return }
-        // The users tap on the iPhone will give us an (x,y) coordinates on the iPhone screen.
-        let user_click = sender.location(in: ARView)
         
-        // Perform ARKit raycast on tap location
-        if let result = ARView.raycast(from: user_click, allowing: .estimatedPlane, alignment: .any).first {
-            getGeoLocation(worldPosition: result)
-        } else {
-            
+        // The users tap on the iPhone will give us an (x,y) coordinates on the iPhone screen.
+        let point = sender.location(in: view)
+        debugPrint("LOG - Tapped on ARView")
+        
+        guard let entity = ARView.entity(at: point)
+        else {
+            debugPrint("LOG - Tapped on no entity")
+            return
         }
-
+        debugPrint("LOG - Tapped on entity name: \(entity.name)")
+        
+        /*
+        let raycastEntities = ARView.entities(at: point)
+        debugPrint("LOG - Found: \(raycastEntities.count) entities at tap location")
+        
+        var i = 0
+        for entity in raycastEntities {
+            print("LOG - Entity #\(i): \(entity.name)")
+            i += 1
+        }
+         */
     }
+
 
 
     @objc
@@ -175,7 +177,19 @@ extension ARViewController {
     // ENDS HERE
     // prepareToAddGeoAnchor adds the geoAnchor to our AR world
     func prepareToAddGeoAnchor(_ geoAnchor: ARGeoAnchor){
+        // Don't add a geo anchor if Core Location isn't sure yet where the user is.
+        guard isGeoTrackingLocalized else {
+            debugPrint("LOG - ERROR. Cannot add geo anchor to session because arcore location has not identified where the user is.")
+            return
+        }
         ARView.session.add(anchor: geoAnchor)
+    }
+    
+    var isGeoTrackingLocalized: Bool {
+        if let status = self.ARView.session.currentFrame?.geoTrackingStatus, status.state == .localized {
+            return true
+        }
+        return false
     }
 
     
