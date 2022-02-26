@@ -91,6 +91,94 @@
                     }
                   ],
                   "__version" : 3
+                },
+                {
+                  "__content" : [
+                    {
+                      "accessibility" : {
+                        "__content" : [
+                          {
+                            "isEnabled" : false
+                          }
+                        ],
+                        "__version" : 1
+                      },
+                      "actionGroups" : [
+                        {
+                          "__content" : [
+                            {
+                              "configurations" : [
+                                {
+                                  "__content" : [
+                                    {
+                                      "configurationBox" : {
+                                        "configuration" : {
+                                          "angularCoefficient" : 1,
+                                          "animationStyle" : "basic",
+                                          "buildInAnimationType" : "pop",
+                                          "distance" : 1,
+                                          "duration" : 0.75,
+                                          "fadeIn" : true,
+                                          "linearCoefficient" : 1,
+                                          "moveEase" : "easeInOut",
+                                          "respectPhysics" : false,
+                                          "target" : [
+                                            "210E69BC-E85B-4611-B7B6-824F430052DD"
+                                          ]
+                                        },
+                                        "name" : {
+                                          "type" : "show"
+                                        }
+                                      },
+                                      "identifier" : "2A292DF3-0C3F-4688-A13B-459E065C3B7B",
+                                      "isEnabled" : true
+                                    }
+                                  ],
+                                  "__version" : 1
+                                }
+                              ],
+                              "identifier" : "A11CDEC4-C4B5-4B7B-97C9-0409B3201E2E",
+                              "isEnabled" : true
+                            }
+                          ],
+                          "__version" : 1
+                        }
+                      ],
+                      "color" : [
+                        0.21568627655506134,
+                        0.72549021244049072,
+                        0.80000001192092896,
+                        1
+                      ],
+                      "identifier" : "418E9D5C-9C5F-45EA-B38F-860A6123C326",
+                      "isEnabled" : true,
+                      "isLooping" : false,
+                      "isModal" : false,
+                      "name" : "Behavior 1",
+                      "triggers" : [
+                        {
+                          "__content" : [
+                            {
+                              "configurationBox" : {
+                                "configuration" : {
+                                  "distance" : 2.0005722045898438,
+                                  "target" : [
+                                    "210E69BC-E85B-4611-B7B6-824F430052DD"
+                                  ],
+                                  "type" : 0
+                                },
+                                "name" : "proximity"
+                              },
+                              "identifier" : "504AF72A-C691-45AC-B65C-56907DC899FF",
+                              "isEnabled" : true
+                            }
+                          ],
+                          "__version" : 1
+                        }
+                      ]
+                    }
+                  ],
+                  "__version" : 3
                 }
               ],
               "gravity" : [
@@ -643,9 +731,15 @@
                   0.68090969324111938,
                   0.66831588745117188,
                   0,
+<<<<<<< Updated upstream:reality-composer/pin.rcproject/com.apple.RCFoundation.Project
                   0.16639560461044312,
                   0.31412667036056519,
                   0.29427602887153625,
+=======
+                  0.2300068736076355,
+                  2.8441147804260254,
+                  -0.13877356052398682,
+>>>>>>> Stashed changes:iOS-frontend/ProjectM/pin.rcproject/com.apple.RCFoundation.Project
                   1
                 ],
                 "sceneTransform" : [
