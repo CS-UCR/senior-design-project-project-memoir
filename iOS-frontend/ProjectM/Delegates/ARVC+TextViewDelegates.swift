@@ -40,7 +40,7 @@ extension ARViewController: UITextViewDelegate {
 
         // Access the text before deleting it
         // print(messageView.textView.text)
-        messageView.textView.text = ""
+        
         if let devicePosition = locationManager.location?.coordinate {
             do {
                 let anchorData = CreateAnchorInput(lat: devicePosition.latitude, long: devicePosition.longitude)
@@ -51,10 +51,11 @@ extension ARViewController: UITextViewDelegate {
             } catch {
                 print("Unexpected error: \(error).")
             }
-            self.addGeoLocationToAnchor(at: devicePosition)
+            let message = Message(text: messageView.textView.text)
+            self.addGeoLocationToAnchor(at: devicePosition, message: message)
         } else {
         }
-
+        messageView.textView.text = ""
         messageView.userMessage.shouldAnimate = true
         messageView.userMessage.isEditing = false
 
