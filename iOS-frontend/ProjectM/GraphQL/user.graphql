@@ -7,10 +7,10 @@ query getUserByID ($id: ID!){
         profile_icon
     }
 }
-mutation createUser ($username: String!){
-    createUser(input: {username: $username}) {
+mutation createUser ($userInput: CreateUserInput!){
+    createUser(input: $userInput) {
+        id
         username
         create_date
-        id
     }
 }

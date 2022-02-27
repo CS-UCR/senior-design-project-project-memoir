@@ -1,6 +1,9 @@
 query getAnchorByID($id: ID!) {
     getAnchor(id: $id) {
+        id
         create_date
+        author_id
+        message
         entity_id
         lat
         long
@@ -14,12 +17,9 @@ query listAnchors($limit: Int, $nextToken: String) {
         items {
             id
             create_date
+            author_id
+            message
             entity_id
-            message {
-                id
-                body
-                modified_date
-            }
             lat
             long
             alt
@@ -31,6 +31,8 @@ mutation createAnchor($anchorInput: CreateAnchorInput!) {
     createAnchor(input: $anchorInput) {
         id
         create_date
+        author_id
+        message
         entity_id
         lat
         long
@@ -42,13 +44,11 @@ mutation deleteAnchor($anchorInput: DeleteAnchorInput!) {
     deleteAnchor(input: $anchorInput) {
         id
         create_date
+        author_id
+        message
         entity_id
         lat
         long
         alt
-        message {
-            id
-            body
-        }
     }
 }
