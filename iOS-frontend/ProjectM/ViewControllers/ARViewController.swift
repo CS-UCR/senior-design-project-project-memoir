@@ -281,6 +281,4 @@ class ARViewController: UIViewController, ARSessionDelegate {
     override var prefersHomeIndicatorAutoHidden: Bool {
         return true
     }
-    
-
 }
