@@ -181,7 +181,7 @@ class ARViewController: UIViewController, ARSessionDelegate {
             print("LOG - GeoLocation is enabled for your device!")
             let geoTrackingConfig = ARGeoTrackingConfiguration()
             geoTrackingConfig.planeDetection = [.horizontal]
-            self.ARView.debugOptions = [.showPhysics]
+            //self.ARView.debugOptions = [.showPhysics]
             self.ARView.session.run(geoTrackingConfig)
             // self.placeExistingMessages()
 
@@ -221,7 +221,7 @@ class ARViewController: UIViewController, ARSessionDelegate {
             let entity = try! Entity.load(named: "pin")
             entity.name = "geo anchor entity message"
             // double scale size
-            entity.scale = [5, 5, 5]
+            entity.scale = [3, 3, 3]
             
             // create parent entity
             let parentEntity = ModelEntity()

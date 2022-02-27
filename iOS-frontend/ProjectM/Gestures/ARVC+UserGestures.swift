@@ -86,25 +86,14 @@ extension ARViewController {
         
         // The users tap on the iPhone will give us an (x,y) coordinates on the iPhone screen.
         let point = sender.location(in: view)
-        debugPrint("LOG - Tapped on ARView")
         
         guard let entity = ARView.entity(at: point)
         else {
             debugPrint("LOG - Tapped on no entity")
             return
         }
+        
         debugPrint("LOG - Tapped on entity name: \(entity.name)")
-        
-        /*
-        let raycastEntities = ARView.entities(at: point)
-        debugPrint("LOG - Found: \(raycastEntities.count) entities at tap location")
-        
-        var i = 0
-        for entity in raycastEntities {
-            print("LOG - Entity #\(i): \(entity.name)")
-            i += 1
-        }
-         */
     }
 
 
