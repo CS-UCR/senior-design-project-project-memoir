@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0288C41D27A942E6009C09B8 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0288C41C27A942E6009C09B8 /* CreateAccountViewController.swift */; };
+		0291659727CB2E5500CABF72 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0291659627CB2E5500CABF72 /* UserManager.swift */; };
 		0299FBD727A86D7400941CC3 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0299FBD627A86D7400941CC3 /* LandingViewController.swift */; };
 		02D4B52627A7ED6F009065A3 /* AppSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 02D4B52527A7ED6F009065A3 /* AppSettings.xcconfig */; };
 		071023A52775779A00B21474 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 071023A42775779A00B21474 /* Assets.xcassets */; };
@@ -66,6 +67,7 @@
 
 /* Begin PBXFileReference section */
 		0288C41C27A942E6009C09B8 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		0291659627CB2E5500CABF72 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		0299FBD127A8669600941CC3 /* ProjectM.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ProjectM.entitlements; sourceTree = "<group>"; };
 		0299FBD627A86D7400941CC3 /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		02D4B52527A7ED6F009065A3 /* AppSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = AppSettings.xcconfig; path = ../../../../../Downloads/AppSettings.xcconfig; sourceTree = "<group>"; };
@@ -84,7 +86,6 @@
 		7952814D27A09A5B0019BD5B /* IncompleteAPIQueries.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = IncompleteAPIQueries.txt; sourceTree = "<group>"; };
 		799C3F1B27CAC34900B10B3F /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		799C3F1F27CAD95600B10B3F /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
-		79D5536F27C17C1E00211DA4 /* AR_Session_Horizontal.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = AR_Session_Horizontal.mov; sourceTree = "<group>"; };
 		79D5537D27C6E64500211DA4 /* pin.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = pin.rcproject; sourceTree = "<group>"; };
 		935D0D712798D6B1000C81D0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		936932A12786922000EA8B68 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
@@ -140,7 +141,6 @@
 		078BF1D32711277B00307C5E = {
 			isa = PBXGroup;
 			children = (
-				79D5536F27C17C1E00211DA4 /* AR_Session_Horizontal.mov */,
 				078BF1DE2711277B00307C5E /* ProjectM */,
 				078BF1DD2711277B00307C5E /* Products */,
 			);
@@ -227,6 +227,7 @@
 				93D9DFBE2794EF2500FB4A66 /* Utilities.swift */,
 				936932AD2786922E00EA8B68 /* SIMD.swift */,
 				93D34EF72790007900B2B852 /* Configuration.swift */,
+				0291659627CB2E5500CABF72 /* UserManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -469,6 +470,7 @@
 				936932DC2786BC8800EA8B68 /* Network.swift in Sources */,
 				936932B82786924400EA8B68 /* ARVC+Overlay.swift in Sources */,
 				93D34EF82790007900B2B852 /* Configuration.swift in Sources */,
+				0291659727CB2E5500CABF72 /* UserManager.swift in Sources */,
 				93D9DFBF2794EF2500FB4A66 /* Utilities.swift in Sources */,
 				936932BC2786925200EA8B68 /* MessageView.swift in Sources */,
 				936932A82786922600EA8B68 /* ARVC+UserGestures.swift in Sources */,
