@@ -31,8 +31,43 @@
                                     {
                                       "configurationBox" : {
                                         "configuration" : {
+                                          "audioType" : "play",
+                                          "filePath" : "audio:com.apple.rc.audio.sound-effects.cork-pop-fx-02\/Cork%20Pop%20FX%2002.caf",
+                                          "loops" : false,
+                                          "multiplePerformType" : "ignore request",
+                                          "target" : [
+                                            "210E69BC-E85B-4611-B7B6-824F430052DD"
+                                          ],
+                                          "volume" : 0.37062185402684567
+                                        },
+                                        "name" : {
+                                          "type" : "audio"
+                                        }
+                                      },
+                                      "identifier" : "95C414C4-A6B8-45CC-BEDD-A13B2C9305F5",
+                                      "isEnabled" : true
+                                    }
+                                  ],
+                                  "__version" : 1
+                                }
+                              ],
+                              "identifier" : "B6B1D750-0DCC-49A7-BD3C-97C119B931A0",
+                              "isEnabled" : true
+                            }
+                          ],
+                          "__version" : 1
+                        },
+                        {
+                          "__content" : [
+                            {
+                              "configurations" : [
+                                {
+                                  "__content" : [
+                                    {
+                                      "configurationBox" : {
+                                        "configuration" : {
                                           "animationStyle" : "basic",
-                                          "duration" : 1.0299999713897705,
+                                          "duration" : 1.0099999904632568,
                                           "emphasisAnimationType" : "bounce",
                                           "iterations" : 1,
                                           "target" : [
@@ -81,6 +116,89 @@
                                 "name" : "tapTarget"
                               },
                               "identifier" : "7CCB30B8-F64E-4A2F-9807-405F23488A18",
+                              "isEnabled" : true
+                            }
+                          ],
+                          "__version" : 1
+                        }
+                      ]
+                    }
+                  ],
+                  "__version" : 3
+                },
+                {
+                  "__content" : [
+                    {
+                      "accessibility" : {
+                        "__content" : [
+                          {
+                            "isEnabled" : false
+                          }
+                        ],
+                        "__version" : 1
+                      },
+                      "actionGroups" : [
+                        {
+                          "__content" : [
+                            {
+                              "configurations" : [
+                                {
+                                  "__content" : [
+                                    {
+                                      "configurationBox" : {
+                                        "configuration" : {
+                                          "animationStyle" : "playful",
+                                          "duration" : 3.8199999332427979,
+                                          "emphasisAnimationType" : "pulse",
+                                          "iterations" : 1,
+                                          "target" : [
+                                            "210E69BC-E85B-4611-B7B6-824F430052DD"
+                                          ]
+                                        },
+                                        "name" : {
+                                          "type" : "emphasis"
+                                        }
+                                      },
+                                      "identifier" : "EDBC031C-C531-4D24-9CF3-E251EAB6E432",
+                                      "isEnabled" : true
+                                    }
+                                  ],
+                                  "__version" : 1
+                                }
+                              ],
+                              "identifier" : "8F71B65F-A769-4D20-B9A5-4821293E1A0F",
+                              "isEnabled" : true
+                            }
+                          ],
+                          "__version" : 1
+                        }
+                      ],
+                      "color" : [
+                        0.21568627655506134,
+                        0.72549021244049072,
+                        0.80000001192092896,
+                        1
+                      ],
+                      "identifier" : "78A535D9-ECFA-491F-99D9-C4D86344714E",
+                      "isEnabled" : true,
+                      "isLooping" : false,
+                      "isModal" : false,
+                      "name" : "Behavior 1",
+                      "triggers" : [
+                        {
+                          "__content" : [
+                            {
+                              "configurationBox" : {
+                                "configuration" : {
+                                  "distance" : 2.5,
+                                  "target" : [
+                                    "210E69BC-E85B-4611-B7B6-824F430052DD"
+                                  ],
+                                  "type" : 0
+                                },
+                                "name" : "proximity"
+                              },
+                              "identifier" : "2B984A10-87B6-4163-955C-9449B46F9E63",
                               "isEnabled" : true
                             }
                           ],
@@ -380,21 +498,21 @@
               "title" : "Scene",
               "viewTransform" : {
                 "cameraTransform" : [
-                  0.76715981960296631,
-                  -1.2397695314803059e-08,
-                  -0.64145594835281372,
+                  0.7432931661605835,
+                  -9.0176683897880139e-09,
+                  -0.66896575689315796,
                   0,
-                  -0.64106523990631104,
-                  0.034899603575468063,
-                  -0.76669251918792725,
+                  -0.32532072067260742,
+                  0.87378972768783569,
+                  -0.36146640777587891,
                   0,
-                  0.022386541590094566,
-                  0.99939084053039551,
-                  0.026773564517498016,
+                  0.58453541994094849,
+                  0.48630395531654358,
+                  0.64948201179504395,
                   0,
-                  0.19648937880992889,
-                  2.843144416809082,
-                  -0.074511155486106873,
+                  1.7999943494796753,
+                  1.4095128774642944,
+                  1.7032099962234497,
                   1
                 ],
                 "sceneTransform" : [
