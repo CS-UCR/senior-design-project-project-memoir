@@ -190,7 +190,7 @@
                             {
                               "configurationBox" : {
                                 "configuration" : {
-                                  "distance" : 1,
+                                  "distance" : 2.5,
                                   "target" : [
                                     "210E69BC-E85B-4611-B7B6-824F430052DD"
                                   ],
