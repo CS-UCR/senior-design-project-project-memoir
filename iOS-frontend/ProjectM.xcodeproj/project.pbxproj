@@ -19,6 +19,7 @@
 		79528141279FD25B0019BD5B /* story.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 7952813D279FD25B0019BD5B /* story.graphql */; };
 		7952814627A084E90019BD5B /* anchor.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 7952814527A084E90019BD5B /* anchor.graphql */; };
 		7952814E27A09A5B0019BD5B /* IncompleteAPIQueries.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7952814D27A09A5B0019BD5B /* IncompleteAPIQueries.txt */; };
+		796C678C27CBEE2000A486E8 /* CustomElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796C678B27CBEE0B00A486E8 /* CustomElements.swift */; };
 		799C3F1C27CAC34900B10B3F /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799C3F1B27CAC34900B10B3F /* API.swift */; };
 		799C3F2027CAD95600B10B3F /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 799C3F1F27CAD95600B10B3F /* schema.json */; };
 		79D5537E27C6E64500211DA4 /* pin.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 79D5537D27C6E64500211DA4 /* pin.rcproject */; };
@@ -82,6 +83,7 @@
 		7952813D279FD25B0019BD5B /* story.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = story.graphql; sourceTree = "<group>"; };
 		7952814527A084E90019BD5B /* anchor.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = anchor.graphql; sourceTree = "<group>"; };
 		7952814D27A09A5B0019BD5B /* IncompleteAPIQueries.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = IncompleteAPIQueries.txt; sourceTree = "<group>"; };
+		796C678B27CBEE0B00A486E8 /* CustomElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomElements.swift; sourceTree = "<group>"; };
 		799C3F1B27CAC34900B10B3F /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		799C3F1F27CAD95600B10B3F /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		79D5536F27C17C1E00211DA4 /* AR_Session_Horizontal.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = AR_Session_Horizontal.mov; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				936932B72786924400EA8B68 /* ARVC+Overlay.swift */,
+				796C678B27CBEE0B00A486E8 /* CustomElements.swift */,
 			);
 			path = OverlayUI;
 			sourceTree = "<group>";
@@ -452,6 +455,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				936932B02786923100EA8B68 /* UIView.swift in Sources */,
+				796C678C27CBEE2000A486E8 /* CustomElements.swift in Sources */,
 				9397714C27BDE7A500698077 /* Entity.swift in Sources */,
 				0299FBD727A86D7400941CC3 /* LandingViewController.swift in Sources */,
 				936932A22786922000EA8B68 /* ARViewController.swift in Sources */,
