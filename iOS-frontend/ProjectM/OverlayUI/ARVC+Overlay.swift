@@ -43,7 +43,6 @@ extension ARViewController {
         shadeView.alpha = 0
     }
 
-
     // addClearButton() creates a button so user can remove all messages from screen
     fileprivate func addClearButton() {
         // create clear button
@@ -62,7 +61,6 @@ extension ARViewController {
         clearButton.addTarget(self, action: #selector(userTappedClear(_:)), for: .touchUpInside)
         clearButton.alpha = 0.7
     }
-    
     
     fileprivate func addMenuButton(){
         // create a menu button

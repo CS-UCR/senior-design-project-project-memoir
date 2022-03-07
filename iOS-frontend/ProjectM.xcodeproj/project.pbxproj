@@ -15,6 +15,7 @@
 		078BF1E22711277B00307C5E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078BF1E12711277B00307C5E /* SceneDelegate.swift */; };
 		078BF1EC2711277E00307C5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 078BF1EA2711277E00307C5E /* LaunchScreen.storyboard */; };
 		07C7E7D5277977B20069C607 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C7E7D4277977B20069C607 /* AppDelegate.swift */; };
+		7924508427D6AED6009F22E1 /* CustomElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7924508327D6AED6009F22E1 /* CustomElements.swift */; };
 		7952813F279FD25B0019BD5B /* user.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 7952813B279FD25A0019BD5B /* user.graphql */; };
 		79528140279FD25B0019BD5B /* comment.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 7952813C279FD25B0019BD5B /* comment.graphql */; };
 		79528141279FD25B0019BD5B /* story.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 7952813D279FD25B0019BD5B /* story.graphql */; };
@@ -79,6 +80,7 @@
 		078BF1F22711277F00307C5E /* ProjectMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		078BF1FD2711277F00307C5E /* ProjectMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07C7E7D4277977B20069C607 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7924508327D6AED6009F22E1 /* CustomElements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomElements.swift; sourceTree = "<group>"; };
 		7952813B279FD25A0019BD5B /* user.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = user.graphql; sourceTree = "<group>"; };
 		7952813C279FD25B0019BD5B /* comment.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = comment.graphql; sourceTree = "<group>"; };
 		7952813D279FD25B0019BD5B /* story.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = story.graphql; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 		936932C42786AF0300EA8B68 /* OverlayUI */ = {
 			isa = PBXGroup;
 			children = (
+				7924508327D6AED6009F22E1 /* CustomElements.swift */,
 				936932B72786924400EA8B68 /* ARVC+Overlay.swift */,
 			);
 			path = OverlayUI;
@@ -475,6 +478,7 @@
 				936932BC2786925200EA8B68 /* MessageView.swift in Sources */,
 				936932A82786922600EA8B68 /* ARVC+UserGestures.swift in Sources */,
 				078BF1E22711277B00307C5E /* SceneDelegate.swift in Sources */,
+				7924508427D6AED6009F22E1 /* CustomElements.swift in Sources */,
 				799C3F1C27CAC34900B10B3F /* API.swift in Sources */,
 				936932B22786923200EA8B68 /* LoginViewController.swift in Sources */,
 			);
