@@ -1,0 +1,53 @@
+//
+//  NetworkTest.swift
+//  UnitTest
+//
+//  Created by Carlos Loeza on 3/1/22.
+//
+
+import XCTest
+
+
+
+
+class NetworkTest: XCTestCase {
+
+  
+    override func setUpWithError() throws {
+        // Put setup code here. This method is called before the invocation of each test method in the class.
+    }
+
+    override func tearDownWithError() throws {
+        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        //network = nil
+    }
+
+    func testExample() throws {
+        XCTAssertTrue(1 == 1)
+        // This is an example of a functional test case.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        // Any test you write for XCTest can be annotated as throws and async.
+        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
+        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+//        print("success")
+//        do {
+//
+//            try Network.shared.apollo.fetch(query: ListAnchorsQuery(limit: 1)) { result in
+//                guard let data = try? result.get().data else { return }
+//                XCTAssertTrue(data.listAnchors?.items?.count == 1)
+//                print(data.listAnchors?.items?.count)
+//            }
+//            } catch {
+//                throw NetworkError.runtimeError("Network Issue")
+//            }
+    }
+    
+
+    func testPerformanceExample() throws {
+        // This is an example of a performance test case.
+        self.measure {
+            // Put the code you want to measure the time of here.
+        }
+    }
+
+}

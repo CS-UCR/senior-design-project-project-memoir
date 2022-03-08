@@ -28,6 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "07F1697227CEAC1D00E8F534"
+               BuildableName = "UnitTest.xctest"
+               BlueprintName = "UnitTest"
+               ReferencedContainer = "container:ProjectM.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "077DC86A27D1AB7E002643F5"
+               BuildableName = "ProjectM_UnitTests.xctest"
+               BlueprintName = "ProjectM_UnitTests"
+               ReferencedContainer = "container:ProjectM.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -52,7 +72,7 @@
          </BuildableReference>
       </BuildableProductRunnable>
       <DeviceSensorReplayFileReference
-         identifier = "../../../../../../Downloads/Arcade.mov">
+         identifier = "../../AR Session 1.mov">
       </DeviceSensorReplayFileReference>
    </LaunchAction>
    <ProfileAction
