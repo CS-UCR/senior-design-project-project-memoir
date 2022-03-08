@@ -140,36 +140,8 @@ class ARViewController: UIViewController, ARSessionDelegate {
     }
     
 
-    // Presents the available actions when the user presses the Save/Load button.
-    func presentMenuOptions() {
-        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        actionSheet.addAction(UIAlertAction(title: "Load Anchors …", style: .default, handler: { (_) in
-            self.loadAnchors()
-        }))
-        actionSheet.addAction(UIAlertAction(title: "Save Anchors …", style: .default, handler: { (_) in
-            self.saveAnchors()
-        }))
-        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-        present(actionSheet, animated: true)
-    }
     
-    
-    // Save anchors to server
-    // This is meant to replicate server
-    func saveAnchors(){
-        if !geoAnchors_array.isEmpty {
-            savedGeoAnchors = geoAnchors_array
-        }
-    }
-    
-    // Load anchors from "server"
-    func loadAnchors(){
-        geoAnchors_array = savedGeoAnchors
-        for geoAnchor in geoAnchors_array {
-            prepareToAddGeoAnchor(geoAnchor)
-        }
-    }
-    
+
     func runARSession() {
         ARGeoTrackingConfiguration.checkAvailability { (available, error) in
             guard available else {
@@ -183,14 +155,7 @@ class ARViewController: UIViewController, ARSessionDelegate {
             geoTrackingConfig.planeDetection = [.horizontal]
             //self.ARView.debugOptions = [.showPhysics]
             self.ARView.session.run(geoTrackingConfig)
-            // self.placeExistingMessages()
 
-            // Test placing anchors
-            // let cords1 = CLLocationCoordinate2D(latitude: 33.977197859645955, longitude: -117.34819358120566)
-            // let cords2 = CLLocationCoordinate2D(latitude: 33.97717306726972, longitude: -117.34821592500165)
-            // self.addGeoLocationToAnchor(at: cords)
-            // self.addGeoLocationToAnchor(at: cords1)
-            // self.addGeoLocationToAnchor(at: cords2)
         }
     }
     

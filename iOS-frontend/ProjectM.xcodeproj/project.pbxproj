@@ -12,7 +12,6 @@
 		071023A52775779A00B21474 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 071023A42775779A00B21474 /* Assets.xcassets */; };
 		077DC87627D1AC79002643F5 /* Network_UnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077DC87527D1AC79002643F5 /* Network_UnitTest.swift */; };
 		077DC8B827D53559002643F5 /* GeoAnchor_UnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077DC8B727D53559002643F5 /* GeoAnchor_UnitTests.swift */; };
-		077DC8BC27D5530E002643F5 /* AR Session 1.mov in Resources */ = {isa = PBXBuildFile; fileRef = 077DC8BB27D5530E002643F5 /* AR Session 1.mov */; };
 		078BF1E22711277B00307C5E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078BF1E12711277B00307C5E /* SceneDelegate.swift */; };
 		078BF1EC2711277E00307C5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 078BF1EA2711277E00307C5E /* LaunchScreen.storyboard */; };
 		07C7E7D5277977B20069C607 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C7E7D4277977B20069C607 /* AppDelegate.swift */; };
@@ -89,7 +88,6 @@
 		077DC86B27D1AB7E002643F5 /* ProjectM_UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectM_UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		077DC87527D1AC79002643F5 /* Network_UnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network_UnitTest.swift; sourceTree = "<group>"; };
 		077DC8B727D53559002643F5 /* GeoAnchor_UnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoAnchor_UnitTests.swift; sourceTree = "<group>"; };
-		077DC8BB27D5530E002643F5 /* AR Session 1.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "AR Session 1.mov"; sourceTree = "<group>"; };
 		078BF1DC2711277B00307C5E /* ProjectM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		078BF1E12711277B00307C5E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		078BF1EB2711277E00307C5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -184,7 +182,6 @@
 		078BF1D32711277B00307C5E = {
 			isa = PBXGroup;
 			children = (
-				077DC8BB27D5530E002643F5 /* AR Session 1.mov */,
 				078BF1DE2711277B00307C5E /* ProjectM */,
 				077DC86C27D1AB7E002643F5 /* ProjectM_UnitTests */,
 				078BF1DD2711277B00307C5E /* Products */,
@@ -501,7 +498,6 @@
 				799C3F2027CAD95600B10B3F /* schema.json in Resources */,
 				078BF1EC2711277E00307C5E /* LaunchScreen.storyboard in Resources */,
 				07F1697E27CEACB800E8F534 /* AppSettings.xcconfig in Resources */,
-				077DC8BC27D5530E002643F5 /* AR Session 1.mov in Resources */,
 				071023A52775779A00B21474 /* Assets.xcassets in Resources */,
 				79528140279FD25B0019BD5B /* comment.graphql in Resources */,
 				9397715227BE091600698077 /* bounce-message.usdz in Resources */,
@@ -894,7 +890,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "c.lo-.ProjectMTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ProjectM.app/ProjectM";
 			};
 			name = Debug;
@@ -916,7 +912,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "c.lo-.ProjectMTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ProjectM.app/ProjectM";
 			};
 			name = Release;
@@ -1123,7 +1119,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "c.lo-.ProjectMTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ProjectM.app/ProjectM";
 			};
 			name = Staging;

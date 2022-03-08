@@ -194,9 +194,6 @@ extension ARViewController {
         clear()
     }
     
-    @objc
-    func userTappedMenu(_ sender: UIButton){
-        presentMenuOptions()
-    }
+
 }
 
