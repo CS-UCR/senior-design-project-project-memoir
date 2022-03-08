@@ -19,6 +19,7 @@ class ARViewController: UIViewController, ARSessionDelegate {
     var messageLocation = [ARRaycastResult]()
     
     @IBOutlet weak var ARView: ARView!
+    @IBOutlet weak var toastLabel: UILabel!
 
     // Hold messages users post
     var userMessages = [MessageEntity]()
