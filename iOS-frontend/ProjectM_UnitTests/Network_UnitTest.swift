@@ -4,13 +4,6 @@
 //
 //  Created by Carlos Loeza on 3/3/22.
 //
-/*
- 
- - name: Select Xcode
-       run: sudo xcode-select -switch /Applications/Xcode_12.2.app && /usr/bin/xcodebuild -version
-     - name: Run unit tests
-       run: xcodebuild test -scheme ProjectM -workspace ProjectM.xcodeproj
- */
 
 @testable import ProjectM
 import XCTest
