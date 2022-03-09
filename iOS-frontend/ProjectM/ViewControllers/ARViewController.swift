@@ -49,10 +49,17 @@ class ARViewController: UIViewController, ARSessionDelegate {
         // Get a 3D point (user's message) and convert it to 2D
         self.showEditBox()
     }
-
+    
     func showEditBox() {
         guard let messageView = self.editMessageBox.view else { return }
         messageView.textView.becomeFirstResponder()
+        focusOnMessageView(messageView)
+    }
+
+    func showEditBox(text: String) {
+        guard let messageView = self.editMessageBox.view else { return }
+        messageView.textView.becomeFirstResponder()
+        messageView.textView.text = text
         focusOnMessageView(messageView)
     }
 
@@ -84,20 +91,22 @@ class ARViewController: UIViewController, ARSessionDelegate {
     }
     
     func placeExistingMessages() {
-        Network.shared.apollo.fetch(query: ListAnchorsQuery(limit: 100)) { result in
+        Network.shared.apollo.fetch(query: ListAnchorsQuery(limit: 200)) { result in
             switch result {
             case .success(let graphQLResult):
                 guard let items = graphQLResult.data?.listAnchors?.items else { break }
                 print("LOG - Grabbing \(items.count) anchors from the database")
-                
+
                 for optionalItem in items {
                     guard let item = optionalItem else { continue }
                     guard let lat = item.lat else {continue}
                     guard let long = item.long else {continue}
                     let loc = CLLocationCoordinate2D(latitude: lat, longitude: long)
-                    self.addGeoLocationToAnchor(at: loc)
+                    let messageString = item.message ?? ""
+                    let message = Message(text: messageString);
+                    self.addGeoLocationToAnchor(at: loc, message: message)
                 }
-                
+
             case .failure(_):
                 print("LOG - placeExistingMessages error")
             }
@@ -140,8 +149,36 @@ class ARViewController: UIViewController, ARSessionDelegate {
     }
     
 
+    // Presents the available actions when the user presses the Save/Load button.
+    func presentMenuOptions() {
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "Load Anchors …", style: .default, handler: { (_) in
+            self.loadAnchors()
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Save Anchors …", style: .default, handler: { (_) in
+            self.saveAnchors()
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        present(actionSheet, animated: true)
+    }
     
-
+    
+    // Save anchors to server
+    // This is meant to replicate server
+    func saveAnchors(){
+        if !geoAnchors_array.isEmpty {
+            savedGeoAnchors = geoAnchors_array
+        }
+    }
+    
+    // Load anchors from "server"
+    func loadAnchors(){
+        geoAnchors_array = savedGeoAnchors
+        for geoAnchor in geoAnchors_array {
+            prepareToAddGeoAnchor(geoAnchor, Message(text: "text"))
+        }
+    }
+    
     func runARSession() {
         ARGeoTrackingConfiguration.checkAvailability { (available, error) in
             guard available else {
@@ -176,34 +213,36 @@ class ARViewController: UIViewController, ARSessionDelegate {
     // THIS FUNCTION HELPS US ADD THE AR ANCHOR TO OUR AR WORLD AND MAP VIEW FOUND
     // ON THE BOTTOM HALF
     
-    func session(_ session: ARSession, didAdd anchors: [ARAnchor]) {
-        // CYCLE THROUGH ALL OF OUR GEOANCHORS
-        // print("added anchor in session")
-        for geoAnchor in anchors.compactMap({ $0 as? ARGeoAnchor }) {
-            
-            // create geoAnchorEntity for our message
-            let geoAnchorEntity = AnchorEntity(anchor: geoAnchor)
-            let entity = try! Entity.load(named: "pin")
-            entity.name = "geo anchor entity message"
-            // double scale size
-            entity.scale = [3, 3, 3]
-            
-            // create parent entity
-            let parentEntity = ModelEntity()
-            parentEntity.addChild(entity)
-            parentEntity.name = "geo anchor pin collision box"
-            
-            // create bounds for parent entity
-            let entityBounds = entity.visualBounds(relativeTo: parentEntity)
-            parentEntity.collision = CollisionComponent(shapes: [ShapeResource.generateBox(size: entityBounds.extents).offsetBy(translation: entityBounds.center)])
-            parentEntity.generateCollisionShapes(recursive: false)
-            
-            // install gestures and add child
-            // ARView.installGestures([.all], for: parentEntity)
-            geoAnchorEntity.addChild(parentEntity)
-            self.ARView.scene.addAnchor(geoAnchorEntity)
-        }
-    }
+//    func session(_ session: ARSession, didAdd anchors: [ARAnchor]) {
+//        // CYCLE THROUGH ALL OF OUR GEOANCHORS
+//        // print("added anchor in session")
+//        for geoAnchor in anchors.compactMap({ $0 as? ARGeoAnchor }) {
+//            
+//            // create geoAnchorEntity for our message
+//            let geoAnchorEntity = AnchorEntity(anchor: geoAnchor)
+//            let entity = try! Entity.load(named: "pin")
+//            entity.message = "hello"
+//            print("hi")
+//            entity.name = "geo anchor entity message"
+//            // double scale size
+//            entity.scale = [3, 3, 3]
+//            
+//            // create parent entity
+//            let parentEntity = ModelEntity()
+//            parentEntity.addChild(entity)
+//            parentEntity.name = "geo anchor pin collision box"
+//            
+//            // create bounds for parent entity
+//            let entityBounds = entity.visualBounds(relativeTo: parentEntity)
+//            parentEntity.collision = CollisionComponent(shapes: [ShapeResource.generateBox(size: entityBounds.extents).offsetBy(translation: entityBounds.center)])
+//            parentEntity.generateCollisionShapes(recursive: false)
+//            
+//            // install gestures and add child
+//            // ARView.installGestures([.all], for: parentEntity)
+//            geoAnchorEntity.addChild(parentEntity)
+//            self.ARView.scene.addAnchor(geoAnchorEntity)
+//        }
+//    }
     
     func session(_ session: ARSession, didFailWithError error: Error) {
         guard error is ARError else {

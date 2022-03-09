@@ -18,7 +18,8 @@ extension ARViewController {
         addClearButton()
         // Adding the ARCoachingOverlayView, which helps guide users to establish tracking.
         addCoachingOverlay()
-  
+        // Add menu button
+        addMenuButton()
     }
     
     // setupShadeView() will create the shade view for our user when they type
@@ -42,7 +43,6 @@ extension ARViewController {
         shadeView.alpha = 0
     }
 
-
     // addClearButton() creates a button so user can remove all messages from screen
     fileprivate func addClearButton() {
         // create clear button
@@ -62,8 +62,25 @@ extension ARViewController {
         clearButton.alpha = 0.7
     }
     
-    
-
+    fileprivate func addMenuButton(){
+        // create a menu button
+        let menuButton = UIButton()
+        // set autoresizing to false
+        menuButton.translatesAutoresizingMaskIntoConstraints = false
+        // add menuButton to ARView
+        ARView.addSubview(menuButton)
+        // set constraints
+        NSLayoutConstraint.activate([
+            menuButton.bottomAnchor.constraint(equalTo: ARView.safeAreaLayoutGuide.bottomAnchor),
+            menuButton.trailingAnchor.constraint(equalTo: ARView.trailingAnchor, constant: -300)
+        ])
+        // set image for button
+        //menuButton.setImage(UIImage(named: square.and.arrow.up))
+        //menuButton.setImage(UIImage(imageLiteralResourceName: "clear"), for: .normal)
+        menuButton.setTitle("Save/Load", for: .normal)
+        menuButton.addTarget(self, action: #selector(userTappedMenu(_:)), for: .touchUpInside)
+        menuButton.alpha = 0.7
+    }
     
     // Coaching overlay helps us validate we have a supported for our AR world
     fileprivate func addCoachingOverlay() {

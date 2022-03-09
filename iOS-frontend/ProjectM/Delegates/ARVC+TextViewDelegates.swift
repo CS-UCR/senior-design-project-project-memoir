@@ -37,24 +37,21 @@ extension ARViewController: UITextViewDelegate {
     func textViewDidEndEditing(_ textView: UITextView) {
         // get message user was editing
         guard let messageView = textView.firstSuperViewOfType(MessageView.self) else { return }
-
-        // Access the text before deleting it
-        // print(messageView.textView.text)
-        messageView.textView.text = ""
+        
         if let devicePosition = locationManager.location?.coordinate {
             do {
-                let anchorData = CreateAnchorInput(lat: devicePosition.latitude, long: devicePosition.longitude)
+                let anchorData = CreateAnchorInput(lat: devicePosition.latitude, long: devicePosition.longitude, message: messageView.textView.text)
                 try Network.shared.apollo.perform(mutation: CreateAnchorMutation(anchorInput: anchorData)) { result in
                  guard let data = try? result.get().data else { return }
-                   print("Added anchor:\(data.createAnchor?.id) to database")
                 }
             } catch {
                 print("Unexpected error: \(error).")
             }
-            self.addGeoLocationToAnchor(at: devicePosition)
+            let message = Message(text: messageView.textView.text)
+            self.addGeoLocationToAnchor(at: devicePosition, message: message)
         } else {
         }
-
+        messageView.textView.text = ""
         messageView.userMessage.shouldAnimate = true
         messageView.userMessage.isEditing = false
 

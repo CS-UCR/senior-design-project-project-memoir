@@ -9,6 +9,10 @@ import UIKit
 import ARKit
 import RealityKit
 
+struct Message {
+    var text: String
+}
+
 extension ARViewController {
     // Set up gestures for user to use on messages
     // Ex: drag message or tap on message to edit
@@ -89,11 +93,21 @@ extension ARViewController {
         
         guard let entity = ARView.entity(at: point)
         else {
+            CustomElements.clickIndicator(loc: point, startRadius: 20.0, endRadius: 40.0, controller: self, color: UIColor.white)
             debugPrint("LOG - Tapped on no entity")
+            
+            // NOTE - more efficient to reuse same toast layer but how fast can the user click anyway :P
+            ARView.layer.sublayers?.filter{ $0.name == "toast - entity not found" }
+                .forEach{ $0.removeFromSuperlayer() }
+
+            // let user know there was no entity found at location
+            CustomElements.toast(message: "sorry, no messages here!", controller: self)
             return
         }
-        
+        CustomElements.clickIndicator(loc: point, startRadius: 20.0, endRadius: 40.0, controller: self, color: UIColor.green)
         debugPrint("LOG - Tapped on entity name: \(entity.name)")
+        debugPrint("LOG - Tapped on entity with message: \(entity.message)")
+        CustomElements.showMessage(message: entity.message, controller: self)
     }
 
 
@@ -136,42 +150,49 @@ extension ARViewController {
         }
     }
     
-    // STARTS HERE
-    // getGeoLocation gets us the location and altitude based on where the user clicks on their iphone screen
-    func getGeoLocation(worldPosition: ARRaycastResult){
-        // Parse the information from our raycastResult, else we encountered an error.
-        // We will use these coordinates to place our AR message
-        // Closure Expression Syntax
-        // @see https://docs.swift.org/swift-book/LanguageGuide/Closures.html#ID97
-        // Based on the user click, we will get a location and altitude. Location gives us a longitude and latitude.
-        ARView.session.getGeoLocation(forPoint: worldPosition.worldTransform.translation) { (location, altitude, error) in
-            if let error = error {
-                return
-            }
-            // If we get the location then call addGeoAnchor below with our coordinates.
-            self.addGeoLocationToAnchor(at: location, altitude: altitude)
-        }
-        
-    }
-    
     // addGeoLocation creates an ARGeoAnchor to assign it a location
-    func addGeoLocationToAnchor(at location: CLLocationCoordinate2D, altitude: CLLocationDistance? = nil){
+    func addGeoLocationToAnchor(at location: CLLocationCoordinate2D, altitude: CLLocationDistance? = nil, message: Message){
         // Create a geoAnchor variable to assign it our location
         var geoAnchor: ARGeoAnchor!
         // Assign geoLocation
         geoAnchor = ARGeoAnchor(coordinate: location)
-        prepareToAddGeoAnchor(geoAnchor)
+        prepareToAddGeoAnchor(geoAnchor, message)
     }
     
     // ENDS HERE
     // prepareToAddGeoAnchor adds the geoAnchor to our AR world
-    func prepareToAddGeoAnchor(_ geoAnchor: ARGeoAnchor){
+    func prepareToAddGeoAnchor(_ geoAnchor: ARGeoAnchor, _ message: Message){
         // Don't add a geo anchor if Core Location isn't sure yet where the user is.
         guard isGeoTrackingLocalized else {
             debugPrint("LOG - ERROR. Cannot add geo anchor to session because arcore location has not identified where the user is.")
             return
         }
+        
         ARView.session.add(anchor: geoAnchor)
+        
+        // create geoAnchorEntity for our message
+        let geoAnchorEntity = AnchorEntity(anchor: geoAnchor)
+        let entity = try! Entity.load(named: "pin")
+        entity.message = message.text
+        print("hi")
+        entity.name = "geo anchor entity message"
+        // double scale size
+        entity.scale = [3, 3, 3]
+        
+        // create parent entity
+        let parentEntity = ModelEntity()
+        parentEntity.addChild(entity)
+        parentEntity.name = "geo anchor pin collision box"
+        
+        // create bounds for parent entity
+        let entityBounds = entity.visualBounds(relativeTo: parentEntity)
+        parentEntity.collision = CollisionComponent(shapes: [ShapeResource.generateBox(size: entityBounds.extents).offsetBy(translation: entityBounds.center)])
+        parentEntity.generateCollisionShapes(recursive: false)
+        
+        // install gestures and add child
+        // ARView.installGestures([.all], for: parentEntity)
+        geoAnchorEntity.addChild(parentEntity)
+        ARView.scene.addAnchor(geoAnchorEntity)
     }
     
     var isGeoTrackingLocalized: Bool {
