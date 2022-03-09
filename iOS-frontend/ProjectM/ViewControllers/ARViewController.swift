@@ -19,7 +19,6 @@ class ARViewController: UIViewController, ARSessionDelegate {
     var messageLocation = [ARRaycastResult]()
     
     @IBOutlet weak var ARView: ARView!
-    @IBOutlet weak var toastLabel: UILabel!
 
     // Hold messages users post
     var userMessages = [MessageEntity]()
@@ -92,21 +91,22 @@ class ARViewController: UIViewController, ARSessionDelegate {
     }
     
     func placeExistingMessages() {
-        Network.shared.apollo.fetch(query: ListAnchorsQuery(limit: 20)) { result in
+        Network.shared.apollo.fetch(query: ListAnchorsQuery(limit: 200)) { result in
             switch result {
             case .success(let graphQLResult):
                 guard let items = graphQLResult.data?.listAnchors?.items else { break }
                 print("LOG - Grabbing \(items.count) anchors from the database")
-                
+
                 for optionalItem in items {
                     guard let item = optionalItem else { continue }
                     guard let lat = item.lat else {continue}
                     guard let long = item.long else {continue}
                     let loc = CLLocationCoordinate2D(latitude: lat, longitude: long)
-                    let message = Message(text: "hi");
+                    let messageString = item.message ?? ""
+                    let message = Message(text: messageString);
                     self.addGeoLocationToAnchor(at: loc, message: message)
                 }
-                
+
             case .failure(_):
                 print("LOG - placeExistingMessages error")
             }
@@ -192,14 +192,7 @@ class ARViewController: UIViewController, ARSessionDelegate {
             geoTrackingConfig.planeDetection = [.horizontal]
             //self.ARView.debugOptions = [.showPhysics]
             self.ARView.session.run(geoTrackingConfig)
-            // self.placeExistingMessages()
 
-            // Test placing anchors
-            // let cords1 = CLLocationCoordinate2D(latitude: 33.977197859645955, longitude: -117.34819358120566)
-            // let cords2 = CLLocationCoordinate2D(latitude: 33.97717306726972, longitude: -117.34821592500165)
-            // self.addGeoLocationToAnchor(at: cords)
-            // self.addGeoLocationToAnchor(at: cords1)
-            // self.addGeoLocationToAnchor(at: cords2)
         }
     }
     
