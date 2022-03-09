@@ -131,4 +131,67 @@ class CustomElements {
             })
         })
     }
+    
+    static var messageContainer = UIView(frame: CGRect())
+    
+    static func showMessage(message: String, controller: UIViewController) {
+        messageContainer = UIView(frame: CGRect())
+        messageContainer.backgroundColor = UIColor(
+            red: CGFloat(182),
+            green: CGFloat(249),
+            blue: CGFloat(201),
+            alpha: 1.0)
+        
+        messageContainer.alpha = 1
+        messageContainer.layer.cornerRadius = 5;
+        messageContainer.clipsToBounds  =  true
+        messageContainer.layer.name = "message"
+
+        let toastLabel = UILabel(frame: CGRect())
+        toastLabel.textColor = UIColor.black
+        toastLabel.textAlignment = .center;
+        toastLabel.font.withSize(12.0)
+        toastLabel.text = message
+        toastLabel.clipsToBounds  =  true
+        toastLabel.numberOfLines = 0
+
+        messageContainer.addSubview(toastLabel)
+        controller.view.addSubview(messageContainer)
+
+        toastLabel.translatesAutoresizingMaskIntoConstraints = false
+        messageContainer.translatesAutoresizingMaskIntoConstraints = false
+
+        let a1 = NSLayoutConstraint(item: toastLabel, attribute: .leading, relatedBy: .equal, toItem: messageContainer, attribute: .leading, multiplier: 1, constant: 15)
+        let a2 = NSLayoutConstraint(item: toastLabel, attribute: .trailing, relatedBy: .equal, toItem: messageContainer, attribute: .trailing, multiplier: 1, constant: -15)
+        let a3 = NSLayoutConstraint(item: toastLabel, attribute: .bottom, relatedBy: .equal, toItem: messageContainer, attribute: .bottom, multiplier: 1, constant: -15)
+        let a4 = NSLayoutConstraint(item: toastLabel, attribute: .top, relatedBy: .equal, toItem: messageContainer, attribute: .top, multiplier: 1, constant: 30)
+        messageContainer.addConstraints([a1, a2, a3, a4])
+
+        let c1 = NSLayoutConstraint(item: messageContainer, attribute: .leading, relatedBy: .equal, toItem: controller.view, attribute: .leading, multiplier: 1, constant: 10)
+        let c2 = NSLayoutConstraint(item: messageContainer, attribute: .trailing, relatedBy: .equal, toItem: controller.view, attribute: .trailing, multiplier: 1, constant: -10)
+        let c3 = NSLayoutConstraint(item: messageContainer, attribute: .top, relatedBy: .equal, toItem: controller.view, attribute: .top, multiplier: 1, constant: 10)
+
+        controller.view.addConstraints([c1, c2, c3])
+        
+        let closeButton = UIButton()
+        closeButton.setImage(UIImage(systemName: "xmark.circle"), for: .normal)
+        messageContainer.addSubview(closeButton)
+
+        closeButton.translatesAutoresizingMaskIntoConstraints = false
+
+
+        let b1 = NSLayoutConstraint(item: closeButton, attribute: .trailing, relatedBy: .equal, toItem: messageContainer, attribute: .trailing, multiplier: 1, constant: -15)
+        let b2 = NSLayoutConstraint(item: closeButton, attribute: .top, relatedBy: .equal, toItem: messageContainer, attribute: .top, multiplier: 1, constant: 15)
+
+        messageContainer.addConstraints([b1, b2])
+        closeButton.addTarget(self, action: #selector(hideView), for: .touchUpInside)
+    }
+    
+    @objc static func hideView() {
+        UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseIn, animations: {
+            messageContainer.alpha = 0
+        })
+    }
+    
+    
 }

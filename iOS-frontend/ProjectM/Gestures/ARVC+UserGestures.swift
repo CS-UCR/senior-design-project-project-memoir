@@ -107,6 +107,7 @@ extension ARViewController {
         CustomElements.clickIndicator(loc: point, startRadius: 20.0, endRadius: 40.0, controller: self, color: UIColor.green)
         debugPrint("LOG - Tapped on entity name: \(entity.name)")
         debugPrint("LOG - Tapped on entity with message: \(entity.message)")
+        CustomElements.showMessage(message: entity.message, controller: self)
     }
 
 
