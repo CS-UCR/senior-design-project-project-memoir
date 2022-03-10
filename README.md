@@ -16,7 +16,7 @@
 <a href= "https://www.linkedin.com/in/adenghadimi/" target="_blank"><img src= "https://aghad.github.io/me.jpg" align="left" height ="30px"> Aden Ghadimi</a><br><br>
 <a href= "https://www.linkedin.com/in/marco-alexi-sta-ana-946556209/" target="_blank"><img src= "https://media-exp1.licdn.com/dms/image/C4D03AQED53VHwi5a-g/profile-displayphoto-shrink_800_800/0/1621479166911?e=1651104000&v=beta&t=knTTtq9Wj6yUSvwSAy4dSPhNSJ8sKcu8fbTLyJLD5DM" align="left" height ="30px"> Marco Alexi Sta Ana</a><br><br>
 <a href= "https://www.linkedin.com/in/bryan-david-orozco/" target="_blank"><img src= "https://media-exp1.licdn.com/dms/image/C5603AQHknNYQzzy1dA/profile-displayphoto-shrink_800_800/0/1583603736185?e=1651104000&v=beta&t=beQWS9yjJGBXebEDR6atxmxicFB8uELlHMAqPOqrQpY" align="left" height ="30px"> Bryan David Orozco</a><br><br>
-<a href= "https://www.linkedin.com/in/carlos-loeza/" target="_blank"> <img src= "https://media-exp1.licdn.com/dms/image/D4D35AQG67BCBOrd1-g/profile-framedphoto-shrink_800_800/0/1639428474501?e=1645902000&v=beta&t=vzAB3adjgg_4Ru9iRcAvs1j2CGyWvIHA4whHIkjsIm8" align="left" height ="30px"> Carlos Loeza</a><br><br>
+<a href= "https://www.linkedin.com/in/carlos-loeza/" target="_blank"><img src= "https://media-exp1.licdn.com/dms/image/D4D35AQG67BCBOrd1-g/profile-framedphoto-shrink_800_800/0/1639428474501?e=1645902000&v=beta&t=vzAB3adjgg_4Ru9iRcAvs1j2CGyWvIHA4whHIkjsIm8" align="left" height ="30px"> Carlos Loeza</a><br><br>
 
 ## Usage
 Demo: <Link to youtube video>
