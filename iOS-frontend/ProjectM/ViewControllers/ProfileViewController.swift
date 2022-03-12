@@ -10,16 +10,19 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     @IBOutlet weak var profileTable: UITableView!
-    
+    @IBOutlet weak var standardUIImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         profileTable.register(UITableViewCell.self, forCellReuseIdentifier: "profileCell")
         profileTable.dataSource = self
+        standardUIImage.layer.masksToBounds = true
+        standardUIImage.layer.cornerRadius = standardUIImage.bounds.width / 2
+        standardUIImage.image = UIImage(named: "chiliicon.png")
     }
 }
 
-let profileOptionsOne = ["One", "Two", "Three"]
-let profileOptionsTwo = ["One", "Two"]
+let profileOptionsOne = ["Edit Profile ", "Log Out"]
+let profileOptionsTwo = ["Notifications", "Email", "Report"]
 
 extension ProfileViewController : UITableViewDataSource  {
     
@@ -54,9 +57,10 @@ extension ProfileViewController : UITableViewDataSource  {
 }
 
 
+
 extension ProfileViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-
-        return "Section \(section + 1)"
+        let tableTitles = ["Social", "Communications"]
+        return tableTitles[section]
     }
 }

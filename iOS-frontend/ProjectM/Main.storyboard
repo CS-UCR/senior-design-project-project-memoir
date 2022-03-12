@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pYA-hk-d7H">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pYA-hk-d7H">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -146,6 +146,10 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CuteTeddyBear" translatesAutoresizingMaskIntoConstraints="NO" id="stW-tE-GY3">
+                                <rect key="frame" x="107" y="44" width="200" height="134"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2wb-y9-11x"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -158,11 +162,12 @@
                     <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" id="O0a-tK-hSy"/>
                     <connections>
                         <outlet property="profileTable" destination="0AL-rv-28M" id="Du7-9R-th9"/>
+                        <outlet property="standardUIImage" destination="stW-tE-GY3" id="xdv-Bk-awE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8SX-t7-rRE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1399" y="141"/>
+            <point key="canvasLocation" x="1398.5507246376812" y="140.625"/>
         </scene>
         <!--Landing Page-->
         <scene sceneID="4NY-Ee-Y4Y">
@@ -349,6 +354,7 @@
         <segue reference="YSd-F8-hF9"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="CuteTeddyBear" width="1000" height="1080"/>
         <image name="arkit" catalog="system" width="128" height="128"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="login_profile_world" width="825.2021484375" height="591.41900634765625"/>
