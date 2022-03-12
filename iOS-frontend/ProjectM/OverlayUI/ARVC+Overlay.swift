@@ -15,11 +15,11 @@ extension ARViewController {
         
         setupShadeView()
         // Adding a clear button, the user should always be able to remove all messages in the AR Experience.
-        addClearButton()
+       //addClearButton()
         // Adding the ARCoachingOverlayView, which helps guide users to establish tracking.
         addCoachingOverlay()
         // Add menu button
-        addMenuButton()
+        //addMenuButton()
     }
     
     // setupShadeView() will create the shade view for our user when they type

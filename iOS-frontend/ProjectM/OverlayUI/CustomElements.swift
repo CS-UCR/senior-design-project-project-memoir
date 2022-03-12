@@ -135,7 +135,6 @@ class CustomElements {
     static var messageContainer = UIView(frame: CGRect())
     
     static func showMessage(message: String, controller: UIViewController) {
-        messageContainer = UIView(frame: CGRect())
         messageContainer.backgroundColor = UIColor(
             red: CGFloat(182),
             green: CGFloat(249),
@@ -169,7 +168,7 @@ class CustomElements {
 
         let c1 = NSLayoutConstraint(item: messageContainer, attribute: .leading, relatedBy: .equal, toItem: controller.view, attribute: .leading, multiplier: 1, constant: 10)
         let c2 = NSLayoutConstraint(item: messageContainer, attribute: .trailing, relatedBy: .equal, toItem: controller.view, attribute: .trailing, multiplier: 1, constant: -10)
-        let c3 = NSLayoutConstraint(item: messageContainer, attribute: .top, relatedBy: .equal, toItem: controller.view, attribute: .top, multiplier: 1, constant: 10)
+        let c3 = NSLayoutConstraint(item: messageContainer, attribute: .top, relatedBy: .equal, toItem: controller.view, attribute: .top, multiplier: 1, constant: 30)
 
         controller.view.addConstraints([c1, c2, c3])
         

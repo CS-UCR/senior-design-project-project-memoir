@@ -35,7 +35,7 @@ class MessageView: UIView{
         userMessage = user_message
         setupBlurBackgroundContainer()
         setupTextbox()
-        setupDeleteButton()
+        //setupDeleteButton()
         lastFrame = frame
     }
     

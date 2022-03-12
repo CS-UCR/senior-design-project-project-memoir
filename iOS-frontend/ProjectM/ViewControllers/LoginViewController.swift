@@ -34,7 +34,6 @@ class LoginViewController: UIViewController {
                     print("LOG ERROR - testCreateAnchor GraphQL request: \(graphQLResult.errors.debugDescription)")
                     break
                 }
-                print("LOG - testCreateAnchor created: \(anchorData.id)")
             case .failure(let error):
                 print("LOG ERROR - testCreateAnchor perform \(error)")
             }

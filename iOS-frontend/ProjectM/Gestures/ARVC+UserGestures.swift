@@ -94,7 +94,6 @@ extension ARViewController {
         guard let entity = ARView.entity(at: point)
         else {
             CustomElements.clickIndicator(loc: point, startRadius: 20.0, endRadius: 40.0, controller: self, color: UIColor.white)
-            debugPrint("LOG - Tapped on no entity")
             
             // NOTE - more efficient to reuse same toast layer but how fast can the user click anyway :P
             ARView.layer.sublayers?.filter{ $0.name == "toast - entity not found" }
@@ -105,8 +104,6 @@ extension ARViewController {
             return
         }
         CustomElements.clickIndicator(loc: point, startRadius: 20.0, endRadius: 40.0, controller: self, color: UIColor.green)
-        debugPrint("LOG - Tapped on entity name: \(entity.name)")
-        debugPrint("LOG - Tapped on entity with message: \(entity.message)")
         CustomElements.showMessage(message: entity.message, controller: self)
     }
 
@@ -174,7 +171,6 @@ extension ARViewController {
         let geoAnchorEntity = AnchorEntity(anchor: geoAnchor)
         let entity = try! Entity.load(named: "pin")
         entity.message = message.text
-        print("hi")
         entity.name = "geo anchor entity message"
         // double scale size
         entity.scale = [3, 3, 3]

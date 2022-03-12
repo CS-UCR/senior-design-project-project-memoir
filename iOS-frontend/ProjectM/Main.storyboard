@@ -82,9 +82,10 @@
                                 <rect key="frame" x="-7" y="0.0" width="421" height="854"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U0d-jz-2ib">
-                                        <rect key="frame" x="302.5" y="732" width="110.5" height="31"/>
+                                        <rect key="frame" x="322" y="694" width="91" height="81"/>
+                                        <color key="tintColor" name="AccentColor"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="add message"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="plus" title=""/>
                                         <connections>
                                             <action selector="showEditBox:" destination="lt2-YW-pVz" eventType="touchUpInside" id="SpQ-qw-zkb"/>
                                         </connections>
@@ -92,8 +93,8 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="U0d-jz-2ib" secondAttribute="trailing" constant="8" id="QBZ-j1-guJ"/>
-                                    <constraint firstAttribute="bottom" secondItem="U0d-jz-2ib" secondAttribute="bottom" constant="91" id="wh7-8G-8Mm"/>
+                                    <constraint firstAttribute="trailing" secondItem="U0d-jz-2ib" secondAttribute="trailing" constant="8" id="EC5-0w-1YN"/>
+                                    <constraint firstAttribute="bottom" secondItem="U0d-jz-2ib" secondAttribute="bottom" constant="79" id="bu2-PA-JDj"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -353,6 +354,7 @@
         <image name="login_profile_world" width="825.2021484375" height="591.41900634765625"/>
         <image name="logo" width="374" height="334"/>
         <image name="person" catalog="system" width="128" height="117"/>
+        <image name="plus" width="67" height="67"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
