@@ -93,8 +93,8 @@ extension ARViewController {
         
         guard let entity = ARView.entity(at: point)
         else {
-            CustomElements.clickIndicator(loc: point, startRadius: 20.0, endRadius: 40.0, controller: self, color: UIColor.white)
-            
+//            CustomElements.clickIndicator(loc: point, startRadius: 20.0, endRadius: 40.0, controller: self, color: UIColor.white)
+//
             // NOTE - more efficient to reuse same toast layer but how fast can the user click anyway :P
             ARView.layer.sublayers?.filter{ $0.name == "toast - entity not found" }
                 .forEach{ $0.removeFromSuperlayer() }
@@ -104,7 +104,10 @@ extension ARViewController {
             return
         }
         CustomElements.clickIndicator(loc: point, startRadius: 20.0, endRadius: 40.0, controller: self, color: UIColor.green)
-        CustomElements.showMessage(message: entity.message, controller: self)
+        var message = entity.name;
+        if(message != "pin" && !message.contains("simpB")) {
+            CustomElements.message(message: message, controller: self)
+        }
     }
 
 
@@ -148,7 +151,7 @@ extension ARViewController {
     }
     
     // addGeoLocation creates an ARGeoAnchor to assign it a location
-    func addGeoLocationToAnchor(at location: CLLocationCoordinate2D, altitude: CLLocationDistance? = nil, message: Message){
+    func addGeoLocationToAnchor(at location: CLLocationCoordinate2D, altitude: CLLocationDistance? = nil, message: String){
         // Create a geoAnchor variable to assign it our location
         var geoAnchor: ARGeoAnchor!
         // Assign geoLocation
@@ -158,7 +161,7 @@ extension ARViewController {
     
     // ENDS HERE
     // prepareToAddGeoAnchor adds the geoAnchor to our AR world
-    func prepareToAddGeoAnchor(_ geoAnchor: ARGeoAnchor, _ message: Message){
+    func prepareToAddGeoAnchor(_ geoAnchor: ARGeoAnchor, _ message: String){
         // Don't add a geo anchor if Core Location isn't sure yet where the user is.
         guard isGeoTrackingLocalized else {
             debugPrint("LOG - ERROR. Cannot add geo anchor to session because arcore location has not identified where the user is.")
@@ -170,15 +173,17 @@ extension ARViewController {
         // create geoAnchorEntity for our message
         let geoAnchorEntity = AnchorEntity(anchor: geoAnchor)
         let entity = try! Entity.load(named: "pin")
-        entity.message = message.text
-        entity.name = "geo anchor entity message"
+        entity.name = message
+        //entity.name = "geo anchor entity message"
         // double scale size
         entity.scale = [3, 3, 3]
         
         // create parent entity
         let parentEntity = ModelEntity()
+        parentEntity.name = message
         parentEntity.addChild(entity)
-        parentEntity.name = "geo anchor pin collision box"
+        
+        //parentEntity.name = "geo anchor pin collision box"
         
         // create bounds for parent entity
         let entityBounds = entity.visualBounds(relativeTo: parentEntity)

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pYA-hk-d7H">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pYA-hk-d7H">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -25,7 +25,6 @@
                         <tabBarAppearance key="scrollEdgeAppearance"/>
                     </tabBar>
                     <connections>
-                        <segue destination="COn-2P-SKb" kind="relationship" relationship="viewControllers" id="6f2-N0-zIr"/>
                         <segue destination="lt2-YW-pVz" kind="relationship" relationship="viewControllers" id="Gx3-vd-xUl"/>
                         <segue destination="5hs-XO-aTK" kind="relationship" relationship="viewControllers" id="uzC-Jp-z67"/>
                     </connections>
@@ -33,42 +32,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uRD-pJ-0zU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="70" y="-612"/>
-        </scene>
-        <!--Home-->
-        <scene sceneID="lQS-h4-TLb">
-            <objects>
-                <viewController id="COn-2P-SKb" customClass="LoginViewController" customModule="ProjectM" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="oRr-41-BK8">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ge-t9-jep">
-                                <rect key="frame" x="134" y="704" width="146" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="146" id="FbA-XP-eAt"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="TEST API"/>
-                                <connections>
-                                    <action selector="TestAPI:" destination="COn-2P-SKb" eventType="touchUpInside" id="rOz-Z2-hue"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="IMt-rp-RjQ"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="IMt-rp-RjQ" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="5ge-t9-jep" secondAttribute="trailing" constant="134" id="6iT-T4-i6Y"/>
-                            <constraint firstItem="5ge-t9-jep" firstAttribute="leading" relation="lessThanOrEqual" secondItem="IMt-rp-RjQ" secondAttribute="leading" constant="134" id="77z-pc-ew6"/>
-                            <constraint firstItem="IMt-rp-RjQ" firstAttribute="bottom" secondItem="5ge-t9-jep" secondAttribute="bottom" constant="78" id="e1Q-BY-Jau"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="hPm-hl-LKH">
-                        <color key="badgeColor" name="AccentColor"/>
-                    </tabBarItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KAx-Y8-N2j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-781.15942028985512" y="150.66964285714286"/>
         </scene>
         <!--Camera-->
         <scene sceneID="4cW-3b-WVq">
@@ -351,12 +314,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="YSd-F8-hF9"/>
+        <segue reference="rMT-UP-UT5"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="CuteTeddyBear" width="1000" height="1080"/>
         <image name="arkit" catalog="system" width="128" height="128"/>
-        <image name="house" catalog="system" width="128" height="106"/>
         <image name="login_profile_world" width="825.2021484375" height="591.41900634765625"/>
         <image name="logo" width="374" height="334"/>
         <image name="person" catalog="system" width="128" height="117"/>

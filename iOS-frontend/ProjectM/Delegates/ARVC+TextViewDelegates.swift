@@ -47,8 +47,8 @@ extension ARViewController: UITextViewDelegate {
             } catch {
                 print("Unexpected error: \(error).")
             }
-            let message = Message(text: messageView.textView.text)
-            self.addGeoLocationToAnchor(at: devicePosition, message: message)
+            let message = messageView.textView.text;
+            self.addGeoLocationToAnchor(at: devicePosition, message: message!)
         } else {
         }
         messageView.textView.text = ""

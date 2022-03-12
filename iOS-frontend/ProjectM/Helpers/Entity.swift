@@ -10,17 +10,17 @@ import ARKit
 import RealityKit
 
 extension Entity {
-    struct Holder {
-        static var _message:String = ""
-    }
-    var message:String {
-        get {
-            return Holder._message
-        }
-        set(newValue) {
-            Holder._message = newValue
-        }
-    }
+//    struct Holder {
+//        static var _message:String = ""
+//    }
+//    var message:String {
+//        get {
+//            return Holder._message
+//        }
+//        set(newValue) {
+//            Holder._message = newValue
+//        }
+//    }
     
     func move(by translation: SIMD3<Float>, scale: SIMD3<Float>, after delay: TimeInterval, duration: TimeInterval) {
         DispatchQueue.main.asyncAfter(deadline: .now() + delay) {

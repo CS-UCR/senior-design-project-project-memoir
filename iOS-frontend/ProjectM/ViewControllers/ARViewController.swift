@@ -103,8 +103,7 @@ class ARViewController: UIViewController, ARSessionDelegate {
                     guard let long = item.long else {continue}
                     let loc = CLLocationCoordinate2D(latitude: lat, longitude: long)
                     let messageString = item.message ?? ""
-                    let message = Message(text: messageString);
-                    self.addGeoLocationToAnchor(at: loc, message: message)
+                    self.addGeoLocationToAnchor(at: loc, message: messageString)
                 }
 
             case .failure(_):
@@ -175,7 +174,7 @@ class ARViewController: UIViewController, ARSessionDelegate {
     func loadAnchors(){
         geoAnchors_array = savedGeoAnchors
         for geoAnchor in geoAnchors_array {
-            prepareToAddGeoAnchor(geoAnchor, Message(text: "text"))
+            prepareToAddGeoAnchor(geoAnchor, "text")
         }
     }
     

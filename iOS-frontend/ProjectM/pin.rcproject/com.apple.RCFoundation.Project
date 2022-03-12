@@ -180,7 +180,7 @@
                         1
                       ],
                       "identifier" : "78A535D9-ECFA-491F-99D9-C4D86344714E",
-                      "isEnabled" : true,
+                      "isEnabled" : false,
                       "isLooping" : false,
                       "isModal" : false,
                       "name" : "Behavior 1",
