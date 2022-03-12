@@ -95,10 +95,11 @@ extension ARViewController: UITextViewDelegate {
         let safeFrame = view.safeAreaLayoutGuide.layoutFrame
         // height holds the space where our message box will appear for user to type message
         // We get this by getting (the height our iphone screen) - (the height our keyboard)
+        print(keyboardHeight)
         let height = safeFrame.height - keyboardHeight
         // insets helps create a cushion between our message and the screen borders
         // In our case, we are creating a cushion between keyboard and message box when user is editing
-        let inset = height * 0.1
+        let inset = height * 0.2
         // create message box using our inset measurement
         let editingFrame = CGRect(origin: safeFrame.origin, size: CGSize(width: safeFrame.width, height: height + 10)).insetBy(dx: inset, dy: inset)
         UIViewPropertyAnimator(duration: 0.2, curve: .easeIn) {

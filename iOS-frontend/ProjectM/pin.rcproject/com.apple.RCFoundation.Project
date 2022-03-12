@@ -38,7 +38,7 @@
                                           "target" : [
                                             "210E69BC-E85B-4611-B7B6-824F430052DD"
                                           ],
-                                          "volume" : 0.37062185402684567
+                                          "volume" : 0.64610775341708959
                                         },
                                         "name" : {
                                           "type" : "audio"
@@ -52,40 +52,6 @@
                                 }
                               ],
                               "identifier" : "B6B1D750-0DCC-49A7-BD3C-97C119B931A0",
-                              "isEnabled" : true
-                            }
-                          ],
-                          "__version" : 1
-                        },
-                        {
-                          "__content" : [
-                            {
-                              "configurations" : [
-                                {
-                                  "__content" : [
-                                    {
-                                      "configurationBox" : {
-                                        "configuration" : {
-                                          "animationStyle" : "basic",
-                                          "duration" : 1.0099999904632568,
-                                          "emphasisAnimationType" : "bounce",
-                                          "iterations" : 1,
-                                          "target" : [
-                                            "210E69BC-E85B-4611-B7B6-824F430052DD"
-                                          ]
-                                        },
-                                        "name" : {
-                                          "type" : "emphasis"
-                                        }
-                                      },
-                                      "identifier" : "AAE5E7C8-B7FC-49A7-A95A-6017320BBA6A",
-                                      "isEnabled" : true
-                                    }
-                                  ],
-                                  "__version" : 1
-                                }
-                              ],
-                              "identifier" : "5DB355E1-FAA2-4C0E-8978-802320B64551",
                               "isEnabled" : true
                             }
                           ],

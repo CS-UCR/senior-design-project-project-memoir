@@ -180,7 +180,7 @@
                     </view>
                     <connections>
                         <segue destination="oiq-k0-IOb" kind="presentation" identifier="new_account_segue" modalPresentationStyle="fullScreen" id="fFg-DJ-JiH"/>
-                        <segue destination="Q1O-wb-VJ6" kind="presentation" identifier="has_account_segue" id="eEP-1J-IHr"/>
+                        <segue destination="Q1O-wb-VJ6" kind="presentation" identifier="has_account_segue" modalPresentationStyle="fullScreen" id="eEP-1J-IHr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1yo-HO-bb6" sceneMemberID="firstResponder"/>
@@ -314,7 +314,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="rMT-UP-UT5"/>
+        <segue reference="eEP-1J-IHr"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="CuteTeddyBear" width="1000" height="1080"/>
