@@ -16,5 +16,7 @@ jobs:
       run: ls /Applications | grep Xcode
     - name: Select Xcode
       run: sudo xcode-select -switch /Applications/Xcode_13.0.app && /usr/bin/xcodebuild -version
+    - name: Add App settings
+      run: echo ${{secrets.APP_SETTINGS}} >> ./iOS-frontend/ProjectM/AppSettings.xcconfig
     - name: Run unit tests
       run: cd ./iOS-frontend && xcodebuild test -project ./ProjectM.xcodeproj  -scheme ProjectM -configuration 'Staging'  -destination 'platform=iOS Simulator,name=iPhone 12,OS=15.0' -derivedDataPath ./DerivedData
