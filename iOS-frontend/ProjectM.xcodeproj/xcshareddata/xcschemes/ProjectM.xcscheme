@@ -37,6 +37,11 @@
                BlueprintName = "ProjectMUnitTests"
                ReferencedContainer = "container:ProjectM.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "GeoAnchorUnitTests">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
    </TestAction>

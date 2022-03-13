@@ -13,10 +13,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Make sure user device supports ARWorldTrackingConfiguration
         // ARWorldTrackingConfiguration: tracks the device's position and orientation relative to
         // any surfaces, people, or known images and objects that ARKit may find and track (using rear camera).
-        guard ARWorldTrackingConfiguration.isSupported else {
-            // If user's device does not support, terminate app
-            fatalError("Your device does not support ARKit.")
-        }
+//        guard ARWorldTrackingConfiguration.isSupported else {
+//            // If user's device does not support, terminate app
+//            fatalError("Your device does not support ARKit.")
+//        }
         
         // return true if user's device supports ARWorldTracking
         return true

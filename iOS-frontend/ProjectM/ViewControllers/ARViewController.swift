@@ -66,6 +66,9 @@ class ARViewController: UIViewController, ARSessionDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        #if targetEnvironment(simulator)
+        print("in simulator")
+        #else
         ARView.automaticallyConfigureSession = false
         // setup different gestures to recognize user actions
         let ARSingleTapGesture = UITapGestureRecognizer(target: self, action: #selector(userTapsOnARView))
@@ -88,6 +91,8 @@ class ARViewController: UIViewController, ARSessionDelegate {
         
         // run ar session
         runARSession()
+        #endif
+       
     }
     
     func placeExistingMessages() {
