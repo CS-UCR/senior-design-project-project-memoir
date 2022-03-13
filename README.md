@@ -51,3 +51,20 @@ We use the apollo cli to download the schemas. Once the apollo cli is installed 
 
 apollo schema:download --header "x-api-key: AWS_API_KEY" --endpoint=https://wcgn7h5rojedpgzlmoroh3bazq.appsync-api.us-west-1.amazonaws.com/graphql schema.json
 
+ 
+## Authentication
+Authentication for Memoir is managed by Apple Sign In. We do not store any password information for security purposes. Each user has the ability to disclose their email to us or hide it through an icloud alias. [Read more about Sign In with Apple](https://developer.apple.com/documentation/sign_in_with_apple).
+
+## ARKit
+Apple's ARKit is the fundamental framework used for the AR development. Scenes, Anchors and Entities are used to display content on the scene.
+ - [Scenes](https://developer.apple.com/documentation/arkit/arscnview/2875547-scene)
+ - [ARAnchors](https://developer.apple.com/documentation/arkit/aranchor)
+ - [Entities](https://developer.apple.com/documentation/realitykit/entity)
+
+### ARGeoAnchors
+ARGeoAnchors are used to place anchors in the real world. By providing a latitude and longitude, we are able represent an anchor in our world. ARGeoAnchors are only available in certain cities, [see list](https://developer.apple.com/documentation/arkit/argeotrackingconfiguration). 
+
+### Reality Composer
+Reality Composer is used to model the 3D objects placed in the AR view. Behaviors such as touch or proximity.  
+
+![Reality Composer](./images/reality-composer.png "Reality Composer" )
