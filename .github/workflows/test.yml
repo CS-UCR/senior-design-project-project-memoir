@@ -19,4 +19,4 @@ jobs:
     - name: Add App settings
       run: echo "${{secrets.APP_SETTINGS}}" > ./iOS-frontend/ProjectM/AppSettings.xcconfig
     - name: Run unit tests
-      run: cd ./iOS-frontend && xcodebuild test -project ./ProjectM.xcodeproj  -scheme ProjectM -configuration 'Staging'  -destination 'platform=iOS Simulator,name=iPhone 12,OS=15.0' -derivedDataPath ./DerivedData
+      run: cd ./iOS-frontend && xcodebuild test-without-building -project ./ProjectM.xcodeproj  -scheme ProjectM -configuration 'Staging'  -destination 'platform=iOS Simulator,name=iPhone 12,OS=15.0' -derivedDataPath ./DerivedData
