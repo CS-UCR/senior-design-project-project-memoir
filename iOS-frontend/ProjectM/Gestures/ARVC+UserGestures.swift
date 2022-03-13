@@ -103,7 +103,7 @@ extension ARViewController {
             CustomElements.toast(message: "sorry, no messages here!", controller: self)
             return
         }
-        CustomElements.clickIndicator(loc: point, startRadius: 20.0, endRadius: 40.0, controller: self, color: UIColor.green)
+//        CustomElements.clickIndicator(loc: point, startRadius: 20.0, endRadius: 40.0, controller: self, color: UIColor.green)
         var message = entity.name;
         if(message != "pin" && !message.contains("simpB")) {
             CustomElements.message(message: message, controller: self)
