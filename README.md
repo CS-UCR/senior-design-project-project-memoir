@@ -39,4 +39,15 @@ cd iOS-frontend
 open ProjectM.xcodeproj
 ```
 You'll need to have your phone connected to your computer. Build the project `Product > Build`, then run it `Product > Run`. The application will open on your phone.
+ 
+ ## AppSync
+Given that GraphQL is the method our data is fetched and updated, AWS AppSync provides us with a GraphQL endpoint as well as a schema designer. Mutations for updating data is also created within AppSync. To download the graphQL schema you can use the AWS cli.
+
+## Apollo
+Apollo is used to connect from our iOS app to the GraphGL server. Queries are written and saved under the `GraphQL` folder in the XCode project. [Read more about apollo-ios](https://www.apollographql.com/docs/ios/tutorial/tutorial-add-sdk/).
+
+### Schemas
+We use the apollo cli to download the schemas. Once the apollo cli is installed you can runt he following command. Replace `AWS_API_KEY` with the actual api key.
+
+apollo schema:download --header "x-api-key: AWS_API_KEY" --endpoint=https://wcgn7h5rojedpgzlmoroh3bazq.appsync-api.us-west-1.amazonaws.com/graphql schema.json
 
