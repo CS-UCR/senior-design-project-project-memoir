@@ -163,37 +163,45 @@ extension ARViewController {
     // prepareToAddGeoAnchor adds the geoAnchor to our AR world
     func prepareToAddGeoAnchor(_ geoAnchor: ARGeoAnchor, _ message: String){
         // Don't add a geo anchor if Core Location isn't sure yet where the user is.
-        guard isGeoTrackingLocalized else {
-            debugPrint("LOG - ERROR. Cannot add geo anchor to session because arcore location has not identified where the user is.")
-            return
+        #if targetEnvironment(simulator)
+        print("in simulator")
+        #else
+        do {
+            guard isGeoTrackingLocalized else {
+                debugPrint("LOG - ERROR. Cannot add geo anchor to session because arcore location has not identified where the user is.")
+                return
+            }
+            
+            ARView.session.add(anchor: geoAnchor)
+            
+            // create geoAnchorEntity for our message
+            let geoAnchorEntity = AnchorEntity(anchor: geoAnchor)
+            let entity = try! Entity.load(named: "pin")
+            entity.name = message
+            //entity.name = "geo anchor entity message"
+            // double scale size
+            entity.scale = [3, 3, 3]
+            
+            // create parent entity
+            let parentEntity = ModelEntity()
+            parentEntity.name = message
+            parentEntity.addChild(entity)
+            
+            //parentEntity.name = "geo anchor pin collision box"
+            
+            // create bounds for parent entity
+            let entityBounds = entity.visualBounds(relativeTo: parentEntity)
+            parentEntity.collision = CollisionComponent(shapes: [ShapeResource.generateBox(size: entityBounds.extents).offsetBy(translation: entityBounds.center)])
+            parentEntity.generateCollisionShapes(recursive: false)
+            
+            // install gestures and add child
+            // ARView.installGestures([.all], for: parentEntity)
+            geoAnchorEntity.addChild(parentEntity)
+            ARView.scene.addAnchor(geoAnchorEntity)
+        } catch {
+            print(error)
         }
-        
-        ARView.session.add(anchor: geoAnchor)
-        
-        // create geoAnchorEntity for our message
-        let geoAnchorEntity = AnchorEntity(anchor: geoAnchor)
-        let entity = try! Entity.load(named: "pin")
-        entity.name = message
-        //entity.name = "geo anchor entity message"
-        // double scale size
-        entity.scale = [3, 3, 3]
-        
-        // create parent entity
-        let parentEntity = ModelEntity()
-        parentEntity.name = message
-        parentEntity.addChild(entity)
-        
-        //parentEntity.name = "geo anchor pin collision box"
-        
-        // create bounds for parent entity
-        let entityBounds = entity.visualBounds(relativeTo: parentEntity)
-        parentEntity.collision = CollisionComponent(shapes: [ShapeResource.generateBox(size: entityBounds.extents).offsetBy(translation: entityBounds.center)])
-        parentEntity.generateCollisionShapes(recursive: false)
-        
-        // install gestures and add child
-        // ARView.installGestures([.all], for: parentEntity)
-        geoAnchorEntity.addChild(parentEntity)
-        ARView.scene.addAnchor(geoAnchorEntity)
+        #endif
     }
     
     var isGeoTrackingLocalized: Bool {
