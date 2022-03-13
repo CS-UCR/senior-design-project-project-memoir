@@ -9,6 +9,9 @@ import Foundation
 import UIKit
 
 class ProfileViewController: UIViewController {
+    @IBOutlet weak var usernameLabel: UILabel!
+
+    
     @IBOutlet weak var profileTable: UITableView!
     @IBOutlet weak var standardUIImage: UIImageView!
     override func viewDidLoad() {
@@ -18,7 +21,37 @@ class ProfileViewController: UIViewController {
         standardUIImage.layer.masksToBounds = true
         standardUIImage.layer.cornerRadius = standardUIImage.bounds.width / 2
         standardUIImage.image = UIImage(named: "chiliicon.png")
+        retrieveUser()
     }
+
+    func retrieveUser(){
+        let userToken = UserDefaults.standard.object(forKey: "userToken")!
+        
+        Network.shared.apollo.fetch(query: GetUserByIdQuery(id: userToken as! String)){
+            result in
+            switch result {
+            case .success(let graphQLResult):
+                
+                guard let userData = graphQLResult.data?.getUser
+                else{
+                    print("LOG ERROR - getUserData GraphQL request: (graphQLResult.errors?.debugDescription)")
+                    break
+                }
+                
+                let name = UserDefaults.standard.object(forKey: "firstName")!
+                let userToken = userData.id ?? nil
+                let username = userData.username ?? name as! String
+                
+                
+                self.usernameLabel.text = username;
+                                
+            case .failure(let error):
+                print("Failure to retrieve user data!")
+            }
+        }
+    }
+    
+    
 }
 
 let profileOptionsOne = ["Edit Profile ", "Log Out"]
