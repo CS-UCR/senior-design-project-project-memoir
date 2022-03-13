@@ -15,10 +15,7 @@ class NetworkUnitTests: XCTestCase {
     func testListAnchors(){
         let expectation = self.expectation(description: "Fetching query")
         Network.shared.apollo.fetch(query: ListAnchorsQuery(limit: 1)) { result in
-            // defer{} works as a pause button. We will not run the switch statment
-            // until defer{} is done.
-            // We need this because our test case will run before the server is done getting the
-            // the anchor
+
             defer{expectation.fulfill()}
             switch result {
             case .success(let graphQLResult):
