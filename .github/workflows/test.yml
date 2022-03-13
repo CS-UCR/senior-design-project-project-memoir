@@ -1,0 +1,22 @@
+name: Swift
+
+on: 
+  push:
+    branches:
+      - development
+  pull_request:
+    branches:
+      - development
+jobs:
+  Run_workspace_Tests:
+    runs-on: macOS-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: List available Xcode versions
+      run: ls /Applications | grep Xcode
+    - name: Select Xcode
+      run: sudo xcode-select -switch /Applications/Xcode_13.0.app && /usr/bin/xcodebuild -version
+    - name: Add App settings
+      run: echo "${{secrets.APP_SETTINGS}}" > ./iOS-frontend/ProjectM/AppSettings.xcconfig
+    - name: Run unit tests
+      run: cd ./iOS-frontend && xcodebuild -showsdks
