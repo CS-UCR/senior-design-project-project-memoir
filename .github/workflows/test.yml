@@ -18,9 +18,5 @@ jobs:
       run: sudo xcode-select -switch /Applications/Xcode_13.0.app && /usr/bin/xcodebuild -version
     - name: Add App settings
       run: echo "${{secrets.APP_SETTINGS}}" > ./iOS-frontend/ProjectM/AppSettings.xcconfig
-    - uses: sersoft-gmbh/xcodebuild-action@v1
-      with:
-        project: ./iOS-frontend/ProjectM.xcodeproj
-        scheme: ProjectM
-        destination: platform=iOS Simulator,name=iPhone 12,OS=15.0
-        action: build
+    - name: Run unit tests
+      run: cd ./iOS-frontend && xcodebuild -showsdks
