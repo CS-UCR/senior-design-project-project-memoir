@@ -48,9 +48,9 @@ Apollo is used to connect from our iOS app to the GraphGL server. Queries are wr
 
 ### Schemas
 We use the apollo cli to download the schemas. Once the apollo cli is installed you can runt he following command. Replace `AWS_API_KEY` with the actual api key.
-
+```shell
 apollo schema:download --header "x-api-key: AWS_API_KEY" --endpoint=https://wcgn7h5rojedpgzlmoroh3bazq.appsync-api.us-west-1.amazonaws.com/graphql schema.json
-
+```
  
 ## Authentication
 Authentication for Memoir is managed by Apple Sign In. We do not store any password information for security purposes. Each user has the ability to disclose their email to us or hide it through an icloud alias. [Read more about Sign In with Apple](https://developer.apple.com/documentation/sign_in_with_apple).
