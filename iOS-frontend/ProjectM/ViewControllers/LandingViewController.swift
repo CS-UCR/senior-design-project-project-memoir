@@ -65,10 +65,8 @@ extension LandingViewController: ASAuthorizationControllerDelegate {
             let email = credentials.email
             
             let uniqueId = credentials.user;
-            var tempId: String;
             
             Network.shared.apollo.fetch(query: GetUserByIdQuery(id: uniqueId)){
-            
                 result in
                 switch result {
                 case .success(let graphQLResult):
@@ -79,10 +77,11 @@ extension LandingViewController: ASAuthorizationControllerDelegate {
                         break
                     }
                     
-                    let authorID = userData.id ?? "no identifier found"
-                    let username = userData.username ?? "no username found"
+                    let userToken = userData.id ?? nil
+                    let username = userData.username ?? nil
                     
-                    if(authorID != nil){
+                    if(userToken != nil){
+                        UserDefaults.standard.set(userToken, forKey: "userToken")
                         self.performSegue(withIdentifier: "has_account_segue", sender: self)
                     }
                     
@@ -90,35 +89,10 @@ extension LandingViewController: ASAuthorizationControllerDelegate {
                     print("Failure to retrieve user data!")
                 }
             }
-        
-            let userData = CreateUserInput(id: uniqueId, username: firstName)
             
             if(firstName != nil){
-                Network.shared.apollo.perform(mutation: CreateUserMutation(userInput: userData)) {
-                    result in
-                    switch result {
-                    case .success(let graphQLResult):
-                      
-                      let errors = graphQLResult.errors
-                      let userData = graphQLResult.data?.createUser
-                      
-                      var alert: UIAlertController
-                      if errors != nil {
-                          alert = UIAlertController(title: "ERROR CREATE DUPLICATE USER", message: "attempted to create another user with the same id: \(uniqueId)", preferredStyle: .alert)
-                      } else {
-                          alert = UIAlertController(title: "CREATE USER SUCCESSFUL", message: userData.debugDescription, preferredStyle: .alert)
-                      }
-
-                      alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
-                      NSLog("The \"OK\" alert occured.")
-                      }))
-
-                      self.present(alert, animated: true, completion: nil)
-
-                    case .failure(let error):
-                        print("Failure! Error: \(error)")
-                  }
-                }
+                UserDefaults.standard.set(uniqueId, forKey: "userToken")
+                UserDefaults.standard.set(firstName, forKey: "firstName")
                 self.performSegue(withIdentifier: "new_account_segue", sender: self)
             }
             break
