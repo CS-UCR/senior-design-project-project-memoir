@@ -1,4 +1,4 @@
-![Memoir](./images/banner.jpg?raw=true "Memoir")
+![Memoir](./images/logo_white.png?raw=true "Memoir")
 
 
 ## Table of Contents
