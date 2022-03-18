@@ -38,12 +38,12 @@ class ProfileViewController: UIViewController {
                     break
                 }
                 
-                let name = UserDefaults.standard.object(forKey: "firstName")!
-                let userToken = userData.id ?? nil
-                let username = userData.username ?? name as! String
-                
-                
-                self.usernameLabel.text = username;
+//                let name = UserDefaults.standard.object(forKey: "firstName")!
+//                let userToken = userData.id ?? nil
+//                let username = userData.username ?? name as! String
+//                
+//                
+//                self.usernameLabel.text = username;
                                 
             case .failure(let error):
                 print("Failure to retrieve user data!")

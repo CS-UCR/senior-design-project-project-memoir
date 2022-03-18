@@ -18,20 +18,26 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="selectedImageTintColor" systemColor="opaqueSeparatorColor"/>
-                        <tabBarAppearance key="standardAppearance">
+                        <tabBarAppearance key="standardAppearance" selectionIndicatorImage="mappin.and.ellipse" catalog="system">
                             <color key="backgroundColor" systemColor="systemGray2Color"/>
                             <color key="selectionIndicatorTintColor" name="AccentColor"/>
                         </tabBarAppearance>
                         <tabBarAppearance key="scrollEdgeAppearance"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.5099592740662271" green="1" blue="0.68645285783900789" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="displayP3"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
+                        <segue destination="DjZ-QG-Czj" kind="relationship" relationship="viewControllers" id="ATK-FE-Y8Q"/>
                         <segue destination="lt2-YW-pVz" kind="relationship" relationship="viewControllers" id="Gx3-vd-xUl"/>
                         <segue destination="5hs-XO-aTK" kind="relationship" relationship="viewControllers" id="uzC-Jp-z67"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uRD-pJ-0zU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="70" y="-612"/>
+            <point key="canvasLocation" x="32" y="-832"/>
         </scene>
         <!--Camera-->
         <scene sceneID="4cW-3b-WVq">
@@ -78,7 +84,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vgv-rB-fhw" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="31.884057971014496" y="140.625"/>
+            <point key="canvasLocation" x="32" y="1"/>
         </scene>
         <!--Profile-->
         <scene sceneID="ywh-uO-Ld4">
@@ -131,7 +137,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8SX-t7-rRE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1398.5507246376812" y="140.625"/>
+            <point key="canvasLocation" x="1209" y="1"/>
         </scene>
         <!--Landing Page-->
         <scene sceneID="4NY-Ee-Y4Y">
@@ -186,7 +192,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1yo-HO-bb6" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1071" y="-1447"/>
+            <point key="canvasLocation" x="32" y="-1551"/>
         </scene>
         <!--Create Page-->
         <scene sceneID="S0m-GN-bHa">
@@ -261,17 +267,54 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ydo-Lp-MV7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1071.0144927536232" y="-612.05357142857144"/>
+            <point key="canvasLocation" x="-1154" y="-832"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="Qfd-Jg-b8k">
+            <objects>
+                <viewController id="DjZ-QG-Czj" customClass="MapViewController" customModule="ProjectM" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tiU-Wt-p5h">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vyP-JH-UJQ">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="VGx-2z-5Ds"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vyP-JH-UJQ" firstAttribute="leading" secondItem="VGx-2z-5Ds" secondAttribute="leading" id="33a-EI-vXf"/>
+                            <constraint firstItem="vyP-JH-UJQ" firstAttribute="top" secondItem="tiU-Wt-p5h" secondAttribute="top" id="FDY-Lk-Gc6"/>
+                            <constraint firstItem="vyP-JH-UJQ" firstAttribute="trailing" secondItem="VGx-2z-5Ds" secondAttribute="trailing" id="qWa-5G-JUJ"/>
+                            <constraint firstAttribute="bottom" secondItem="vyP-JH-UJQ" secondAttribute="bottom" id="rY4-5g-Sga"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Map" image="mappin.and.ellipse" catalog="system" id="3iJ-B4-Re6">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" systemColor="tintColor"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
+                    <connections>
+                        <outlet property="mapView" destination="vyP-JH-UJQ" id="4HS-Q6-0EI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fYQ-7t-bEb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-914" y="1"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="eEP-1J-IHr"/>
+        <segue reference="rMT-UP-UT5"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arkit" catalog="system" width="128" height="128"/>
         <image name="chiliicon" width="512" height="512"/>
         <image name="login_profile_world" width="825.2021484375" height="591.41900634765625"/>
         <image name="logo" width="374" height="334"/>
+        <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="plus" width="67" height="67"/>
         <namedColor name="AccentColor">
@@ -285,6 +328,9 @@
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
