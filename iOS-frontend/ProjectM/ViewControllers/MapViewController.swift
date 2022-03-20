@@ -107,7 +107,8 @@ class MapViewController: UIViewController, MKMapViewDelegate{
         for location in locations {
             let annotation = MKPointAnnotation()
             annotation.coordinate = CLLocationCoordinate2D(latitude: location["latitude"] as! CLLocationDegrees, longitude: location["longitude"] as! CLLocationDegrees)
-
+            // brute force to assign a title to each annotation.
+            // title determines the color of annotation. (see func mapView() below for reference)
             if (counter % 3 == 0){
                 annotation.title = "Public"
             } else {
@@ -138,11 +139,13 @@ class MapViewController: UIViewController, MKMapViewDelegate{
         // Blue is public and green is friends only
         switch annotation.title!! {
             case "Public":
-                // Color: Twitter blue
-                annotationView.markerTintColor = twitterBlue
-            case "Friends":
                 // Color: Memoir green
                 annotationView.markerTintColor = memoirGreen
+                annotationView.glyphImage = UIImage(systemName: "person.3.fill")
+            case "Friends":
+                // Color: Twitter blue
+                annotationView.markerTintColor = twitterBlue
+                annotationView.glyphImage = UIImage(systemName: "star.fill")
             default:
                 annotationView.markerTintColor = twitterBlue
         }
