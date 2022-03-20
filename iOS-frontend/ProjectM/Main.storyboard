@@ -173,6 +173,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XpX-h7-K0g"/>
                         <color key="backgroundColor" red="0.96862745289999996" green="0.96862745289999996" blue="0.96862745289999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" systemColor="tintColor"/>
                         <constraints>
                             <constraint firstItem="XpX-h7-K0g" firstAttribute="bottom" secondItem="vk5-36-LIv" secondAttribute="bottom" constant="96" id="0fP-jS-Su4"/>
                             <constraint firstItem="QtW-Nh-Xdp" firstAttribute="top" secondItem="zh0-zp-gg5" secondAttribute="bottom" constant="16" id="2c0-mp-Upv"/>
@@ -277,7 +278,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="vyP-JH-UJQ">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vyP-JH-UJQ">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </mapView>
                         </subviews>
@@ -307,7 +308,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="rMT-UP-UT5"/>
+        <segue reference="eEP-1J-IHr"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arkit" catalog="system" width="128" height="128"/>

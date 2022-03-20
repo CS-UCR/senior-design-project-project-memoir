@@ -28,7 +28,7 @@ class MapViewController: UIViewController, MKMapViewDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
-        // Golden Gate Park
+        // Golden Gate Park pins
         var annotationLocations = [
             ["latitude": 37.770412, "longitude": -122.480161 ],
             ["latitude": 37.771771, "longitude": -122.469390],
@@ -61,6 +61,9 @@ class MapViewController: UIViewController, MKMapViewDelegate{
             ["latitude": 37.770522, "longitude": -122.467512],
             ["latitude": 37.770308, "longitude": -122.467096],
         ]
+        
+
+        
         configureLocationServices()
         placeAnchorsOnMap(locations: annotationLocations)
     }
@@ -85,13 +88,6 @@ class MapViewController: UIViewController, MKMapViewDelegate{
         }
     }
     
-    // zoomToCurrentLocation tells our map how zoomed
-    // Example: seeing an entire city vs only your neighborhood
-    private func zoomToCurrentLocation(with coordinate: CLLocationCoordinate2D) {
-        let zoomRegion = MKCoordinateRegion(center: coordinate, latitudinalMeters: 500,longitudinalMeters: 500)
-        mapView.setRegion(zoomRegion, animated: true)
-    }
-    
     // beginLocationUpdates
     private func beginLocationUpdates(locationManager: CLLocationManager){
         mapView.showsUserLocation = true
@@ -100,35 +96,61 @@ class MapViewController: UIViewController, MKMapViewDelegate{
         // get longtitude and latitude of current location
         locationManager.startUpdatingLocation()
     }
+    
     // counter used for testing color in pin
     var counter = 0
     
     // placeAnchorsOnMap allows us to place a pin on our map.
     // Currently places red pins but I also want to add other colors
     func placeAnchorsOnMap(locations: [[String : Double]]){
+        // get all the locations
         for location in locations {
             let annotation = MKPointAnnotation()
             annotation.coordinate = CLLocationCoordinate2D(latitude: location["latitude"] as! CLLocationDegrees, longitude: location["longitude"] as! CLLocationDegrees)
-//
-//            if (counter % 2 == 0){
-//                annotation.pinTintColor = .blue
-//            } else {
-//                annotation.pinTintColor = .green
-//            }
 
+            if (counter % 3 == 0){
+                annotation.title = "Public"
+            } else {
+                annotation.title = "Friends"
+            }
             // Add pin to map
             mapView.addAnnotation(annotation)
             //
             counter+=1
         }
+        print(counter-1)
     }
     
     // Changes color of pins
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        // if annotation location == user's location, do not assign it a colored pin.
+        // We want to keept the user's location appearance as a blue dot.
+        // Ex: blue dot on Apple Maps showing your location
+        guard !(annotation is MKUserLocation) else { return nil }
+        // create the balloon pin which shows the location of messages posted
         let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "MyMarker")
-        annotationView.markerTintColor = UIColor.green
+        // Check if message is for public view or only friends and determine what color to assing it.
+        // Blue is public and green is friends only
+        switch annotation.title!! {
+            case "Public":
+                // Color: Twitter blue
+                annotationView.markerTintColor = UIColor(red: 0/255.0, green: 172/255.0, blue: 238/255.0, alpha: 1.0)
+            case "Friends":
+                // Color: Memoir green
+                annotationView.markerTintColor = UIColor(red: 130/255.0, green: 255/255.0, blue: 175/255.0, alpha: 1.0)
+            default:
+                annotationView.markerTintColor = UIColor(red: 0/255.0, green: 172/255.0, blue: 238/255.0, alpha: 1.0)
+        }
         return annotationView
     }
+    
+    // zoomToCurrentLocation tells our map how zoomed
+    // Example: seeing an entire city vs only your neighborhood
+    private func zoomToCurrentLocation(with coordinate: CLLocationCoordinate2D) {
+        let zoomRegion = MKCoordinateRegion(center: coordinate, latitudinalMeters: 500,longitudinalMeters: 500)
+        mapView.setRegion(zoomRegion, animated: true)
+    }
+    
 }
 
 
