@@ -9,7 +9,16 @@ import ARKit
 import MapKit
 import UIKit
 
-class MapViewController: UIViewController {
+
+// MyPointAnnotation allows us to give our MKPointAnnotation
+// different colors.
+// Add custom property, pinTintColor, in order to use .coordinate in MKPointAnnotation
+class MyPointAnnotation : MKPointAnnotation {
+    var pinTintColor: UIColor?
+}
+
+
+class MapViewController: UIViewController, MKMapViewDelegate{
     
     private let locationManager = CLLocationManager()
     private var currentCoordinates: CLLocationCoordinate2D?
@@ -18,13 +27,52 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        mapView.delegate = self
+        // Golden Gate Park
+        var annotationLocations = [
+            ["latitude": 37.770412, "longitude": -122.480161 ],
+            ["latitude": 37.771771, "longitude": -122.469390],
+            ["latitude": 37.769294, "longitude": -122.467352],
+            ["latitude": 37.770182, "longitude": -122.470194],
+            ["latitude": 37.771713, "longitude": -122.460053],
+            ["latitude": 37.771208, "longitude": -122.466793],
+            ["latitude": 37.766884, "longitude": -122.492708],
+            ["latitude": 37.769571, "longitude": -122.498083],
+            ["latitude": 37.769609, "longitude": -122.497076],
+            ["latitude": 37.765822, "longitude": -122.495574],
+            ["latitude": 37.770132, "longitude": -122.466662],
+            ["latitude": 37.772104, "longitude": -122.460050],
+            ["latitude": 37.771751, "longitude": -122.471294],
+            ["latitude": 37.769718, "longitude": -122.472314],
+            // stow lake
+            ["latitude": 37.769718, "longitude": -122.472314],
+            ["latitude": 37.769584, "longitude": -122.473504],
+            ["latitude": 37.769753, "longitude": -122.474738],
+            ["latitude": 37.770608, "longitude": -122.476832],
+            ["latitude": 37.769274, "longitude": -122.474668],
+            ["latitude": 37.767836, "longitude": -122.476524],
+            // botanical gardens
+            ["latitude": 37.769132, "longitude": -122.470423],
+            ["latitude": 37.769110, "longitude": -122.470185],
+            // de young museum
+            ["latitude": 37.771056, "longitude": -122.468537],
+            ["latitude": 37.771336, "longitude": -122.468140],
+            // music concourse
+            ["latitude": 37.770522, "longitude": -122.467512],
+            ["latitude": 37.770308, "longitude": -122.467096],
+        ]
         configureLocationServices()
+        placeAnchorsOnMap(locations: annotationLocations)
     }
+    
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
+    // configureLocationServices checks to see if we have permission
+    // to use get user's location
     private func configureLocationServices() {
         locationManager.delegate = self
         // location status
@@ -37,19 +85,50 @@ class MapViewController: UIViewController {
         }
     }
     
+    // zoomToCurrentLocation tells our map how zoomed
+    // Example: seeing an entire city vs only your neighborhood
     private func zoomToCurrentLocation(with coordinate: CLLocationCoordinate2D) {
         let zoomRegion = MKCoordinateRegion(center: coordinate, latitudinalMeters: 500,longitudinalMeters: 500)
         mapView.setRegion(zoomRegion, animated: true)
     }
     
-    
+    // beginLocationUpdates
     private func beginLocationUpdates(locationManager: CLLocationManager){
         mapView.showsUserLocation = true
+        // kCLLocationAccuracyBest = high accuracy for user location
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         // get longtitude and latitude of current location
         locationManager.startUpdatingLocation()
     }
+    // counter used for testing color in pin
+    var counter = 0
     
+    // placeAnchorsOnMap allows us to place a pin on our map.
+    // Currently places red pins but I also want to add other colors
+    func placeAnchorsOnMap(locations: [[String : Double]]){
+        for location in locations {
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = CLLocationCoordinate2D(latitude: location["latitude"] as! CLLocationDegrees, longitude: location["longitude"] as! CLLocationDegrees)
+//
+//            if (counter % 2 == 0){
+//                annotation.pinTintColor = .blue
+//            } else {
+//                annotation.pinTintColor = .green
+//            }
+
+            // Add pin to map
+            mapView.addAnnotation(annotation)
+            //
+            counter+=1
+        }
+    }
+    
+    // Changes color of pins
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "MyMarker")
+        annotationView.markerTintColor = UIColor.green
+        return annotationView
+    }
 }
 
 
@@ -60,7 +139,6 @@ extension MapViewController: CLLocationManagerDelegate {
         if currentCoordinates == nil {
             zoomToCurrentLocation(with: latestLocation.coordinate)
         }
-        
         currentCoordinates = latestLocation.coordinate
     }
     
