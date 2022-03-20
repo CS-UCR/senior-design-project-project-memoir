@@ -121,7 +121,7 @@ class MapViewController: UIViewController, MKMapViewDelegate{
         print(counter-1)
     }
     
-    // Changes color of pins
+    // Create pin and assign it a color
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         // if annotation location == user's location, do not assign it a colored pin.
         // We want to keept the user's location appearance as a blue dot.
@@ -129,17 +129,22 @@ class MapViewController: UIViewController, MKMapViewDelegate{
         guard !(annotation is MKUserLocation) else { return nil }
         // create the balloon pin which shows the location of messages posted
         let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "MyMarker")
-        // Check if message is for public view or only friends and determine what color to assing it.
+        // Pin colors:
+        // 1. Twitter blue
+        let twitterBlue = UIColor(red: 0/255.0, green: 172/255.0, blue: 238/255.0, alpha: 1.0)
+        // 2. Memoir green
+        let memoirGreen = UIColor(red: 130/255.0, green: 255/255.0, blue: 175/255.0, alpha: 1.0)
+        // Check if message is for public view or only friends, and determine what color to assing it.
         // Blue is public and green is friends only
         switch annotation.title!! {
             case "Public":
                 // Color: Twitter blue
-                annotationView.markerTintColor = UIColor(red: 0/255.0, green: 172/255.0, blue: 238/255.0, alpha: 1.0)
+                annotationView.markerTintColor = twitterBlue
             case "Friends":
                 // Color: Memoir green
-                annotationView.markerTintColor = UIColor(red: 130/255.0, green: 255/255.0, blue: 175/255.0, alpha: 1.0)
+                annotationView.markerTintColor = memoirGreen
             default:
-                annotationView.markerTintColor = UIColor(red: 0/255.0, green: 172/255.0, blue: 238/255.0, alpha: 1.0)
+                annotationView.markerTintColor = twitterBlue
         }
         return annotationView
     }
