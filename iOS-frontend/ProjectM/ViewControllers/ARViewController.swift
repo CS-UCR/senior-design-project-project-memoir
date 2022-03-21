@@ -45,24 +45,6 @@ class ARViewController: UIViewController, ARSessionDelegate {
     let locationManager = CLLocationManager()
     let coachingOverlay = ARCoachingOverlayView()
     
-    @IBAction func showEditBox(_ sender: Any) {
-        // Get a 3D point (user's message) and convert it to 2D
-        self.showEditBox()
-    }
-    
-    func showEditBox() {
-        guard let messageView = self.editMessageBox.view else { return }
-        messageView.textView.becomeFirstResponder()
-        focusOnMessageView(messageView)
-    }
-
-    func showEditBox(text: String) {
-        guard let messageView = self.editMessageBox.view else { return }
-        messageView.textView.becomeFirstResponder()
-        messageView.textView.text = text
-        focusOnMessageView(messageView)
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -94,7 +76,26 @@ class ARViewController: UIViewController, ARSessionDelegate {
         #endif
        
     }
+
     
+    @IBAction func showEditBox(_ sender: Any) {
+        // Get a 3D point (user's message) and convert it to 2D
+        self.showEditBox()
+    }
+    
+    func showEditBox() {
+        guard let messageView = self.editMessageBox.view else { return }
+        messageView.textView.becomeFirstResponder()
+        focusOnMessageView(messageView)
+    }
+
+    func showEditBox(text: String) {
+        guard let messageView = self.editMessageBox.view else { return }
+        messageView.textView.becomeFirstResponder()
+        messageView.textView.text = text
+        focusOnMessageView(messageView)
+    }
+
     func placeExistingMessages() {
         Network.shared.apollo.fetch(query: ListAnchorsQuery(limit: 20)) { result in
             switch result {
