@@ -177,7 +177,7 @@ class MapViewController: UIViewController, MKMapViewDelegate{
     }
     
     
-    // zoomToCurrentLocation tells our map how zoomed
+    // zoomToCurrentLocation tells our map how zoomed in to be when user opens map
     // Example: seeing an entire city vs only your neighborhood
     private func zoomToCurrentLocation(with coordinate: CLLocationCoordinate2D) {
         let zoomRegion = MKCoordinateRegion(center: coordinate, latitudinalMeters: 500,longitudinalMeters: 500)
