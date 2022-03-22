@@ -76,7 +76,7 @@
                             <constraint firstItem="MaM-O2-B9G" firstAttribute="leading" secondItem="Nkx-Nt-Ass" secondAttribute="leadingMargin" constant="-27" id="kzB-68-nCo"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Camera" image="arkit" catalog="system" id="wv9-Ud-7bG"/>
+                    <tabBarItem key="tabBarItem" title="Camera" image="camera" catalog="system" id="wv9-Ud-7bG"/>
                     <navigationItem key="navigationItem" id="0ME-Bz-rR0"/>
                     <connections>
                         <outlet property="ARView" destination="MaM-O2-B9G" id="Mai-27-vng"/>
@@ -128,7 +128,7 @@
                             <constraint firstItem="nL3-IK-9VZ" firstAttribute="top" secondItem="2wb-y9-11x" secondAttribute="top" constant="168" id="gop-wP-plB"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" id="O0a-tK-hSy"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person.text.rectangle" catalog="system" id="O0a-tK-hSy"/>
                     <connections>
                         <outlet property="profileTable" destination="0AL-rv-28M" id="Du7-9R-th9"/>
                         <outlet property="standardUIImage" destination="stW-tE-GY3" id="xdv-Bk-awE"/>
@@ -311,12 +311,12 @@
         <segue reference="eEP-1J-IHr"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="arkit" catalog="system" width="128" height="128"/>
+        <image name="camera" catalog="system" width="128" height="94"/>
         <image name="chiliicon" width="512" height="512"/>
         <image name="login_profile_world" width="825.2021484375" height="591.41900634765625"/>
         <image name="logo" width="374" height="334"/>
         <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
-        <image name="person" catalog="system" width="128" height="117"/>
+        <image name="person.text.rectangle" catalog="system" width="128" height="93"/>
         <image name="plus" width="67" height="67"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

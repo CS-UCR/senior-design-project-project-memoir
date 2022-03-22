@@ -112,15 +112,17 @@ class MapViewController: UIViewController, MKMapViewDelegate{
         Network.shared.apollo.fetch(query: ListAnchorsQuery(limit: 20)) { result in
             switch result {
             case .success(let graphQLResult):
+                // locations holds a list of messages on our server
                 guard let locations = graphQLResult.data?.listAnchors?.items else { break }
+                // get the coordinates of each message location so we can place it on our map
                 for location in locations {
-                    // create annotation of type MKPointAnnotation to create pin for map
+                    // annotation of type MKPointAnnotation creates the pin for map
                     let annotation = MKPointAnnotation()
                     // get coordinates of message
                     guard let lat = location?.lat else {continue}
                     guard let long = location?.long else {continue}
                     let loc = CLLocationCoordinate2D(latitude: lat, longitude: long)
-                    // assign location to annotation.coord
+                    // assign location to the annotation pin
                     annotation.coordinate = loc
                     // add title to annotation pin
                     annotation.title = "Friends"
