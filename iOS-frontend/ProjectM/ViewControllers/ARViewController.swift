@@ -41,7 +41,6 @@ class ARViewController: UIViewController, ARSessionDelegate {
     var keyboardHeight: CGFloat!
     // Button will remove all mes ewsages on the screen
     var clearButton: UIButton!
-    
     let locationManager = CLLocationManager()
     let coachingOverlay = ARCoachingOverlayView()
     

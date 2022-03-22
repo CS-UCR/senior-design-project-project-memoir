@@ -16,7 +16,7 @@ extension Double {
         return Double(floor(pow(10.0, Double(places)) * self)/pow(10.0, Double(places)))
     }
 }
-
+// mock data to test how pins will appear on map
 var annotationLocations = [
     // Golden Gate Park pins
     ["latitude": 37.770412, "longitude": -122.480161], ["latitude": 37.771771, "longitude": -122.469390],
@@ -57,18 +57,7 @@ var annotationLocations = [
     ["latitude": 37.721278, "longitude": -122.475699], ["latitude": 37.721307, "longitude": -122.475848],
     ["latitude": 37.721366, "longitude": -122.476265], ["latitude": 37.721419, "longitude": -122.476467],
     ["latitude": 37.721321, "longitude": -122.475870], ["latitude": 37.721412, "longitude": -122.477238],
-
-//37.721631, -122.477067
-    
 ]
-
-
-// MyPointAnnotation allows us to give our MKPointAnnotation
-// different colors.
-// Add custom property, pinTintColor, in order to use .coordinate in MKPointAnnotation
-class MyPointAnnotation : MKPointAnnotation {
-    var pinTintColor: UIColor?
-}
 
 
 class MapViewController: UIViewController, MKMapViewDelegate{
@@ -82,14 +71,15 @@ class MapViewController: UIViewController, MKMapViewDelegate{
         super.viewDidLoad()
         mapView.delegate = self
         configureLocationServices()
-        placeAnchorsOnMap(locations: annotationLocations)
+        placeAnchorsOnMap()
+        //placeMockAnchorsOnMap(locations: annotationLocations)
     }
     
-
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
     
     // configureLocationServices checks to see if we have permission
     // to use get user's location
@@ -105,6 +95,7 @@ class MapViewController: UIViewController, MKMapViewDelegate{
         }
     }
     
+    
     // beginLocationUpdates
     private func beginLocationUpdates(locationManager: CLLocationManager){
         mapView.showsUserLocation = true
@@ -114,39 +105,34 @@ class MapViewController: UIViewController, MKMapViewDelegate{
         locationManager.startUpdatingLocation()
     }
     
-    // counter used for testing pin color
-    var counter = 0
     
-    // placeAnchorsOnMap allows us to place a pin on our map.
-    // Currently places red pins but I also want to add other colors
-    func placeAnchorsOnMap(locations: [[String : Double]]){
-        // get all the locations
-        for location in locations {
-            let annotation = MKPointAnnotation()
-            annotation.coordinate = CLLocationCoordinate2D(latitude: location["latitude"] as! CLLocationDegrees, longitude: location["longitude"] as! CLLocationDegrees)
-            let truncated_latitude = annotation.coordinate.latitude.truncate(places: 2)
-            if (truncated_latitude != 37.72){
-                // brute force to assign a title to each annotation.
-                // title determines the color of annotation. (see func mapView() below for reference)
-                if (counter % 3 == 0){
-                    annotation.title = "Public"
-                } else {
+    // placeAnchorsOnMap allows us to place a pins from our server to map.
+    func placeAnchorsOnMap(){
+        // Call server to get location from messages
+        Network.shared.apollo.fetch(query: ListAnchorsQuery(limit: 20)) { result in
+            switch result {
+            case .success(let graphQLResult):
+                guard let locations = graphQLResult.data?.listAnchors?.items else { break }
+                for location in locations {
+                    // create annotation of type MKPointAnnotation to create pin for map
+                    let annotation = MKPointAnnotation()
+                    // get coordinates of message
+                    guard let lat = location?.lat else {continue}
+                    guard let long = location?.long else {continue}
+                    let loc = CLLocationCoordinate2D(latitude: lat, longitude: long)
+                    // assign location to annotation.coord
+                    annotation.coordinate = loc
+                    // add title to annotation pin
                     annotation.title = "Friends"
+                    // add annotation pin to our map
+                    self.mapView.addAnnotation(annotation)
                 }
-            } else {
-                if (counter % 4 == 0){
-                    annotation.title = "Student&Friend"
-                } else {
-                    annotation.title = "Students"
-                }
+            case .failure(_):
+                print("LOG - placeExistingMessages error")
             }
-            // Add pin to map
-            mapView.addAnnotation(annotation)
-            //
-            counter+=1
         }
-        print(counter-1)
     }
+    
     
     // Create pin and assign it a color
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
@@ -190,6 +176,7 @@ class MapViewController: UIViewController, MKMapViewDelegate{
         return annotationView
     }
     
+    
     // zoomToCurrentLocation tells our map how zoomed
     // Example: seeing an entire city vs only your neighborhood
     private func zoomToCurrentLocation(with coordinate: CLLocationCoordinate2D) {
@@ -197,6 +184,39 @@ class MapViewController: UIViewController, MKMapViewDelegate{
         mapView.setRegion(zoomRegion, animated: true)
     }
     
+    
+    //----------------------------- Code for mock data ---------------------------------
+    func placeMockAnchorsOnMap(locations: [[String : Double]]){
+        // counter used for testing pin color
+        var counter = 0
+        
+        // get all the locations from mock data
+        for location in locations {
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = CLLocationCoordinate2D(latitude: location["latitude"] as! CLLocationDegrees, longitude: location["longitude"] as! CLLocationDegrees)
+            let truncated_latitude = annotation.coordinate.latitude.truncate(places: 2)
+            if (truncated_latitude != 37.72){
+                // brute force to assign a title to each annotation.
+                // title determines the color of annotation. (see func mapView() for reference)
+                if (counter % 3 == 0){
+                    annotation.title = "Public"
+                } else {
+                    annotation.title = "Friends"
+                }
+            } else {
+                if (counter % 4 == 0){
+                    annotation.title = "Student&Friend"
+                } else {
+                    annotation.title = "Students"
+                }
+            }
+            // Add pin to map
+            mapView.addAnnotation(annotation)
+            //
+            counter+=1
+        }
+        print(counter-1)
+    }
 }
 
 
@@ -209,6 +229,7 @@ extension MapViewController: CLLocationManagerDelegate {
         }
         currentCoordinates = latestLocation.coordinate
     }
+    
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .authorizedAlways || status == .authorizedWhenInUse {
